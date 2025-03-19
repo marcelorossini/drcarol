@@ -5,6 +5,8 @@ import Menu from '@/components/ui/menu';
 import AfterBefore from "@/components/ui/after-before";
 import { FaWhatsapp } from "react-icons/fa";
 import { CollapsibleItem } from "@/components/ui/collapsible";
+import Teste from "@/assets/2.svg"
+
 
 export default function Home() {
   return (
@@ -22,7 +24,8 @@ export default function Home() {
       </Section>
       <Section className="bg-[#eee9e3]">
         <Page title={<h1 className="text-3xl">Conheça nossos<br /><span className="text-primary">procedimentos</span></h1>}>
-          <div className="py-8">
+          <Image src={Teste} alt="teste" className="w-80 absolute -top-30 -right-50 z-0" />
+          <div className="relative py-8 z-10">
             <a href="/procedimentos/botox">
               teste
             </a>
@@ -33,18 +36,18 @@ export default function Home() {
         <Page title={<h1 className="text-3xl">Toxina Botulínica</h1>}>
           <div className="py-8 space-y-2">
             <div className="grid grid-cols-1 gap-2 divide-y divide-gray-300">
-            <CollapsibleItem 
-              title="O que é Botox?"
-              content="O botox é um procedimento que utiliza uma toxina bacteriana para reduzir a aparência de rugas e linhas de expressão."
-            />
-            <CollapsibleItem 
-              title="Como funciona o procedimento?"
-              content="O procedimento é realizado através de injeções precisas da toxina botulínica nos músculos faciais, causando um relaxamento temporário que suaviza as rugas."
-            />
-            <CollapsibleItem 
-              title="Quanto tempo dura o efeito?"
-              content="Os efeitos do botox geralmente duram de 3 a 6 meses, dependendo de cada pessoa e da área tratada."
-            />
+              <CollapsibleItem
+                title="O que é Botox?"
+                content="O botox é um procedimento que utiliza uma toxina bacteriana para reduzir a aparência de rugas e linhas de expressão."
+              />
+              <CollapsibleItem
+                title="Como funciona o procedimento?"
+                content="O procedimento é realizado através de injeções precisas da toxina botulínica nos músculos faciais, causando um relaxamento temporário que suaviza as rugas."
+              />
+              <CollapsibleItem
+                title="Quanto tempo dura o efeito?"
+                content="Os efeitos do botox geralmente duram de 3 a 6 meses, dependendo de cada pessoa e da área tratada."
+              />
             </div>
           </div>
           <div className="grid grid-cols-3 gap-1">
@@ -65,7 +68,10 @@ export default function Home() {
             </div>
             <div className="w-28 h-28 bg-red-500 rounded-xl">
               a
-            </div>            
+            </div>
+            <div className="w-28 h-28 bg-red-500 rounded-xl">
+              a
+            </div>
             <div className="w-28 h-28 bg-red-500 rounded-xl">
               a
             </div>
@@ -74,16 +80,13 @@ export default function Home() {
             </div>
             <div className="w-28 h-28 bg-red-500 rounded-xl">
               a
-            </div>            
-            <div className="w-28 h-28 bg-red-500 rounded-xl">
-              a
             </div>
             <div className="w-28 h-28 bg-red-500 rounded-xl">
               a
             </div>
             <div className="w-28 h-28 bg-red-500 rounded-xl">
               a
-            </div>            
+            </div>
           </div>
         </Page>
       </Section>
