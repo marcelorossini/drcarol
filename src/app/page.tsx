@@ -6,7 +6,14 @@ import AfterBefore from "@/components/ui/after-before";
 import { FaWhatsapp } from "react-icons/fa";
 import { CollapsibleItem } from "@/components/ui/collapsible";
 import Teste from "@/assets/2.svg"
-
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import { Card, CardContent } from "@/components/ui/card"
 
 export default function Home() {
   return (
@@ -26,9 +33,21 @@ export default function Home() {
         <Page title={<h1 className="text-3xl">Conheça nossos<br /><span className="text-primary">procedimentos</span></h1>}>
           <Image src={Teste} alt="teste" className="w-80 absolute -top-30 -right-50 z-0" />
           <div className="relative py-8 z-10">
-            <a href="/procedimentos/botox">
-              teste
-            </a>
+            <Carousel className="w-full max-w-xs mx-auto">
+              <CarouselContent>
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <CarouselItem key={index}>
+                    <Card>
+                      <CardContent className="flex aspect-square items-center justify-center p-6">
+                        <span className="text-4xl font-semibold">{index + 1}</span>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </Page>
       </Section>
