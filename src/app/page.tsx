@@ -45,8 +45,8 @@ export default function Home() {
       <Section className="bg-[#eee9e3]">
         <Page title={<h1 className="text-3xl">Conheça nossos<br /><span className="text-primary">procedimentos</span></h1>}>
           <Image src={Teste} alt="teste" className="absolute -top-40 -right-50 z-10 w-80" />
-          <div className="relative w-full h-full py-8 border-2 border-[#a9856d]">
-            <div className="absolute -left-4 top-0 w-screen">
+          <div className="relative w-full h-full py-8">
+            <div className="pt-4 absolute -left-4 top-0 w-screen z-20">
               <Carousel
                 opts={{
                   align: "start",
@@ -61,7 +61,7 @@ export default function Home() {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="left-0" />
+                <CarouselPrevious className="-left-5" />
                 <CarouselNext className="right-2" />
               </Carousel>
             </div>
