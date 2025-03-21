@@ -4,6 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --color-primary: #a4826b;
+  --color-secondary: #a9856d;
   --primary20: #E7E1D9;
   --primary30: #eee9e3;
   --radius: 0.625rem;
@@ -13,7 +15,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: #a9856d;
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -128,5 +130,6 @@ html, body {
   }
   body {
     @apply bg-background text-foreground;
+    scroll-behavior: smooth;
   }
 }
