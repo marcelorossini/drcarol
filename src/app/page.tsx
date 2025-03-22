@@ -6,7 +6,6 @@ import { FaWhatsapp } from "react-icons/fa";
 
 import Asset1 from "@/assets/1.svg"
 import Teste from "@/assets/2.svg"
-import SwipperAnimation from "@/assets/others/swipper-animation.gif"
 import HomeBackground from "@/assets/others/home-background.png"
 import Logo from "@/assets/logo.svg"
 import { GoogleReviews } from "@/components/GoogleReviews";
@@ -14,6 +13,10 @@ import InstagramFeed from "@/components/InstagramFeed";
 import TikTokFeed from "@/components/TikTokFeed";
 import HomeFAQ from "@/components/pages/home-faq";
 import { ButtonOpenUrl } from "@/components/ui/button";
+import HomeAbout from "@/components/pages/home-about";
+import HomeAboutClinic from "@/components/pages/home-about-clinic";
+import HomeTypeProcedures from "@/components/pages/home-type-procedures";
+import HomeResults from "@/components/pages/home-results";
 
 import {
   Carousel,
@@ -23,10 +26,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { Card, CardContent } from "@/components/ui/card"
-import HomeAbout from "@/components/pages/home-about";
-import HomeAboutClinic from "@/components/pages/home-about-clinic";
-import HomeTypeProcedures from "@/components/pages/home-type-procedures";
-import HomeResults from "@/components/pages/home-results";
+
 export default function Home() {
   const whatsappUrl = "https://api.whatsapp.com/send?phone=5511933110909&text=Gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+os+procedimentos+est%C3%A9ticos"
   return (

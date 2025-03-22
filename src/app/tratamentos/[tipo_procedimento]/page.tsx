@@ -1,15 +1,15 @@
 import { FC } from 'react';
-import { convertWordFileToHtml } from '@/utils/word-to-markdown';
 import { loadFilesFromDirectory } from '@/utils/file';
 import Link from 'next/link';
+
 interface TratamentoProps {
-    params: {
+    params: Promise<{
         tipo_procedimento: string;
-    }
+    }>
 }
 
-const Tratamento: FC<TratamentoProps> = async ({ params }) => {
-    const { tipo_procedimento } = await Promise.resolve(params);
+const Tratamento = async ({ params }: TratamentoProps) => {
+    const { tipo_procedimento } = await params;
     const files = await loadFilesFromDirectory({
         directoryPath: `/assets/texts/${decodeURIComponent(tipo_procedimento)}`,
         recursive: true,

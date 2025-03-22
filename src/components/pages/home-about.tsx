@@ -16,7 +16,7 @@ export default function HomeAbout() {
                 </p>
 
                 <p>
-                    Sua abordagem, baseada na <strong>"Beleza Consciente com Naturalidade"</strong>, prioriza resultados sutis e elegantes, alinhados às necessidades e desejos de cada paciente.
+                    Sua abordagem, baseada na <strong>&ldquo;Beleza Consciente com Naturalidade&rdquo;</strong>, prioriza resultados sutis e elegantes, alinhados às necessidades e desejos de cada paciente.
                 </p>
             </div>
 

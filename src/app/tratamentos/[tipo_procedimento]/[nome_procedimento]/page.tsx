@@ -2,14 +2,14 @@ import { FC } from 'react';
 import { convertWordFileToHtml } from '@/utils/word-to-markdown';
 
 interface TratamentoProps {
-    params: {
+    params: Promise<{
         tipo_procedimento: string;
         nome_procedimento: string;
-    }
+    }>
 }
 
-const Tratamento: FC<TratamentoProps> = async ({ params }) => {
-    const { tipo_procedimento, nome_procedimento } = await Promise.resolve(params);
+const Tratamento = async ({ params }: TratamentoProps) => {
+    const { tipo_procedimento, nome_procedimento } = await params;
     const html = await convertWordFileToHtml(`/assets/texts/${decodeURIComponent(tipo_procedimento)}/${decodeURIComponent(nome_procedimento)}/texto.docx`);
     
     return (

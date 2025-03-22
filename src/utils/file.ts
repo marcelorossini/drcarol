@@ -50,7 +50,7 @@ export function loadFilesFromDirectory(config: LoadFilesConfig): FileInfo[] | Fi
 
             if (stats.isDirectory()) {
                 const baseInfo = createFileInfo(relativePath, file, 'directory');
-                let shouldAddDirectory = showType !== 'files';
+                const shouldAddDirectory = showType !== 'files';
                 let subDirFiles: (FileInfo | FileTreeInfo)[] = [];
                 
                 if (recursive) {

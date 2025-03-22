@@ -4,16 +4,18 @@ import * as React from "react"
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react"
+import type { EmblaPluginType } from "embla-carousel"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import Image from "next/image"
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>[0]
 
 interface CarouselProps {
   opts?: UseCarouselParameters
-  plugins?: any[]
+  plugins?: EmblaPluginType[]
   orientation?: "horizontal" | "vertical"
   setApi?: (api: CarouselApi) => void
 }
@@ -256,23 +258,29 @@ interface CarouselImage {
 }
 
 const CarouselDefault = ({ images }: { images: CarouselImage[] }) => {
-  return (<Carousel
-    opts={{
-      align: "start",
-      loop: true,
-    }}
-    className="w-full"
-  >
-    <CarouselContent className="w-full">
-      {images.map((image, index) => (
-        <CarouselItem key={index}>
-          <img src={image.url} alt={image.alt} className="w-full h-full object-cover" />
-        </CarouselItem>
-      ))}
-    </CarouselContent>
-    <CarouselPrevious className="-left-2" />
-    <CarouselNext className="right-0" />
-  </Carousel>)
+  return (
+    <Carousel>
+      <CarouselContent>
+        {images.map((image, index) => (
+          <CarouselItem key={index}>
+            <div className="p-1">
+              <div className="flex aspect-square items-center justify-center p-6">
+                <Image
+                  src={image.url}
+                  alt={image.alt}
+                  width={800}
+                  height={800}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+  )
 }
 
 export {

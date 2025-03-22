@@ -2,7 +2,6 @@ import Page from "@/components/ui/page"
 
 interface CosmeticProceduresProps {
     title: string
-    description: string
     procedures: {
         title: string
         description: string
@@ -10,7 +9,7 @@ interface CosmeticProceduresProps {
     }[]
 }
 
-export default function CosmeticProcedures({ title, description }: CosmeticProceduresProps) {
+export default function CosmeticProcedures({ title }: CosmeticProceduresProps) {
     return (
         <Page title={<h1 className="text-3xl">{title}</h1>} className="p-8">
             <div className="">
