@@ -9,7 +9,7 @@ interface TratamentoProps {
 }
 
 const Tratamento: FC<TratamentoProps> = async ({ params }) => {
-    const { tipo_procedimento, nome_procedimento } = params;
+    const { tipo_procedimento, nome_procedimento } = await Promise.resolve(params);
     const html = await convertWordFileToHtml(`/assets/texts/${decodeURIComponent(tipo_procedimento)}/${decodeURIComponent(nome_procedimento)}/texto.docx`);
     
     return (
