@@ -4,6 +4,7 @@ import * as React from "react"
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react"
+import Autoplay from "embla-carousel-autoplay"
 import type { EmblaPluginType } from "embla-carousel"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -258,13 +259,27 @@ interface CarouselImage {
 }
 
 const CarouselDefault = ({ images }: { images: CarouselImage[] }) => {
+  const autoplayOptions = {
+    delay: 3000,
+    rootNode: (emblaRoot: HTMLElement) => emblaRoot.parentElement,
+  }
+
   return (
-    <Carousel>
-      <CarouselContent>
+    <Carousel 
+      opts={{
+        align: "start",
+        containScroll: "trimSnaps",
+        loop: true
+      }}
+      plugins={[
+        Autoplay(autoplayOptions)
+      ]}
+    >
+      <CarouselContent className="lg:-ml-4">
         {images.map((image, index) => (
-          <CarouselItem key={index}>
-            <div className="p-1">
-              <div className="flex aspect-square items-center justify-center p-6">
+          <CarouselItem key={index} className="lg:basis-1/3 lg:pl-4">
+            <div className="p-0.5">
+              <div className="flex aspect-square items-center justify-center p-2">
                 <Image
                   src={image.url}
                   alt={image.alt}

@@ -25,7 +25,7 @@ export default function HomeTypeProcedures() {
   ]
 
   return (
-    <div className="flex flex-col gap-4 border-2 border-red-500">
+    <div className="flex flex-col gap-4">
       <p className="text-gray-500">Clique sobre o tratamento para saber mais</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-center justify-center">
         {procedures.map((procedure, index) => (
@@ -39,7 +39,7 @@ export default function HomeTypeProcedures() {
               alt={"imagem do procedimento"}
               width={400}
               height={160}
-              className="w-full h-40 object-cover rounded-4xl z-10 drop-shadow-sm"
+              className="w-full h-40 object-cover rounded-4xl z-10 drop-shadow-sm lg:h-80"
             />
             <div className="absolute flex flex-col gap-2 -bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-24 bg-white flex items-center justify-center z-10 rounded-md drop-shadow-lg hover:drop-shadow-xl transition-shadow duration-300">
               <h2 className="text-2xl font-bold text-bold">{procedure.title}</h2>

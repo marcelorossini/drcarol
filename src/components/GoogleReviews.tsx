@@ -41,6 +41,27 @@ export function GoogleReviews() {
         text: "Serviço de alta qualidade e preço justo.",
         profile_photo_url: "https://placehold.co/600x400",
         time: "3 dias atrás"
+      },
+      {
+        author_name: "João Silva",
+        rating: 5,
+        text: "Excelente atendimento! Profissionais muito competentes e dedicados.",
+        profile_photo_url: "https://placehold.co/600x400",
+        time: "2 semanas atrás"
+      },
+      {
+        author_name: "Maria Santos",
+        rating: 5,
+        text: "Melhor experiência que já tive com atendimento ao cliente.",
+        profile_photo_url: "https://placehold.co/600x400",
+        time: "1 mês atrás"
+      },
+      {
+        author_name: "Pedro Oliveira",
+        rating: 5,
+        text: "Serviço de alta qualidade e preço justo.",
+        profile_photo_url: "https://placehold.co/600x400",
+        time: "3 dias atrás"
       }
     ];
 
