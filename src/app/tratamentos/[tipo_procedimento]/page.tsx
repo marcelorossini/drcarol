@@ -8,6 +8,15 @@ interface TratamentoProps {
     }>
 }
 
+export async function generateStaticParams() {
+    // Lista de tipos de procedimentos disponíveis
+    return [
+        { tipo_procedimento: 'face' },
+        { tipo_procedimento: 'corpo' },
+        { tipo_procedimento: 'tecnologias' }
+    ];
+}
+
 const Tratamento = async ({ params }: TratamentoProps) => {
     const { tipo_procedimento } = await params;
     const files = await loadFilesFromDirectory({

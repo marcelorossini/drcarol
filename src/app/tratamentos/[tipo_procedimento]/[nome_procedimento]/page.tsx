@@ -1,11 +1,39 @@
 import { FC } from 'react';
 import { convertWordFileToHtml } from '@/utils/word-to-markdown';
+import { loadFilesFromDirectory } from '@/utils/file';
 
 interface TratamentoProps {
     params: Promise<{
         tipo_procedimento: string;
         nome_procedimento: string;
     }>
+}
+
+export async function generateStaticParams() {
+    const procedimentos = [
+        { tipo_procedimento: 'face' },
+        { tipo_procedimento: 'corpo' },
+        { tipo_procedimento: 'tecnologias' }
+    ];
+
+    const params = [];
+
+    for (const { tipo_procedimento } of procedimentos) {
+        const files = await loadFilesFromDirectory({
+            directoryPath: `/assets/texts/${tipo_procedimento}`,
+            recursive: true,
+            showType: 'directories'
+        });
+
+        for (const file of files) {
+            params.push({
+                tipo_procedimento,
+                nome_procedimento: file.name
+            });
+        }
+    }
+
+    return params;
 }
 
 const Tratamento = async ({ params }: TratamentoProps) => {
