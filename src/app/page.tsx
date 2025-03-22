@@ -3,11 +3,6 @@ import Section from "@/components/ui/section";
 import Page from "@/components/ui/page";
 import Menu from '@/components/ui/menu';
 import { FaWhatsapp } from "react-icons/fa";
-
-import Asset1 from "@/assets/1.svg"
-import Teste from "@/assets/2.svg"
-import HomeBackground from "@/assets/others/home-background.png"
-import Logo from "@/assets/logo.svg"
 import { GoogleReviews } from "@/components/GoogleReviews";
 import InstagramFeed from "@/components/InstagramFeed";
 import TikTokFeed from "@/components/TikTokFeed";
@@ -34,15 +29,15 @@ export default function Home() {
       <Section id="home" className="min-h-[100vh] relative bg-gradient-to-b from-[#d2b9a5] via-[#d2b9a5] via-35% to-[#a9856d]">
         <Menu />
         <div className="flex flex-col items-center gap-8 p-4 pt-20 w-full lg:pt-0 lg:absolute lg:max-w-160 lg:top-1/2 lg:-translate-y-1/2 lg:right-12 z-15">
-          <Image src={Logo} alt="imagem" className="w-full h-auto" />
-          <ButtonOpenUrl url={whatsappUrl} className="w-fit items-center gap-2 px-4 !py-6 text-2xl text-white border-2 hidden lg:flex rounded-full">
+          <Image src="/assets/logo.svg" alt="imagem" width={500} height={500} className="w-full h-auto" />
+          <ButtonOpenUrl url={whatsappUrl} className="w-fit items-center gap-2 px-4 !py-6 text-2xl text-black border-2 border-black hidden lg:flex rounded-full">
             <FaWhatsapp size={28} /> Agendar consulta
           </ButtonOpenUrl>
         </div>
         <div className="absolute top-0 left-0 w-full h-full lg:w-auto">
-          <Image src={Asset1} alt="imagem" className="rotate-slow -mt-40 w-full h-full blur-md opacity-80" /></div>
+          <Image src="/assets/1.svg" alt="imagem" width={1000} height={1000} className="rotate-slow -mt-40 w-full h-full blur-md opacity-80" /></div>
         <div className="absolute inset-x-0 bottom-0">
-          <div className="w-full h-full flex items-end relative z-20 p-8 lg:p-20 pb-16">
+          <div className="w-full h-full flex items-end relative z-20 p-8 lg:p-20 pb-20">
             <div className="flex flex-col gap-8">
               <p className="text-4xl lg:text-6xl text-white font-light drop-shadow-lg">
                 <span>Você em harmonia<br className="lg:hidden" /> com a </span><strong>sua beleza</strong>
@@ -52,13 +47,14 @@ export default function Home() {
               </ButtonOpenUrl>
             </div>
           </div>
-          <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-[#a9856d] via-35% to-[#a9856d] lg:opacity-80" />
+          <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-[#a9856d] via-30% to-[#a9856d] lg:opacity-80" />
         </div>
-        <Image src={HomeBackground} alt="imagem" className="absolute bottom-0 -left-10 z-0 h-full w-auto object-contain object-left-bottom pb-16 lg:pb-0 lg:left-30" />
+        <Image src="/assets/others/home-background.png" alt="imagem" width={1000} height={1000} className="absolute bottom-0 -left-10 z-0 h-full w-auto object-contain object-left-bottom pb-24 lg:pb-0 lg:left-30" />
+        <div className="absolute bottom-0 left-0 w-full h-4 z-10 bg-[#eee9e3]"/>
       </Section>
       <Section id="tratamentos" className="bg-[#eee9e3]">
         <Page title={<h1 className="text-3xl">Conheça nossos<br /><span className="text-primary">tratamentos</span></h1>}>
-          <Image src={Teste} alt="teste" className="absolute -top-40 -right-50 z-10 w-80 lg:w-128 lg:-right-20 lg:-top-60" />
+          <Image src="/assets/2.svg" alt="teste" width={500} height={500} className="absolute -top-40 -right-55 z-10 w-80 lg:w-128 lg:-top-60" />
           <div className="relative w-full h-full z-15">
             <HomeTypeProcedures />
           </div>
@@ -74,7 +70,7 @@ export default function Home() {
           <HomeAboutClinic />
         </Page>
       </Section>
-      <Section id="faq" className="bg-white">
+      <Section id="faq" className="bg-white p-8 !pb-0">
         <Page title={<h1 className="text-3xl">Perguntas <span className="text-primary">frequentes</span></h1>}>
           <HomeFAQ />
         </Page>

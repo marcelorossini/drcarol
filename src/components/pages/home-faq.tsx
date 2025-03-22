@@ -1,4 +1,5 @@
 import { CollapsibleList } from "@/components/ui/collapsible";
+import Image from "next/image";
 
 export default function HomeFAQ() {
     const faq = [
@@ -45,6 +46,15 @@ export default function HomeFAQ() {
     ]
 
     return (
-        <CollapsibleList items={faq} />
+        <div className="flex flex-col md:flex-row gap-4">
+            <div className="hidden md:flex w-1/2 relative justify-end items-end">
+                <div className="w-full max-h-[600px] h-full relative">
+                    <Image src={"/assets/images/home-faq.png"} alt="imagem" fill className="object-contain object-bottom" />
+                </div>
+            </div>
+            <div className="w-full md:w-1/2 pb-8 lg:pb-20">
+                <CollapsibleList items={faq} />
+            </div>
+        </div>
     )
 }

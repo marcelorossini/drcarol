@@ -285,7 +285,7 @@ const CarouselDefault = ({ images }: { images: CarouselImage[] }) => {
                   alt={image.alt}
                   width={800}
                   height={800}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-4xl"
                 />
               </div>
             </div>
