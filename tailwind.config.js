@@ -9,6 +9,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-rosario)'],
+        caladea: ['var(--font-caladea)', 'serif'],
+      },
       keyframes: {
         "collapsible-down": {
           from: { 

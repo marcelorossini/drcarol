@@ -39,7 +39,7 @@ export default function Home() {
         <div className="absolute inset-x-0 bottom-0">
           <div className="w-full h-full flex items-end relative z-20 p-8 lg:p-20 pb-20">
             <div className="flex flex-col gap-8">
-              <p className="text-4xl lg:text-6xl text-white font-light drop-shadow-lg">
+              <p className="text-4xl lg:text-6xl text-white font-light drop-shadow-lg font-caladea font-bold">
                 <span>Você em harmonia<br className="lg:hidden" /> com a </span><strong>sua beleza</strong>
               </p>
               <ButtonOpenUrl url={whatsappUrl} className="flex w-fit items-center gap-2 px-4 !py-6 text-2xl text-white border-2 lg:hidden rounded-full">
@@ -53,7 +53,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-full h-4 z-10 bg-[#eee9e3]"/>
       </Section>
       <Section id="tratamentos" className="bg-[#eee9e3]">
-        <Page title={<h1 className="text-3xl">Conheça nossos<br /><span className="text-primary">tratamentos</span></h1>}>
+        <Page title={<h1 className="text-3xl font-caladea">Conheça nossos<br /><span className="text-primary">tratamentos</span></h1>}>
           <Image src="/assets/2.svg" alt="teste" width={500} height={500} className="absolute -top-40 -right-55 z-10 w-80 lg:w-128 lg:-top-60" />
           <div className="relative w-full h-full z-15">
             <HomeTypeProcedures />
@@ -61,32 +61,30 @@ export default function Home() {
         </Page>
       </Section>
       <Section id="resultados" className="bg-white">
-        <Page title={<h1 className="text-3xl">Veja alguns <span className="text-primary">resultados</span></h1>}>
+        <Page title={<h1>Veja alguns <span className="text-primary">resultados</span></h1>}>
           <HomeResults />
         </Page>
       </Section>
       <Section id="faq" className="bg-[#eee9e3]">
-        <Page title={<h1 className="text-3xl">Conheça a <span className="text-primary">clínica</span></h1>}>
           <HomeAboutClinic />
-        </Page>
       </Section>
       <Section id="faq" className="bg-white p-8 !pb-0">
-        <Page title={<h1 className="text-3xl">Perguntas <span className="text-primary">frequentes</span></h1>}>
+        <Page title={<h1>Perguntas <span className="text-primary">frequentes</span></h1>}>
           <HomeFAQ />
         </Page>
       </Section>
       <Section id="faq" className="bg-[#eee9e3]">
-        <Page title={<h1 className="text-3xl">Conheça a <span className="text-primary">Dra. Carolina Macedo</span></h1>}>
+        <Page title={<h1>Conheça a <span className="text-primary">Dra. Carolina Macedo</span></h1>}>
           <HomeAbout />
         </Page>
       </Section>
       <Section id="depoimentos" className="">
-        <Page title={<h1 className="text-3xl">Depoimentos</h1>}>
+        <Page title={<h1>Depoimentos</h1>}>
           <GoogleReviews />
         </Page>
       </Section>
       <Section id="contato" className="bg-[#eee9e3]">
-        <Page title={<h1 className="text-3xl">Entre em <span className="text-primary">contato</span></h1>}>
+        <Page title={<h1>Entre em <span className="text-primary">contato</span></h1>}>
           <div className="py-8">
             <div className="space-y-8">
               <div>
