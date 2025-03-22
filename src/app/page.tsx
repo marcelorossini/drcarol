@@ -52,7 +52,7 @@ export default function Home() {
       </Section>
       <Section id="tratamentos" className="bg-[#eee9e3]">
         <Page title={<h1 className="text-3xl">Conheça nossos<br /><span className="text-primary">tratamentos</span></h1>}>
-          <Image src={Teste} alt="teste" className="absolute -top-40 -right-50 z-10 w-80" />
+          <Image src={Teste} alt="teste" className="absolute -top-40 -right-50 z-10 w-80 lg:w-128 lg:-right-20 lg:-top-60" />
           <div className="relative w-full h-full">
             <HomeTypeProcedures />
           </div>

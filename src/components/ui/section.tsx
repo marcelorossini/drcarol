@@ -6,7 +6,7 @@ interface SectionProps {
 
 export default function Section({ id, className, children }: SectionProps) {
     return (
-        <div id={id} className={`w-screen min-h-[100vh] p-8 ${className}`}>
+        <div id={id} className={`w-screen min-h-[100vh] h-full p-8 ${className}`}>
             {children}
         </div>
     )

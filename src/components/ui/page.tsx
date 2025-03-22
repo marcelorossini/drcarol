@@ -6,7 +6,7 @@ interface SectionProps {
 
 export default function Section({ className, children, title }: SectionProps) {
     return (
-        <div className={`w-full h-full relative ${className}`}>
+        <div className={`w-full h-full relative ${className} border-2 border-blue-500`}>
             {title}
             <div className="pt-4">
                 {children}
