@@ -39,7 +39,7 @@ module.exports = {
             opacity: 0,
             transform: "translateY(-10px)"
           },
-        },
+        }
       },
       animation: {
         "collapsible-down": "collapsible-down 0.3s cubic-bezier(0.4, 0, 0.2, 1)",

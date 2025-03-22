@@ -34,7 +34,7 @@ export default function Home() {
       <Section id="home" className="relative bg-gradient-to-b from-[#d2b9a5] via-[#d2b9a5] via-35% to-[#a9856d]">
         <Menu />
         <Image src={Logo} alt="imagem" className="pt-20 px-4 z-10 relative" />
-        <div className="absolute top-0 left-0 w-full h-full"><Image src={Asset1} alt="imagem" className="-mt-40 w-full h-full blur-md opacity-80" /></div>
+        <div className="absolute top-0 left-0 w-full h-full"><Image src={Asset1} alt="imagem" className="rotate-slow -mt-40 w-full h-full blur-md opacity-80" /></div>
         <div className="absolute inset-x-0 bottom-0">
           <div className="w-full h-full flex items-end relative z-20 p-8 pb-16">
             <div className="flex flex-col gap-8">
