@@ -24,6 +24,9 @@ export default function RootLayout({
         className={`${spectralSans.variable} antialiased`}
       >
         {children}
+        <footer className="h-10">
+          
+        </footer>
       </body>
     </html>
   );

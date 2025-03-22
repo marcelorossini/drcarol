@@ -13,7 +13,7 @@ const CollapsibleTrigger = React.forwardRef<
   <CollapsiblePrimitive.CollapsibleTrigger
     ref={ref}
     className={cn(
-      "flex justify-between w-full py-2 items-center",
+      "flex justify-between w-full py-2 items-center text-left",
       className
     )}
     {...props}
@@ -55,8 +55,26 @@ export function CollapsibleItem({ title, content }: CollapsibleItemProps) {
         <span className="text-2xl">+</span>
       </CollapsibleTrigger>
       <CollapsibleContent className="">
-        <p className="text-lg text-gray-600">{content}</p>
+        <p className="text-lg text-gray-600" dangerouslySetInnerHTML={{ __html: content.replace(/\n/g, '<br />') }} />
       </CollapsibleContent>
     </Collapsible>
   )
-} 
+}
+
+interface CollapsibleArrayProps {
+  items: CollapsibleItemProps[]
+}
+
+export function CollapsibleList({ items }: CollapsibleArrayProps) {
+  return (
+    <div className="grid grid-cols-1 gap-2 divide-y divide-gray-300">
+      {items.map((item, index) => (
+        <CollapsibleItem
+          key={index}
+          title={item.title}
+          content={item.content}
+        />
+      ))}
+    </div>
+  )
+}

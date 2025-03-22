@@ -2,9 +2,8 @@ import Image from "next/image";
 import Section from "@/components/ui/section";
 import Page from "@/components/ui/page";
 import Menu from '@/components/ui/menu';
-import AfterBefore from "@/components/ui/after-before";
 import { FaWhatsapp } from "react-icons/fa";
-import { CollapsibleItem } from "@/components/ui/collapsible";
+
 import Asset1 from "@/assets/1.svg"
 import Teste from "@/assets/2.svg"
 import SwipperAnimation from "@/assets/others/swipper-animation.gif"
@@ -12,6 +11,8 @@ import HomeBackground from "@/assets/others/home-background.png"
 import Logo from "@/assets/logo.svg"
 import { GoogleReviews } from "@/components/GoogleReviews";
 import InstagramFeed from "@/components/InstagramFeed";
+import TikTokFeed from "@/components/TikTokFeed";
+import HomeFAQ from "@/components/pages/home-faq";
 import { ButtonOpenUrl } from "@/components/ui/button";
 
 import {
@@ -22,8 +23,11 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { Card, CardContent } from "@/components/ui/card"
-
-export default function Home() { 
+import HomeAbout from "@/components/pages/home-about";
+import HomeAboutClinic from "@/components/pages/home-about-clinic";
+import HomeTypeProcedures from "@/components/pages/home-type-procedures";
+import HomeResults from "@/components/pages/home-results";
+export default function Home() {
   const whatsappUrl = "https://api.whatsapp.com/send?phone=5511933110909&text=Gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+os+procedimentos+est%C3%A9ticos"
   return (
     <div className="relative overflow-hidden">
@@ -49,61 +53,36 @@ export default function Home() {
       <Section id="tratamentos" className="bg-[#eee9e3]">
         <Page title={<h1 className="text-3xl">Conheça nossos<br /><span className="text-primary">tratamentos</span></h1>}>
           <Image src={Teste} alt="teste" className="absolute -top-40 -right-50 z-10 w-80" />
-          <div className="relative w-full h-full py-8">
-            <div className="pt-4 absolute -left-4 top-0 w-screen z-20">
-              <Carousel
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-                className="w-full"
-              >
-                <CarouselContent className="w-full">
-                  {Array.from({ length: 5 }).map((_, index) => (
-                    <CarouselItem key={index}>
-                      <img src={`https://placehold.co/400`} alt="teste" className="w-full h-full object-cover" />
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious className="-left-5" />
-                <CarouselNext className="right-2" />
-              </Carousel>
-            </div>
+          <div className="relative w-full h-full">
+            <HomeTypeProcedures />
           </div>
         </Page>
       </Section>
-      <Section className="bg-[#eee9e3]">
-        <Page title={<h1 className="text-3xl">Toxina Botulínica</h1>}>
-          <div className="py-8 space-y-2">
-            <div className="grid grid-cols-1 gap-2 divide-y divide-gray-300">
-              <CollapsibleItem
-                title="O que é Botox?"
-                content="O botox é um procedimento que utiliza uma toxina bacteriana para reduzir a aparência de rugas e linhas de expressão."
-              />
-              <CollapsibleItem
-                title="Como funciona o procedimento?"
-                content="O procedimento é realizado através de injeções precisas da toxina botulínica nos músculos faciais, causando um relaxamento temporário que suaviza as rugas."
-              />
-              <CollapsibleItem
-                title="Quanto tempo dura o efeito?"
-                content="Os efeitos do botox geralmente duram de 3 a 6 meses, dependendo de cada pessoa e da área tratada."
-              />
-            </div>
-          </div>
-          <div className="grid grid-cols-3 gap-1">
-            <div className="w-28 h-28 bg-[#a9856d] rounded-xl">
-              a
-            </div>
-            <div className="w-28 h-28 bg-[#a9856d] rounded-xl">
-              a
-            </div>
-            <div className="w-28 h-28 bg-[#a9856d] rounded-xl">
-              a
-            </div>
-          </div>
+      <Section id="resultados" className="bg-white">
+        <Page title={<h1 className="text-3xl">Veja alguns <span className="text-primary">resultados</span></h1>}>
+          <HomeResults />
         </Page>
       </Section>
-      <GoogleReviews />
+      <Section id="faq" className="bg-[#eee9e3]">
+        <Page title={<h1 className="text-3xl">Conheça a <span className="text-primary">clínica</span></h1>}>
+          <HomeAboutClinic />
+        </Page>
+      </Section>
+      <Section id="faq" className="bg-white">
+        <Page title={<h1 className="text-3xl">Perguntas <span className="text-primary">frequentes</span></h1>}>
+          <HomeFAQ />
+        </Page>
+      </Section>
+      <Section id="faq" className="bg-[#eee9e3]">
+        <Page title={<h1 className="text-3xl">Conheça a <span className="text-primary">Dra. Carolina Macedo</span></h1>}>
+          <HomeAbout />
+        </Page>
+      </Section>
+      <Section id="depoimentos" className="">
+        <Page title={<h1 className="text-3xl">Depoimentos</h1>}>
+          <GoogleReviews />
+        </Page>
+      </Section>
       <Section id="contato" className="bg-[#eee9e3]">
         <Page title={<h1 className="text-3xl">Entre em <span className="text-primary">contato</span></h1>}>
           <div className="max-w-2xl mx-auto py-8">
@@ -116,6 +95,7 @@ export default function Home() {
               <div>
                 <h2 className="text-xl font-semibold mb-4">Redes Sociais</h2>
                 <InstagramFeed username="dra.carolinamacedo" />
+                <TikTokFeed username="dra.carolinamacedo" />
               </div>
               <div>
                 <h2 className="text-xl font-semibold mb-4">Horário de Atendimento</h2>
@@ -123,7 +103,7 @@ export default function Home() {
                   <p>Segunda a Sexta: 12:00 - 20:00</p>
                   <p>Sábado: 09:00 - 14:00</p>
                 </div>
-              </div>              
+              </div>
             </div>
           </div>
         </Page>

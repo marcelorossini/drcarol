@@ -250,6 +250,31 @@ const CarouselNext = React.forwardRef<
 })
 CarouselNext.displayName = "CarouselNext"
 
+interface CarouselImage {
+  url: string;
+  alt: string;
+}
+
+const CarouselDefault = ({ images }: { images: CarouselImage[] }) => {
+  return (<Carousel
+    opts={{
+      align: "start",
+      loop: true,
+    }}
+    className="w-full"
+  >
+    <CarouselContent className="w-full">
+      {images.map((image, index) => (
+        <CarouselItem key={index}>
+          <img src={image.url} alt={image.alt} className="w-full h-full object-cover" />
+        </CarouselItem>
+      ))}
+    </CarouselContent>
+    <CarouselPrevious className="-left-2" />
+    <CarouselNext className="right-0" />
+  </Carousel>)
+}
+
 export {
   type CarouselApi,
   Carousel,
@@ -257,4 +282,5 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
+  CarouselDefault
 }
