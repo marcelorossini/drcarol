@@ -158,12 +158,12 @@ const CarouselContent = React.forwardRef<
   const { carouselRef, orientation } = useCarousel()
 
   return (
-    <div ref={carouselRef} className="overflow-hidden">
+    <div ref={carouselRef} className="w-full">
       <div
         ref={ref}
         className={cn(
           "flex relative",
-          orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col",
+          orientation === "horizontal" ? "" : "-mt-4 flex-col",
           className
         )}
         {...props}
@@ -185,8 +185,8 @@ const CarouselItem = React.forwardRef<
       role="group"
       aria-roledescription="slide"
       className={cn(
-        "min-w-0 shrink-0 grow-0 basis-full transition-opacity duration-300",
-        orientation === "horizontal" ? "pl-4" : "pt-4",
+        "min-w-0 shrink-0 grow-0 transition-opacity duration-300",
+        orientation === "horizontal" ? "" : "pt-4",
         className
       )}
       {...props}
@@ -267,17 +267,18 @@ const CarouselDefault = ({ images }: { images: CarouselImage[] }) => {
   return (
     <Carousel 
       opts={{
-        align: "start",
+        align: "center",
         containScroll: "trimSnaps",
-        loop: true
+        loop: true,
+        dragFree: false
       }}
       plugins={[
         Autoplay(autoplayOptions)
       ]}
     >
-      <CarouselContent className="lg:-ml-4">
+      <CarouselContent className="overflow-visible">
         {images.map((image, index) => (
-          <CarouselItem key={index} className="lg:basis-1/3 lg:pl-4">
+          <CarouselItem key={index} className="basis-[70%] md:basis-1/3">
             <div className="p-0.5">
               <div className="flex aspect-square items-center justify-center p-2">
                 <Image
@@ -298,6 +299,72 @@ const CarouselDefault = ({ images }: { images: CarouselImage[] }) => {
   )
 }
 
+const CarouselHighlight = ({ 
+  images, 
+  enableBlur = true 
+}: { 
+  images: CarouselImage[];
+  enableBlur?: boolean;
+}) => {
+  const autoplayOptions = {
+    delay: 3000,
+    rootNode: (emblaRoot: HTMLElement) => emblaRoot.parentElement,
+  }
+
+  const [selectedIndex, setSelectedIndex] = React.useState(0)
+
+  const onSelect = React.useCallback((api: CarouselApi) => {
+    if (!api) return
+    setSelectedIndex(api.selectedScrollSnap())
+  }, [])
+
+  return (
+    <Carousel       
+      opts={{
+        align: "center",
+        containScroll: "trimSnaps",
+        loop: true,
+        dragFree: false
+      }}
+      plugins={[
+        Autoplay(autoplayOptions)
+      ]}
+      setApi={(api) => {
+        if (!api) return
+        api.on("select", onSelect)
+      }}
+    >
+      <CarouselContent className="overflow-visible">
+        {images.map((image, index) => (
+          <CarouselItem key={index} className={`basis-[70%] md:basis-1/3 ${selectedIndex === index ? "z-10" : "z-0"}`}>
+            <div className="p-0.5">
+              <div className={cn(
+                "flex aspect-square items-center justify-center p-2 transition-transform duration-300 relative",
+                selectedIndex === index 
+                  ? "scale-140 z-10" 
+                  : "scale-100 z-0 opacity-50",
+                enableBlur && selectedIndex !== index && "blur-xs"
+              )}>
+                <Image
+                  src={image.url}
+                  alt={image.alt}
+                  width={800}
+                  height={800}
+                  className={cn(
+                    "w-full h-full object-cover rounded-4xl transition-all duration-300"
+                  )}
+                />
+              </div>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+  )
+}
+
 export {
   type CarouselApi,
   Carousel,
@@ -305,5 +372,6 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
-  CarouselDefault
+  CarouselDefault,
+  CarouselHighlight
 }

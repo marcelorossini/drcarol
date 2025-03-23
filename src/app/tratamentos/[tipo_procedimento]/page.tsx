@@ -1,6 +1,8 @@
-import { FC } from 'react';
 import { loadFilesFromDirectory } from '@/utils/file';
-import Link from 'next/link';
+import { capitalizeText } from '@/utils/string';
+import Section from "@/components/ui/section";
+import Page from "@/components/ui/page";
+import { ProcedureCard, ProcedureCardList   } from '@/components/pages/home-type-procedures';
 
 interface TratamentoProps {
     params: Promise<{
@@ -9,33 +11,35 @@ interface TratamentoProps {
 }
 
 export async function generateStaticParams() {
+    const files = await loadFilesFromDirectory({
+        directoryPath: `/assets/content/tratamentos`    
+    });
+
     // Lista de tipos de procedimentos disponíveis
-    return [
-        { tipo_procedimento: 'face' },
-        { tipo_procedimento: 'corpo' },
-        { tipo_procedimento: 'tecnologias' }
-    ];
+    return files.filter(i => i.type === 'directory').map((file) => ({
+        tipo_procedimento: file.name
+    }));
 }
 
 const Tratamento = async ({ params }: TratamentoProps) => {
     const { tipo_procedimento } = await params;
     const files = await loadFilesFromDirectory({
-        directoryPath: `/assets/texts/${decodeURIComponent(tipo_procedimento)}`,
-        recursive: true,
-        showType: 'directories'
+        directoryPath: `/assets/content/tratamentos/${decodeURIComponent(tipo_procedimento)}`,
+        recursive: true        
     });
-    //const html = await convertWordFileToHtml(`/assets/texts/face/TOXINA BOTULÍNICA.docx`);
-    
+
     return (
-        <div>
-            {files.map((file) => (
-                <div key={file.url}>
-                    <Link href={`/tratamentos/${tipo_procedimento}/${file.name}`}>
-                        <h1>{file.name}</h1>
-                    </Link>
+        <Section id="home" className="min-h-[100vh] relative bg-gradient-to-b from-[#d2b9a5] via-[#d2b9a5] via-35% to-[#a9856d]">
+            <Page className="pt-18" title={<h1>{capitalizeText(tipo_procedimento)}</h1>}>
+                <div>
+                    <ProcedureCardList procedures={files.filter(i => i.type === 'directory').map((file, index) => ({
+                        title: file.name,
+                        image: `/assets/images/procedures/${file.name}.jpg`,
+                        href: `/tratamentos/${tipo_procedimento}/${file.name}`
+                    }))} />
                 </div>
-            ))}
-        </div>
+            </Page>
+        </Section>
     );
 };
 

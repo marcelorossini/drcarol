@@ -2,7 +2,7 @@ import { CarouselDefault } from "@/components/ui/carousel";
 import { loadImagesFromDirectoryAlt } from "@/utils/image-loader";
 import Page from "@/components/ui/page";
 
-export default function HomeAbout() {
+export default function HomeAboutClinic() {
     const images = loadImagesFromDirectoryAlt('/assets/images/home-about-clinic', 'Clínica Dra. Carolina Macedo');
     return (
         <Page title={<h1 className="text-primary">Nossa Clínica fica em São Paulo, no bairro de Moema</h1>}

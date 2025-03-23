@@ -1,15 +1,13 @@
 import Image from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
 import { ButtonOpenUrl } from "@/components/ui/button";
-import Menu from '@/components/ui/menu';
 
 export default function HomeHero() {
     const whatsappUrl = "https://api.whatsapp.com/send?phone=5511933110909&text=Gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+os+procedimentos+est%C3%A9ticos";
 
     return (
         <>
-            <Menu />
-            <div className="flex flex-col items-center gap-8 p-4 pt-20 w-full lg:pt-0 lg:absolute lg:max-w-160 lg:top-1/2 lg:-translate-y-1/2 lg:right-12 z-15">
+            <div className="flex flex-col items-center gap-8 p-4 pt-20 w-full relative lg:pt-0 lg:absolute lg:max-w-160 lg:top-1/2 lg:-translate-y-1/2 lg:right-12 z-5">
                 <Image src="/assets/logo.svg" alt="imagem" width={500} height={500} className="w-full h-auto" />
                 <ButtonOpenUrl url={whatsappUrl} className="w-fit items-center gap-2 px-4 !py-6 text-2xl text-black border-2 border-black hidden lg:flex rounded-full">
                     <FaWhatsapp size={28} /> Agendar consulta
@@ -31,8 +29,8 @@ export default function HomeHero() {
                 </div>
                 <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-[#a9856d] via-30% to-[#a9856d] lg:opacity-80" />
             </div>
-            <Image src="/assets/others/home-background.png" alt="imagem" width={1000} height={1000} className="absolute bottom-0 -left-10 z-0 h-full w-auto object-contain object-left-bottom pb-24 lg:pb-0 lg:left-30" />
-            <div className="absolute bottom-0 left-0 w-full h-4 z-10 bg-[#eee9e3]"/>
+            <Image src="/assets/home-carol.webp" alt="imagem" width={1000} height={1000} className="absolute bottom-0 -left-10 z-1 h-full w-auto object-contain object-left-bottom pb-24 lg:pb-0 lg:left-30" />
+            <Image src="/assets/home-background.webp" alt="imagem" fill className="absolute opacity-50 blur-sm bottom-0 -left-10 z-0 h-full w-auto object-cover object-right-bottom pb-24 lg:pb-0 lg:left-30" />
         </>
     )
 } 

@@ -21,7 +21,7 @@ export default function HomeResults() {
     ]
 
     return (
-        <Page title={<h1>Veja alguns <span className="text-primary">resultados</span></h1>}>
+        <Page title={<h1 className="text-white">Resultados naturais <strong>que te valorizam!</strong></h1>}>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {results.map((result, index) => (
                     <div key={index} className="flex flex-col gap-4">

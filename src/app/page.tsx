@@ -3,8 +3,8 @@ import HomeHero from "@/components/pages/home-hero";
 import HomeTreatments from "@/components/pages/home-treatments";
 import HomeResults from "@/components/pages/home-results";
 import HomeAboutClinic from "@/components/pages/home-about-clinic";
-import HomeFAQSection from "@/components/pages/home-faq-section";
-import HomeAboutSection from "@/components/pages/home-about-section";
+import HomeFAQ from "@/components/pages/home-faq";
+import HomeAboutDoctor from "@/components/pages/home-about";
 import HomeTestimonials from "@/components/pages/home-testimonials";
 import HomeContact from "@/components/pages/home-contact";
 
@@ -17,17 +17,17 @@ export default function Home() {
       <Section id="tratamentos" className="bg-[#eee9e3]">
         <HomeTreatments />
       </Section>
-      <Section id="resultados" className="bg-white">
+      <Section id="resultados" className="bg-[#957665]">
         <HomeResults />
+      </Section>
+      <Section id="about" className="" defaultPadding={false}>
+        <HomeAboutDoctor />
       </Section>
       <Section id="about-clinic" className="bg-[#eee9e3]">
         <HomeAboutClinic />
       </Section>
       <Section id="faq" className="bg-white p-8 !pb-0">
-        <HomeFAQSection />
-      </Section>
-      <Section id="about" className="bg-[#121212]">
-        <HomeAboutSection />
+        <HomeFAQ />
       </Section>
       <Section id="depoimentos" className="">
         <HomeTestimonials />

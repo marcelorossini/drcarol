@@ -33,13 +33,28 @@ export default function Menu() {
     }, [lastScrollY])
 
     const scrollToSection = (sectionId: string) => {
-        const section = document.getElementById(sectionId)
-        if (section) {
-            const offsetTop = section.offsetTop - 80
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            })
+        if (sectionId === 'home') {
+            // Verifica se já está na página inicial
+            if (window.location.pathname === '/') {
+                // Se já estiver na página inicial, apenas rola para o topo
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                })
+            } else {
+                // Se não estiver na página inicial, redireciona para /
+                window.location.href = '/'
+            }
+        } else {
+            // Para outras seções, mantém o comportamento atual
+            const section = document.getElementById(sectionId)
+            if (section) {
+                const offsetTop = section.offsetTop - 80
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                })
+            }
         }
     }
 

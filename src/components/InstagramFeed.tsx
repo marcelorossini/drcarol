@@ -16,19 +16,19 @@ export default function InstagramFeed({ username }: InstagramFeedProps) {
   }, []);
 
   return (
-    <div className="w-full bg-white flex items-center justify-center p-8 rounded-lg">
+    <div className="w-full bg-white flex items-center justify-center lg:p-8 rounded-lg overflow-hidden">
       <div className="w-full h-fit relative before:absolute before:content-[''] before:inset-0 before:border-6 before:border-white before:pointer-events-none">
-      <blockquote
-        className="instagram-media"
-        data-instgrm-permalink={`https://www.instagram.com/${username}`}
-        data-instgrm-version="12"
-        style={{
-          width: '100%',
-        }}
-      >
-      </blockquote>
+        <blockquote
+          className="instagram-media"
+          data-instgrm-permalink={`https://www.instagram.com/${username}`}
+          data-instgrm-version="12"
+          style={{
+            width: '100%',
+          }}
+        >
+        </blockquote>
+        <Script src="https://www.instagram.com/embed.js" strategy="lazyOnload" />
       </div>
-      <Script src="https://www.instagram.com/embed.js" strategy="lazyOnload" />
     </div>
   );
 } 
