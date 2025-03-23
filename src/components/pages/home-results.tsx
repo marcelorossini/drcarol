@@ -1,4 +1,5 @@
 import AfterBefore from "@/components/ui/after-before";
+import Page from "@/components/ui/page";
 
 export default function HomeResults() {
     const results = [
@@ -18,14 +19,17 @@ export default function HomeResults() {
             title: "Resultado 3"
         },
     ]
+
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {results.map((result, index) => (
-                <div key={index} className="flex flex-col gap-4">
-                    <AfterBefore images={result} />
-                    <h3 className="text-lg font-bold">{result.title}</h3>
-                </div>
-            ))}
-        </div>
+        <Page title={<h1>Veja alguns <span className="text-primary">resultados</span></h1>}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {results.map((result, index) => (
+                    <div key={index} className="flex flex-col gap-4">
+                        <AfterBefore images={result} />
+                        <h3 className="text-lg font-bold">{result.title}</h3>
+                    </div>
+                ))}
+            </div>
+        </Page>
     )
 }

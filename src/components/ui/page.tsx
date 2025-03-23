@@ -12,7 +12,7 @@ export default function Page({ className, children, title, subtitle }: PageProps
                 {title}
             </div>
             {subtitle && (
-                <div className="display-contents">
+                <div className="display-contents text-lg">
                     {subtitle}
                 </div>
             )}
