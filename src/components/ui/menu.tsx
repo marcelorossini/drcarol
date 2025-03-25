@@ -8,6 +8,10 @@ export default function Menu() {
     const [isVisible, setIsVisible] = useState(true)
     const [lastScrollY, setLastScrollY] = useState(0)
 
+    function goHome() {
+        window.location.href = '/'
+    }
+
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY
@@ -43,7 +47,7 @@ export default function Menu() {
                 })
             } else {
                 // Se não estiver na página inicial, redireciona para /
-                window.location.href = '/'
+                goHome()
             }
         } else {
             // Para outras seções, mantém o comportamento atual
@@ -62,8 +66,8 @@ export default function Menu() {
         <nav className={`w-full lg:text-xl p-8 transition-all duration-300 fixed top-0 right-0 z-100 
             ${isSticky ? 'bg-gradient-to-b from-[#d2b9a5] via-[#d2b9a5] via-100% to-[transparent]' : 'bg-transparent'}
             ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-            <div className="flex flex-row items-center justify-between">
-                <div className="hidden lg:flex">
+            <div className="flex flex-row items-center justify-center lg:justify-between">
+                <div className="hidden lg:flex cursor-pointer" onClick={goHome}>
                     <Image src="/assets/logo.svg" alt="logo" width={100} height={100} />
                 </div>
                 <ul className="flex flex-row items-start divide-y-0 divide-x-2 divide-black">

@@ -11,8 +11,8 @@ export default function HomeContact() {
         <Page title={<h1>Entre em <span className="text-primary">contato</span></h1>}>
             <div className="py-8">
                 <div className="space-y-8">
-                    <div>
-                        <ButtonOpenUrl url={whatsappUrl} className="flex w-full items-center justify-center gap-2 px-4 !py-8 text-2xl text-white rounded-full drop-shadow-lg bg-primary">
+                    <div className="flex items-center justify-center">
+                        <ButtonOpenUrl url={whatsappUrl} className="flex w-full max-w-128 items-center justify-center gap-2 px-4 !py-8 text-2xl text-white rounded-full drop-shadow-lg bg-primary">
                             <FaWhatsapp size={28} /> Agendar consulta
                         </ButtonOpenUrl>
                     </div>

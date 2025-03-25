@@ -39,9 +39,9 @@ const Tratamento = async ({ params }: TratamentoProps) => {
     const html = await convertWordFileToHtml(`/assets/content/tratamentos/${decodeURIComponent(tipo_procedimento)}/${decodeURIComponent(nome_procedimento)}/texto.docx`);
 
     return (
-        <Section id="home" className="min-h-[100vh] relative bg-gradient-to-b from-[#d2b9a5] via-[#d2b9a5] via-35% to-[#a9856d]">
-            <Page className="pt-18" title={<h1>{capitalizeText(nome_procedimento)}</h1>}>
-                <div className="bg-white rounded-lg p-4">
+        <Section id="home" className="min-h-[100vh] bg-white">
+            <Page className="pt-18 lg:pt-10">
+                <div className="rounded-lg p-4">
                     <div dangerouslySetInnerHTML={{ __html: html.html }} />
                 </div>
             </Page>
