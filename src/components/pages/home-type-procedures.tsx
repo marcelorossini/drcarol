@@ -23,13 +23,13 @@ export function ProcedureCard({ procedure, index }: { procedure: { title: string
         href={procedure.href}
         className="flex cursor-pointer flex-col gap-4 relative cursor-pointer transition-transform duration-300 hover:scale-105"
       >
-        <div className="rounded-4xl z-10 drop-shadow-sm overflow-hidden border-2 border-[#a4826b] text-white">
+        <div className="rounded-4xl z-10 drop-shadow-sm overflow-hidden border-2 border-[#a4826b] text-white bg-white">
           <Image
             src={procedure.image}
             alt={"imagem do procedimento"}
             width={400}
             height={160}
-            className="w-full h-40 object-cover lg:h-80"
+            className="w-full h-40 object-cover object-top lg:h-80"
           />
           <div className="flex items-center justify-center gap-2 text-xl p-2 bg-[#a4826b]">
             <strong>{procedure.title}</strong> <FaArrowAltCircleRight />

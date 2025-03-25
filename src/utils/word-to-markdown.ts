@@ -1,6 +1,7 @@
 import mammoth from 'mammoth';
 import fs from 'fs';
 import path from 'path';
+import TurndownService from 'turndown';
 
 /**
  * Converte um arquivo Word (docx) para HTML
@@ -87,13 +88,116 @@ export async function convertWordFileToHtml(filePath: string): Promise<{
 }
 
 /**
+ * Converte HTML para Markdown usando o Turndown
+ * @param html - String HTML a ser convertida
+ * @returns String contendo o markdown gerado
+ */
+export function convertHtmlToMarkdown(html: string): string {
+  try {
+    const turndownService = new TurndownService({
+      headingStyle: 'atx',
+      codeBlockStyle: 'fenced',
+      emDelimiter: '_',
+      strongDelimiter: '**'
+    });
+    
+    return turndownService.turndown(html);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      throw new Error(`Erro ao converter HTML para Markdown: ${error.message}`);
+    }
+    throw new Error('Erro desconhecido ao converter HTML para Markdown');
+  }
+}
+
+/**
+ * Converte um arquivo Word (docx) diretamente para Markdown
+ * @param file - Arquivo Word a ser convertido (File ou Buffer)
+ * @returns Promise com o Markdown resultante e mensagens de aviso
+ */
+export async function convertWordToMarkdown(file: File | Buffer): Promise<{
+  markdown: string;
+  warnings: string[];
+}> {
+  const { html, warnings } = await convertWordToHtml(file);
+  const markdown = convertHtmlToMarkdown(html);
+  return { markdown, warnings };
+}
+
+/**
+ * Converte um arquivo Word (docx) para Markdown a partir do caminho do arquivo
+ * @param filePath - Caminho do arquivo Word a ser convertido
+ * @returns Promise com o Markdown resultante e mensagens de aviso
+ */
+export async function convertWordFileToMarkdown(filePath: string): Promise<{
+  markdown: string;
+  warnings: string[];
+}> {
+  const { html, warnings } = await convertWordFileToHtml(filePath);
+  const markdown = convertHtmlToMarkdown(html);
+  return { markdown, warnings };
+}
+
+/**
  * Exemplo de uso:
  * 
  * // Com um objeto File (no navegador):
  * const file = event.target.files[0];
- * const { html, warnings } = await convertWordToHtml(file);
+ * const { markdown, warnings } = await convertWordToMarkdown(file);
  * 
  * // Com um Buffer (no servidor):
  * const buffer = fs.readFileSync('documento.docx');
- * const { html, warnings } = await convertWordToHtml(buffer);
+ * const { markdown, warnings } = await convertWordToMarkdown(buffer);
+ * 
+ * // Com um caminho de arquivo:
+ * const { markdown, warnings } = await convertWordFileToMarkdown('caminho/do/arquivo.docx');
+ * 
+ * // Apenas conversão de HTML para Markdown:
+ * const markdown = convertHtmlToMarkdown('<h1>Título</h1><p>Parágrafo</p>');
  */ 
+
+export function convertMarkdownToJson(markdown) {
+  // Divide o markdown em blocos separados por linhas em branco
+  const blocks = markdown?.split(/\n\s*\n/);
+  const sections = [];
+  let currentSection = null;
+
+  blocks.forEach((block) => {
+    // Remove espaços em branco do início e fim
+    block = block.trim();
+    if (!block) return;
+
+    // Verifica se o bloco é um cabeçalho markdown (ex: #### **Título**)
+    if (/^#{1,6}\s/.test(block)) {
+      // Remove os marcadores de heading e os marcadores de negrito
+      let title = block.replace(/^#{1,6}\s*/, '');
+      title = title.replace(/^\*\*/, '').replace(/\*\*$/, '').trim();
+      currentSection = { title, content: "" };
+      sections.push(currentSection);
+    }
+    // Verifica se o bloco é uma linha em negrito (ex: **Pergunta?**) sem quebre de linha
+    else if (/^\*\*.*\*\*$/.test(block) && !block.includes("\n")) {
+      let title = block.replace(/^\*\*/, '').replace(/\*\*$/, '').trim();
+      currentSection = { title, content: "" };
+      sections.push(currentSection);
+    }
+    // Caso contrário, trata o bloco como conteúdo
+    else {
+      // Se o bloco contiver quebras de linha, converte-as em espaços
+      let content = block.replace(/\n/g, " ").trim();
+      // Caso o conteúdo seja uma lista, remove os marcadores (*) e excesso de espaços
+      content = content.replace(/^\*\s+/gm, "").replace(/ {2,}/g, " ").trim();
+
+      // Se já existe uma seção atual, anexa o conteúdo nela;
+      // caso contrário, cria uma nova seção sem título.
+      if (currentSection) {
+        currentSection.content += (currentSection.content ? " " : "") + content;
+      } else {
+        currentSection = { title: "", content };
+        sections.push(currentSection);
+      }
+    }
+  });
+
+  return sections;
+}

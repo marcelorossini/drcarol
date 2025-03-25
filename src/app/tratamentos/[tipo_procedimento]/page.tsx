@@ -25,7 +25,7 @@ const Tratamento = async ({ params }: TratamentoProps) => {
     const { tipo_procedimento } = await params;
     const files = await loadFilesFromDirectory({
         directoryPath: `/assets/content/tratamentos/${decodeURIComponent(tipo_procedimento)}`,
-        recursive: true        
+        //recursive: true        
     });
 
     return (
@@ -34,8 +34,8 @@ const Tratamento = async ({ params }: TratamentoProps) => {
                 <div>
                     <ProcedureCardList procedures={files.filter(i => i.type === 'directory').map((file, index) => ({
                         title: file.name,
-                        image: `/assets/images/procedures/${file.name}.jpg`,
-                        href: `/tratamentos/${tipo_procedimento}/${file.name}`
+                        image: `/assets/content/tratamentos/${decodeURIComponent(tipo_procedimento)}/${decodeURIComponent(file.name)}/cover.webp`,
+                        href: `/tratamentos/${encodeURIComponent(tipo_procedimento)}/${encodeURIComponent(file.name)}`
                     }))} />
                 </div>
             </Page>
