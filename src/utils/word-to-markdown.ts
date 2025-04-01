@@ -156,11 +156,16 @@ export async function convertWordFileToMarkdown(filePath: string): Promise<{
  * const markdown = convertHtmlToMarkdown('<h1>Título</h1><p>Parágrafo</p>');
  */ 
 
-export function convertMarkdownToJson(markdown) {
+interface Section {
+  title: string;
+  content: string;
+}
+
+export function convertMarkdownToJson(markdown: string): Section[] {
   // Divide o markdown em blocos separados por linhas em branco
   const blocks = markdown?.split(/\n\s*\n/);
-  const sections = [];
-  let currentSection = null;
+  const sections: Section[] = [];
+  let currentSection: Section | null = null;
 
   blocks.forEach((block) => {
     // Remove espaços em branco do início e fim
@@ -170,14 +175,13 @@ export function convertMarkdownToJson(markdown) {
     // Verifica se o bloco é um cabeçalho markdown (ex: #### **Título**)
     if (/^#{1,6}\s/.test(block)) {
       // Remove os marcadores de heading e os marcadores de negrito
-      let title = block.replace(/^#{1,6}\s*/, '');
-      title = title.replace(/^\*\*/, '').replace(/\*\*$/, '').trim();
+      const title = block.replace(/^#{1,6}\s*/, '').replace(/^\*\*/, '').replace(/\*\*$/, '').trim();
       currentSection = { title, content: "" };
       sections.push(currentSection);
     }
     // Verifica se o bloco é uma linha em negrito (ex: **Pergunta?**) sem quebre de linha
     else if (/^\*\*.*\*\*$/.test(block) && !block.includes("\n")) {
-      let title = block.replace(/^\*\*/, '').replace(/\*\*$/, '').trim();
+      const title = block.replace(/^\*\*/, '').replace(/\*\*$/, '').trim();
       currentSection = { title, content: "" };
       sections.push(currentSection);
     }

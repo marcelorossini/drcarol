@@ -24,8 +24,7 @@ export async function generateStaticParams() {
 const Tratamento = async ({ params }: TratamentoProps) => {
     const { tipo_procedimento } = await params;
     const files = await loadFilesFromDirectory({
-        directoryPath: `/assets/content/tratamentos/${decodeURIComponent(tipo_procedimento)}`,
-        //recursive: true        
+        directoryPath: `/assets/content/tratamentos/${decodeURIComponent(tipo_procedimento)}`  
     });
 
     return (

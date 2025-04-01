@@ -27,8 +27,8 @@ export async function generateStaticParams() {
     const filesGenerated = files.map(procedures => {
         return procedures.children?.map(procedure => {
             return {
-                tipo_procedimento: encodeURIComponent(procedures.name),
-                nome_procedimento: encodeURIComponent(procedure.name)
+                tipo_procedimento: procedures.name,
+                nome_procedimento: procedure.name
             }
         }) || []
     })

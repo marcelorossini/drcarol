@@ -14,7 +14,9 @@ export async function convertWordToMarkdown(filePath: string): Promise<Conversio
     try {
         const buffer = fs.readFileSync(filePath);
         
+        // @ts-expect-error mammoth não possui tipos TypeScript completos para convertToMarkdown
         const result = await mammoth.convertToMarkdown({ buffer }, {
+            // @ts-expect-error mammoth não possui tipos TypeScript para transformDocument
             transformDocument: (document) => {
                 return document;
             },
@@ -32,8 +34,10 @@ export async function convertWordToMarkdown(filePath: string): Promise<Conversio
 
         return {
             markdown: result.value,
-            images: result.messages
+            images: result.messages 
+                // @ts-expect-error mammoth não possui tipos para message.type
                 .filter(message => message.type === 'image')
+                // @ts-expect-error mammoth não possui tipos para message.image
                 .map(message => message.image)
         };
     } catch (error) {
