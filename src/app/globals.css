@@ -159,3 +159,7 @@ html {
 .rotate-slow {
   animation: rotate-slow 20s linear infinite;
 }
+
+img {
+  user-select: none !important;
+}

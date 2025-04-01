@@ -5,7 +5,7 @@ import HomeTypeProcedures from "./home-type-procedures";
 export default function HomeTreatments() {
     return (
         <Page title={<h1 className="text-3xl font-caladea">Conheça nossos<br /><span className="text-primary">tratamentos</span></h1>}>
-            <Image src="/assets/2.svg" alt="teste" width={500} height={500} className="absolute -top-40 -right-55 z-10 w-80 lg:w-128 lg:-top-60" />
+            <Image draggable={false} src="/assets/2.svg" alt="teste" width={500} height={500} className="absolute -top-40 -right-55 z-10 w-80 lg:w-128 lg:-top-60" />
             <div className="relative w-full h-full z-15">
                 <HomeTypeProcedures />
             </div>

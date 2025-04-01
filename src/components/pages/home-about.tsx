@@ -10,7 +10,7 @@ export default function HomeAboutDoctor() {
         <div className="relative">
             <div className="w-full h-10 lg:h-16 bg-[#957665]" />
             <div className="absolute w-full h-full lg:max-h-120 top-0">
-                <Image src="/assets/carolpg.webp" alt="Dra. Carolina Macedo" fill className="object-contain object-top absolute top-0 left-0 z-5" />
+                <Image draggable={false} src="/assets/carolpg.webp" alt="Dra. Carolina Macedo" fill className="object-contain object-top absolute top-0 left-0 z-5" />
             </div>
             <Page className={`bg-[#121212] ${DEFAULT_PADDING} pt-50 lg:pt-100`} title={<h1 className="text-white">Conheça a Dra. <span className="text-primary"><br />Carolina Macedo</span></h1>}>
                 <div className="flex flex-col gap-8 relative">

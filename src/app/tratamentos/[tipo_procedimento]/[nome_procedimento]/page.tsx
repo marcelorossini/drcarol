@@ -62,7 +62,7 @@ const Tratamento = async ({ params }: TratamentoProps) => {
                 <div className="rounded-lg flex flex-col gap-8">
                     <div className="grid grid-cols-1 md:grid-rows-2 md:grid-cols-2 gap-4">
                         <div className='relative order-1 md:row-span-2 w-full h-fit flex items-center'>
-                            <Image src={`/assets/content/tratamentos/${procedureType}/${procedureName}/cover.webp`} alt={title.title || procedureName} width={1000} height={1000} className="bottom-0 w-full h-auto max-w-[400px] lg:max-w-[256px] object-contain mx-auto" />         
+                            <Image draggable={false} src={`/assets/content/tratamentos/${procedureType}/${procedureName}/cover.webp`} alt={title.title || procedureName} width={1000} height={1000} className="bottom-0 w-full h-auto max-w-[400px] lg:max-w-[256px] object-contain mx-auto" />         
                             <div className="absolute -bottom-5 w-full h-20 bg-gradient-to-t from-[#E7E1D9] via-[#E7E1D9] to-transparent"/>                   
                         </div>
                         <h1 className="text-4xl font-bold font-caladea order-2">{title?.title || procedureName}</h1>

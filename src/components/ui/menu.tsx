@@ -68,9 +68,9 @@ export default function Menu() {
             ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
             <div className="flex flex-row items-center justify-center lg:justify-between">
                 <div className="hidden lg:flex cursor-pointer" onClick={goHome}>
-                    <Image src="/assets/logo.svg" alt="logo" width={100} height={100} />
+                    <Image draggable={false} src="/assets/logo.svg" alt="logo" width={100} height={100} />
                 </div>
-                <ul className="flex flex-row items-start divide-y-0 divide-x-2 divide-black">
+                <ul className="flex flex-row items-start divide-y-0 divide-x-2 divide-black cursor-pointer">
                     <li className="w-full px-4">
                         <button onClick={() => scrollToSection('home')} className="hover:opacity-70 transition-opacity">
                             HOME
