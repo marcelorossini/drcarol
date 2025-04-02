@@ -26,7 +26,7 @@ export default function HomeResults() {
                 {results.map((result, index) => (
                     <div key={index} className="flex flex-col gap-4">
                         <AfterBefore images={result} />
-                        <h3 className="text-lg font-bold">{result.title}</h3>
+                        {/*<h3 className="text-lg font-bold">{result.title}</h3>*/}
                     </div>
                 ))}
             </div>
