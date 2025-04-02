@@ -40,6 +40,11 @@ export function loadFilesFromDirectory(config: LoadFilesConfig): FileInfo[] | Fi
         const publicPath = path.join(process.cwd(), 'public');
         const fullPath = path.join(publicPath, directoryPath);
         
+        if (!fs.existsSync(fullPath)) {
+            console.log(`Diretório não encontrado: ${fullPath}`);
+            return [];
+        }
+        
         const files = fs.readdirSync(fullPath);
         const results: (FileInfo | FileTreeInfo)[] = [];
         

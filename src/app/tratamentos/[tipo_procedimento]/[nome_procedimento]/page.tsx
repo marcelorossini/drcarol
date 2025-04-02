@@ -24,24 +24,39 @@ export async function generateStaticParams() {
     }) as FileTreeInfo[];
 
     // Lista de tipos de procedimentos disponíveis
-    const filesGenerated = files.map(procedures => {
-        return procedures.children?.map(procedure => {
-            return {
-                tipo_procedimento: procedures.name,
-                nome_procedimento: procedure.name
+    const filesGeneratedFlat: { tipo_procedimento: string; nome_procedimento: string; }[] = [];
+    
+    files.forEach(procedures => {
+        procedures.children?.forEach(procedure => {
+            const tipoProcedimentoOriginal = procedures.name
+            const nomeProcedimentoOriginal = procedure.name
+            const tipoProcedimento = encodeURIComponent(tipoProcedimentoOriginal)
+            const nomeProcedimento = encodeURIComponent(nomeProcedimentoOriginal)
+
+            filesGeneratedFlat.push({
+                tipo_procedimento: tipoProcedimentoOriginal,
+                nome_procedimento: nomeProcedimentoOriginal
+            });
+
+            if (tipoProcedimentoOriginal !== tipoProcedimento || nomeProcedimentoOriginal !== nomeProcedimento) {
+                filesGeneratedFlat.push({
+                    tipo_procedimento: tipoProcedimento,
+                    nome_procedimento: nomeProcedimento
+                });
             }
-        }) || []
-    })
-    const filesGeneratedFlat = filesGenerated.flat()
-    //console.log(filesGeneratedFlat)
-    return filesGeneratedFlat
+        });
+    });
+    
+    return filesGeneratedFlat;
 }
 
 const Tratamento = async ({ params }: TratamentoProps) => {
     const { tipo_procedimento, nome_procedimento } = await params;
     const procedureType = decodeURIComponent(tipo_procedimento)
     const procedureName = decodeURIComponent(nome_procedimento)
-    const html = await convertWordFileToMarkdown(`/assets/content/tratamentos/${procedureType}/${procedureName}/text.docx`);
+
+    try {
+        const html = await convertWordFileToMarkdown(`/assets/content/tratamentos/${procedureType}/${procedureName}/text.docx`);
 
     const [title, description, ...faq] = convertMarkdownToJson(html.markdown)
     const faqItems = faq.map(item => ({
@@ -81,6 +96,9 @@ const Tratamento = async ({ params }: TratamentoProps) => {
             </Page>
         </Section>
     );
+    } catch (error) {
+        return <div></div>
+    }
 };
 
 export default Tratamento; 
