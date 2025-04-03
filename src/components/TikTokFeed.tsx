@@ -47,7 +47,7 @@ export default function TikTokFeed({ username }: TikTokFeedProps) {
           </section>
         </blockquote>
       </div>
-      <Script src="https://www.tiktok.com/embed.js" strategy="lazyOnload" />
+      <Script src="ahttps://www.tiktok.com/embed.js" strategy="lazyOnload" />
     </div>
   );
 } 

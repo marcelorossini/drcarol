@@ -1,0 +1,34 @@
+{
+  "title": "Laser Lavieen",
+  "description": "O Laser Lavieen é um tratamento inovador que utiliza a tecnologia de **Laser Thulium 1927nm** para cuidar da saúde e beleza da sua pele. Ele atua estimulando a renovação celular, tratando manchas, poros dilatados, linhas finas e promovendo um efeito de “pele de porcelana” com rápido tempo de recuperação.",
+  "faq": [
+    {
+      "question": "Importância do Procedimento",
+      "answer": "Com o tempo, a pele sofre agressões externas e o processo natural de envelhecimento, resultando em manchas, textura irregular, poros dilatados e perda de viço. O Laser Lavieen estimula a regeneração e a produção de colágeno, proporcionando um aspecto rejuvenescido e saudável para a pele."
+    },
+    {
+      "question": "Benefícios",
+      "answer": "- Uniformização do tom da pele\n- Melhora a textura e luminosidade\n- Clareamento de manchas (Melasma, Melanoses Solares Senis) e hiperpigmentações\n- Estímulo à produção de colágeno para melhora da firmeza e elasticidade\n- Redução de poros dilatados e controle da oleosidade\n- Suavização de rugas finas\n- Recuperação rápida, permitindo retorno rápido às atividades diárias\n- Indicado para todos tipos de pele, incluindo peles sensíveis e com rosácea"
+    },
+    {
+      "question": "Contraindicações",
+      "answer": "- Gestantes e lactantes\n- Pessoas com infecções ativas ou feridas na pele\n- Pacientes que fizeram uso recente de ácidos fortes ou outros lasers agressivos\n- Indivíduos com doenças autoimunes que afetam a pele"
+    },
+    {
+      "question": "Quantas sessões são necessárias?",
+      "answer": "Os resultados já são visíveis desde a primeira sessão, mas dependendo do caso, podem ser indicadas de **3 a 5 sessões**, com intervalos de 30 dias."
+    },
+    {
+      "question": "O procedimento dói?",
+      "answer": "O desconforto é leve e bem tolerado, pois aplicamos pomada anestésica tópica para maior conforto."
+    },
+    {
+      "question": "Quanto tempo dura a recuperação?",
+      "answer": "A pele pode apresentar leve vermelhidão nas primeiras 24 a 48 horas. Em poucos dias, a pele já estará renovada e radiante."
+    },
+    {
+      "question": "Pode ser combinado com outros procedimentos?",
+      "answer": "Sim! Pode e deve! O Laser Lavieen potencializa os resultados de tratamentos como **skinboosters, bioestimuladores de colágeno e toxina botulínica**, proporcionando uma pele saudável e bem cuidada."
+    }
+  ]
+}

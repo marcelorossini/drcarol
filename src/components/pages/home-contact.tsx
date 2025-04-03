@@ -4,6 +4,8 @@ import { ButtonOpenUrl } from "@/components/ui/button";
 import InstagramFeed from "@/components/InstagramFeed";
 import TikTokFeed from "@/components/TikTokFeed";
 
+import { FaRegClock, FaMapMarkerAlt } from "react-icons/fa";
+
 export default function HomeContact() {
     const whatsappUrl = "https://api.whatsapp.com/send?phone=5511933110909&text=Gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+os+procedimentos+est%C3%A9ticos";
 
@@ -24,14 +26,16 @@ export default function HomeContact() {
                         </div>
                     </div>
                     <div>
-                        <h2 className="text-xl font-semibold mb-4">Horário de Atendimento</h2>
-                        <div className="space-y-2">
-                            <p>Segunda a Sexta: 12:00 - 20:00</p>
-                            <p>Sábado: 09:00 - 14:00</p>
+                        <h2 className="text-xl font-bold mb-4 flex items-center gap-2"><FaRegClock />Horário de Atendimento</h2>
+                        <div className="space-y-2 text-lg">
+                            <p>Segunda a sexta-feira das 12:00 às 20:00</p>
+                            <p>Sábado das 09:00 às 14:00</p>
                         </div>
                     </div>
                     <div>
-                        <h2 className="text-xl font-semibold mb-4">Localização</h2>
+                        <h2 className="text-xl font-bold mb-4 flex items-center gap-2"><FaMapMarkerAlt />Localização</h2>
+                        <h3 className="text-lg font-semibold mb-2">Avenida Moaci, 395, conjunto 44 - Moema, São Paulo - SP</h3>
+                        <h3 className="text-lg font-semibold mb-2">Possui estacionamento no local com manobrista.</h3>
                         <div className="w-full h-[400px] rounded-lg overflow-hidden shadow-lg">
                             <iframe
                                 src="https://maps.google.com/maps?width=600&height=400&hl=en&q=%40-23.6111845%2C-46.6641968&t=&z=17&ie=UTF8&iwloc=B&output=embed"

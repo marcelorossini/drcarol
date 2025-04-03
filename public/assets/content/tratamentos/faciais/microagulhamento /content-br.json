@@ -1,0 +1,34 @@
+{
+  "title": "Microagulhamento",
+  "description": "O microagulhamento é um procedimento que utiliza um dispositivo chamado DermaPen, que possui microagulhas, para criar pequenas perfurações na pele em profundidades distintas. Esse processo resulta na estimulação de um colágeno superficial. A abertura de microcanais na pele facilita a permeação de substâncias (por exemplo: ácido hialurônico, vitamina C, etc), que são usadas para potencializar o tratamento.",
+  "faq": [
+    {
+      "title": "Importância do Procedimento",
+      "content": "Com o passar do tempo, a pele perde firmeza e pode apresentar rugas, manchas, cicatrizes de acne e poros dilatados. O microagulhamento induz a renovação celular e melhora a qualidade da pele, proporcionando um aspecto mais uniforme e rejuvenescido."
+    },
+    {
+      "title": "Benefícios",
+      "content": "- Estímulo natural de produção de colágeno e elastina\n- Melhora da textura da pele\n- Redução de rugas finas e linhas de expressão\n- Clareamento de manchas\n- Melhora de cicatrizes de acne\n- Diminuição de poros dilatados"
+    },
+    {
+      "title": "Contraindicações",
+      "content": "- Gestantes e lactantes\n- Pessoas com infecções ativas na pele, como herpes e acne inflamada\n- Pacientes com tendência a queloides ou problemas de cicatrização"
+    },
+    {
+      "title": "Quantas sessões são necessárias?",
+      "content": "Depende do objetivo de cada pessoa, mas geralmente são indicadas de 3 a 5 sessões, com intervalos de 30 dias entre elas."
+    },
+    {
+      "title": "O procedimento doi?",
+      "content": "Não, o microagulhamento é muito bem tolerado pois utilizamos uma pomada anestésica para maior conforto."
+    },
+    {
+      "title": "Quanto tempo leva para ver os resultados?",
+      "content": "Os primeiros sinais de melhora aparecem em cerca de 15 dias, e o efeito máximo ocorre após algumas semanas."
+    },
+    {
+      "title": "Posso me expor ao sol após o procedimento?",
+      "content": "Não, nos primeiros dias, é essencial evitar a exposição solar direta e usar protetor solar para evitar aparecimento de manchas."
+    }
+  ]
+}

@@ -96,4 +96,27 @@ export function loadFilesFromDirectory(config: LoadFilesConfig): FileInfo[] | Fi
         console.error('Erro ao carregar arquivos:', error);
         return [];
     }
+}
+
+/**
+ * Lê o conteúdo de um arquivo JSON
+ * @param filePath Caminho relativo do arquivo JSON (em relação à pasta public)
+ * @returns Conteúdo do arquivo JSON ou null se não for possível ler
+ */
+export async function readJsonFile<T = any>(filePath: string): Promise<T | null> {
+    try {
+        const publicPath = path.join(process.cwd(), 'public');
+        const fullPath = path.join(publicPath, filePath);
+        
+        if (!fs.existsSync(fullPath)) {
+            console.log(`Arquivo não encontrado: ${fullPath}`);
+            return null;
+        }
+        
+        const fileContent = fs.readFileSync(fullPath, 'utf-8');
+        return JSON.parse(fileContent) as T;
+    } catch (error) {
+        console.error(`Erro ao ler arquivo JSON ${filePath}:`, error);
+        return null;
+    }
 } 
