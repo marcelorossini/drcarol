@@ -38,7 +38,7 @@ export default function HomeContact() {
                         <h3 className="text-lg font-semibold mb-2">Possui estacionamento no local com manobrista.</h3>
                         <div className="w-full h-[400px] rounded-lg overflow-hidden shadow-lg">
                             <iframe
-                                src="https://maps.google.com/maps?width=600&height=400&hl=en&q=%40-23.6111845%2C-46.6641968&t=&z=17&ie=UTF8&iwloc=B&output=embed"
+                                src="https://maps.google.com/maps?width=600&height=400&hl=pt-BR&q=Avenida+Moaci%2C+395%2C+conjunto+44+-+Moema%2C+S%C3%A3o+Paulo+-+SP&t=&z=17&ie=UTF8&iwloc=B&output=embed"
                                 width="100%"
                                 height="100%"
                                 style={{ border: 0 }}

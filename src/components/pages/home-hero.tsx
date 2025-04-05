@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import { ButtonOpenUrl } from "@/components/ui/button";
 
 export default function HomeHero() {
@@ -35,6 +35,12 @@ export default function HomeHero() {
             </div>
             <Image draggable={false} src="/assets/home-carol.webp" alt="imagem" width={1000} height={1000} className="transition-all duration-300 absolute bottom-16 sm:bottom-0 md:bottom-8 -left-[3%] z-1 h-full max-h-[70vh] md:max-h-[60vh] lg:max-h-[90vh] w-auto object-contain object-left-bottom pb-24 md:pb-0 md:left-10 xl:left-30" />
             <Image draggable={false} src="/assets/home-background.webp" alt="imagem" fill className="absolute opacity-50 blur-sm bottom-0 -left-10 z-0 h-full w-auto object-cover object-right-bottom pb-24 md:pb-0 md:left-30" />
+            
+            {/* Texto de localização no canto inferior esquerdo */}
+            <div className="absolute bottom-4 left-4 z-50 flex items-center gap-2 lg:text-2xl">
+                <FaMapMarkerAlt size={22} className="text-gray-700" />
+                <p className="text-gray-700 font-medium">Moema, São Paulo</p>
+            </div>
         </>
     )
 } 
