@@ -9,6 +9,17 @@ export interface Review {
   textEn: string;
 }
 
+type GoogleSheetRow = [
+  string,  // author_name
+  string,  // rating
+  string,  // profile_photo_url
+  string,  // time
+  string,  // language
+  string,  // text
+  string,  // textBr
+  string   // textEn
+];
+
 export async function getTestimonials(): Promise<Review[]> {
   try {
     const SPREADSHEET_ID = process.env.NEXT_PUBLIC_GOOGLE_SPREADSHEET_ID;
@@ -30,7 +41,7 @@ export async function getTestimonials(): Promise<Review[]> {
     const rows = data.values || [];
 
     // Pula o cabeçalho
-    return rows.slice(1).map((row: any[]) => ({
+    return rows.slice(1).map((row: GoogleSheetRow) => ({
       author_name: row[0] || '',
       rating: Number(row[1]) || 5,
       profile_photo_url: row[2],

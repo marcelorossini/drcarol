@@ -37,9 +37,9 @@ export default function HomeHero() {
             <Image draggable={false} src="/assets/home-background.webp" alt="imagem" fill className="absolute opacity-50 blur-sm bottom-0 -left-10 z-0 h-full w-auto object-cover object-right-bottom pb-24 md:pb-0 md:left-30" />
             
             {/* Texto de localização no canto inferior esquerdo */}
-            <div className="absolute bottom-4 left-4 z-50 flex items-center gap-2 lg:text-2xl">
-                <FaMapMarkerAlt size={22} className="text-gray-700" />
-                <p className="text-gray-700 font-medium">Moema, São Paulo</p>
+            <div className="absolute bottom-4 left-4 z-50 flex items-center gap-2 lg:text-2xl text-white">
+                <FaMapMarkerAlt size={22} />
+                <p className="font-medium">Moema, São Paulo</p>
             </div>
         </>
     )

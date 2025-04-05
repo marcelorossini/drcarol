@@ -103,7 +103,7 @@ export function loadFilesFromDirectory(config: LoadFilesConfig): FileInfo[] | Fi
  * @param filePath Caminho relativo do arquivo JSON (em relação à pasta public)
  * @returns Conteúdo do arquivo JSON ou null se não for possível ler
  */
-export async function readJsonFile<T = any>(filePath: string): Promise<T | null> {
+export async function readJsonFile<T>(filePath: string): Promise<T | null> {
     try {
         const publicPath = path.join(process.cwd(), 'public');
         const fullPath = path.join(publicPath, filePath);

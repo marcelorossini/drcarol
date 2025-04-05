@@ -20,10 +20,15 @@ interface FaqItem {
     content: string;
 }
 
+interface RawFaqItem {
+    question: string;
+    answer: string;
+}
+
 interface JsonContent {
     title: string;
     description: string;
-    faq: FaqItem[];
+    faq: RawFaqItem[];
 }
 
 export async function generateStaticParams() {
@@ -62,7 +67,7 @@ const Tratamento = async ({ params }: TratamentoProps) => {
         const { title, description, faq } = jsonContent;
         
         // Formatar os itens do FAQ
-        const faqItems = faq.map((item: any) => ({
+        const faqItems = faq.map((item: RawFaqItem) => ({
             title: item.question,
             content: item.answer
         }));
@@ -89,7 +94,7 @@ const Tratamento = async ({ params }: TratamentoProps) => {
                                 </div>
                             </div>
                             <div className='relative w-full h-fit flex items-center'>
-                                <Image draggable={false} src={`/assets/content/tratamentos/${procedureType}/${procedureName}/cover.jpg`} alt={title || procedureName} width={1000} height={1000} className="bottom-0 w-full h-auto max-w-[400px] lg:max-w-[256px] object-contain mx-auto" />         
+                                <Image draggable={false} src={`/assets/content/tratamentos/${procedureType}/${procedureName}/cover.jpg`} alt={title || procedureName} width={1000} height={1000} className="bottom-0 w-full h-auto max-w-[400px] lg:max-w-[300px] object-contain mx-auto" />         
                                 <div className="absolute -bottom-5 w-full h-20 bg-gradient-to-t from-[#E7E1D9] via-[#E7E1D9] to-transparent"/>                   
                             </div>
                         </div>

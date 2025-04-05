@@ -10,6 +10,15 @@ interface TratamentoProps {
     }>
 }
 
+interface JsonContent {
+    title: string;
+    description: string;
+    faq: Array<{
+        question: string;
+        answer: string;
+    }>;
+}
+
 export async function generateStaticParams() {
     const files = await loadFilesFromDirectory({
         directoryPath: `/assets/content/tratamentos`    
@@ -32,7 +41,7 @@ const Tratamento = async ({ params }: TratamentoProps) => {
     for await (const file of files) {
         if (file.type === 'directory') {
             const jsonPath = `${file.url}/content-br.json`;
-            const content = await readJsonFile(jsonPath);
+            const content = await readJsonFile<JsonContent>(jsonPath);
             if (content) {
                 proceduresData.push({
                     ...content,
