@@ -1,6 +1,7 @@
 {
-  "title": "Limpeza de Pele Profunda Adcos",
-  "description": "A limpeza de pele profunda com um procedimento que remove impurezas, cravos, células mortas e o excesso de oleosidade, promovendo uma pele mais saudável, uniforme e renovada. Utilizando produtos da linha Adcos, reconhecida por sua tecnologia e ativos de alta performance, o procedimento proporciona uma limpeza eficaz sem agredir a pele.",
+  "title": "Limpeza de Pele Profunda",
+    "cover":"cover.webp",
+"description": "A limpeza de pele profunda com um procedimento que remove impurezas, cravos, células mortas e o excesso de oleosidade, promovendo uma pele mais saudável, uniforme e renovada. Utilizando produtos da linha Adcos, reconhecida por sua tecnologia e ativos de alta performance, o procedimento proporciona uma limpeza eficaz sem agredir a pele.",
   "faq": [
     {
       "question": "Importância do Procedimento",

@@ -29,6 +29,7 @@ interface JsonContent {
     title: string;
     description: string;
     faq: RawFaqItem[];
+    cover?: string;
 }
 
 export async function generateStaticParams() {
@@ -73,14 +74,22 @@ const Tratamento = async ({ params }: TratamentoProps) => {
         }));
         
         // Carregar diretórios de fotos
-        const photoDirectories1 = await loadFilesFromDirectory({
-            directoryPath: `/assets/content/tratamentos/${procedureType}/${procedureName}/photos`
+        const photoDirectories = await loadFilesFromDirectory({
+            directoryPath: `/assets/content/tratamentos/${procedureType}/${procedureName}/FOTOS`
         });
         
-        const photoDirectories = photoDirectories1.map(i => ({
+        let photoDirectoriesWithPhotosCarousel = photoDirectories.filter(i => i.type === "directory").map(i => ({
             ...i,
-            photos: loadImagesFromDirectoryAlt(`/assets/content/tratamentos/${procedureType}/${procedureName}/photos/${i.name}`, i.name)
+            photos: loadImagesFromDirectoryAlt(`/assets/content/tratamentos/${procedureType}/${procedureName}/FOTOS/${i.name}`, i.name)
         }));
+
+        photoDirectoriesWithPhotosCarousel = photoDirectoriesWithPhotosCarousel.filter(i => i.photos.length > 0)
+
+        const defaultPhotos = photoDirectories.filter(i => i.type === "file")
+        const defaultPhotosCarousel = defaultPhotos.map(i => ({
+            ...i,
+            photos: [i]
+        }))
 
         return (
             <Section id="home" className="min-h-[100vh] bg-[#E7E1D9]">
@@ -94,11 +103,17 @@ const Tratamento = async ({ params }: TratamentoProps) => {
                                 </div>
                             </div>
                             <div className='relative w-full h-fit flex items-center'>
-                                <Image draggable={false} src={`/assets/content/tratamentos/${procedureType}/${procedureName}/cover.jpg`} alt={title || procedureName} width={1000} height={1000} className="bottom-0 w-full h-auto max-w-[400px] lg:max-w-[300px] object-contain mx-auto" />         
+                                <Image draggable={false} src={`/assets/content/tratamentos/${procedureType}/${procedureName}/${jsonContent.cover}`} alt={title || procedureName} width={1000} height={1000} className="bottom-0 w-full h-auto max-w-[400px] lg:max-w-[300px] object-contain mx-auto" />         
                                 <div className="absolute -bottom-5 w-full h-20 bg-gradient-to-t from-[#E7E1D9] via-[#E7E1D9] to-transparent"/>                   
                             </div>
                         </div>
-                        {photoDirectories.map(photoDirectory => (
+                        {defaultPhotosCarousel.length > 0 && (
+                            <>
+                                <h2 className="text-2xl">FOTOS</h2>
+                                <CarouselDefault images={defaultPhotosCarousel} />                        
+                            </>
+                        )}
+                        {photoDirectoriesWithPhotosCarousel.map(photoDirectory => (
                             <div key={photoDirectory.name}>
                                 <h2 className="text-2xl">{photoDirectory.name}</h2>
                                 <CarouselDefault images={photoDirectory.photos} />

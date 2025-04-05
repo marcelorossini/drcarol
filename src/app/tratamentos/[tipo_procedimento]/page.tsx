@@ -13,6 +13,7 @@ interface TratamentoProps {
 interface JsonContent {
     title: string;
     description: string;
+    cover: string;
     faq: Array<{
         question: string;
         answer: string;
@@ -32,7 +33,12 @@ export async function generateStaticParams() {
 
 const Tratamento = async ({ params }: TratamentoProps) => {
     const { tipo_procedimento } = await params;
-    console.log(tipo_procedimento); 
+    const procedureData = await readJsonFile<JsonContent>(`/assets/content/tratamentos/${tipo_procedimento}/content-br.json`);
+    
+    if (!procedureData) {
+        throw new Error(`Conteúdo não encontrado para o procedimento: ${tipo_procedimento}`);
+    }
+    
     const files = await loadFilesFromDirectory({
         directoryPath: `/assets/content/tratamentos/${tipo_procedimento}`  
     });
@@ -45,7 +51,7 @@ const Tratamento = async ({ params }: TratamentoProps) => {
             if (content) {
                 proceduresData.push({
                     ...content,
-                    image: `${file.url}/cover.jpg`,
+                    image: `${file.url}/${content.cover}`,
                     href: `/tratamentos/${tipo_procedimento}/${file.name}`
                 });
             }
@@ -54,7 +60,7 @@ const Tratamento = async ({ params }: TratamentoProps) => {
 
     return (
         <Section id="home" className="min-h-[100vh] relative bg-gradient-to-b from-[#d2b9a5] via-[#d2b9a5] via-35% to-[#a9856d]">
-            <Page className="pt-18" title={<h1>{capitalizeText(tipo_procedimento)}</h1>}>
+            <Page className="pt-18" title={<h1>{capitalizeText(tipo_procedimento)}</h1>} subtitle={<p>{procedureData.description}</p>}  >
                 <div>
                     <ProcedureCardList procedures={proceduresData} />
                 </div>

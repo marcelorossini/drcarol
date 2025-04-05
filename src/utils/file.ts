@@ -49,6 +49,8 @@ export function loadFilesFromDirectory(config: LoadFilesConfig): FileInfo[] | Fi
         const results: (FileInfo | FileTreeInfo)[] = [];
         
         for (const file of files) {
+            if (file === '.DS_Store') continue;
+            
             const filePath = path.join(fullPath, file);
             const relativePath = path.join(directoryPath, file);
             const stats = fs.statSync(filePath);

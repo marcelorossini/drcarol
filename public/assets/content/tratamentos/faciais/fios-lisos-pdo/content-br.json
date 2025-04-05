@@ -1,6 +1,7 @@
 {
   "title": "Fios Lisos de PDO",
-  "description": "Os fios lisos de PDO (Polidioxanona) são fios absorvíveis inseridos na pele para estimular a produção natural de colágeno. Eles melhoram a flacidez, textura da pele e redução das rugas finas, sem alterar o volume ou a expressão facial.",
+    "cover":"cover.webp",
+"description": "Os fios lisos de PDO (Polidioxanona) são fios absorvíveis inseridos na pele para estimular a produção natural de colágeno. Eles melhoram a flacidez, textura da pele e redução das rugas finas, sem alterar o volume ou a expressão facial.",
   "faq": [
     {
       "question": "Importância do Procedimento",
