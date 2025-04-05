@@ -59,7 +59,7 @@ const Tratamento = async ({ params }: TratamentoProps) => {
     }
 
     return (
-        <Section id="home" className="min-h-[100vh] relative bg-gradient-to-b from-[#d2b9a5] via-[#d2b9a5] via-35% to-[#a9856d]">
+        <Section id="home" className="min-h-[100vh] relative bg-[#E7E1D9]">
             <Page className="pt-18" title={<h1>{capitalizeText(tipo_procedimento)}</h1>} subtitle={<p>{procedureData.description}</p>}  >
                 <div>
                     <ProcedureCardList procedures={proceduresData} />

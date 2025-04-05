@@ -4,12 +4,14 @@ import React from 'react';
 import ReactBeforeSliderComponent from 'react-before-after-slider-component';
 import 'react-before-after-slider-component/dist/build.css';
 
-export default function AfterBefore({ images }: { images: { before: string, after: string } }) {
+export default function AfterBefore({ images }: { images: { before: string, after: string, title?: string } }) {
     const FIRST_IMAGE = {
-        imageUrl: images.before
+        imageUrl: images.before,
+        alt: `Antes - ${images.title || 'Resultado'}`
     };
     const SECOND_IMAGE = {
-        imageUrl: images.after
+        imageUrl: images.after,
+        alt: `Depois - ${images.title || 'Resultado'}`
     };
 
     return (

@@ -87,8 +87,8 @@ const Tratamento = async ({ params }: TratamentoProps) => {
 
         const defaultPhotos = photoDirectories.filter(i => i.type === "file")
         const defaultPhotosCarousel = defaultPhotos.map(i => ({
-            ...i,
-            photos: [i]
+            url: i.url,
+            alt: title || procedureName
         }))
 
         return (
