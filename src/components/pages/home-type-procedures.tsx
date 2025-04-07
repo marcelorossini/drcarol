@@ -43,13 +43,13 @@ export function ProcedureCard({ procedure, index }: { procedure: { title: string
 export default function HomeTypeProcedures() {
   const procedures = [
     {
-      title: "FACIAL",
+      title: "FACIAIS",
       description: "Microagulhamento, Fios Lisos PDO, PDRN/Exossomos, Limpeza de pele Premium, Skinboosting",
       image: "/assets/images/home-procedures/face.jpg",
       href: "/tratamentos/faciais"
     },
     {
-      title: "CORPORAL",
+      title: "CORPORAIS",
       description: "Bioestimulador de colágeno, PEIM, ENZIMAS, HARMONIZAÇÃO DE GLÚTEOS",
       image: "/assets/images/home-procedures/corpo.jpg",
       href: "/tratamentos/corporal"

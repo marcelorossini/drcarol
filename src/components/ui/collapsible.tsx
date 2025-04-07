@@ -55,7 +55,7 @@ export function CollapsibleItem({ title, content }: CollapsibleItemProps) {
         <span className="text-2xl">+</span>
       </CollapsibleTrigger>
       <CollapsibleContent className="">
-        <p className="text-lg text-gray-600" dangerouslySetInnerHTML={{ __html: content.replace(/\n/g, '<br />') }} />
+        <p className="text-lg text-gray-600 text-justify" dangerouslySetInnerHTML={{ __html: content.replace(/\n/g, '<br />') }} />
       </CollapsibleContent>
     </Collapsible>
   )

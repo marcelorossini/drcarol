@@ -28,11 +28,16 @@ export default function HomeResults() {
             after: "./assets/content/antes-depois/5-depois.webp",
             title: "Resultado 5"
         },
+        {
+            before: "./assets/content/antes-depois/6-antes.webp",
+            after: "./assets/content/antes-depois/6-depois.webp",
+            title: "Resultado 5"
+        },
     ]
 
     return (
         <Page title={<h1 className="text-white">Resultados naturais <strong>que te valorizam!</strong></h1>}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-6 gap-6">
                 {results.map((result, index) => (
                     <div key={index} className="flex flex-col gap-4">
                         <AfterBefore images={result} />

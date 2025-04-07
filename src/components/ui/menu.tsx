@@ -63,7 +63,7 @@ export default function Menu() {
     }
 
     return (
-        <nav className={`w-full lg:text-xl p-8 transition-all duration-300 fixed top-0 right-0 z-100 
+        <nav className={`w-full lg:text-xl py-4 md:px-8 transition-all duration-300 fixed top-0 right-0 z-100 
             ${isSticky ? 'bg-gradient-to-b from-[#d2b9a5] via-[#d2b9a5] via-100% to-[transparent]' : 'bg-transparent'}
             ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
             <div className="flex flex-row items-center justify-center lg:justify-between">

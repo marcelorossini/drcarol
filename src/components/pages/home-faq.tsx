@@ -24,10 +24,7 @@ export default function HomeFAQ() {
             "title": "Os procedimentos estéticos são doloridos?",
             "content": "A sensibilidade pode variar de acordo com o procedimento e a tolerância de cada paciente, mas nós priorizamos o máximo conforto durante os tratamentos. Para minimizar qualquer desconforto, utilizamos anestésicos, dispositivo de vibração e gelo para analgesia, e um ambiente relaxante com música, garantindo uma experiência mais tranquila e confortável."
         },
-        {
-            "title": "Quanto tempo dura o efeito dos procedimentos?",
-            "content": "A durabilidade varia conforme o tipo de procedimento, a resposta individual do organismo e os cuidados pós-tratamento. Alguns tratamentos duram meses, enquanto outros exigem sessões regulares para manutenção."
-        },
+
         {
             "title": "Quais são os cuidados após os procedimentos?",
             "content": "Os cuidados pós-procedimento são essenciais para garantir uma recuperação tranquila. Embora cada tratamento tenha suas recomendações específicas, algumas orientações gerais incluem: \r\n✅ Evitar exposição solar: use protetor solar diariamente e evite o sol intenso nos primeiros dias para prevenir manchas e irritações. \r\n✅ Manter a hidratação: beba bastante água e utilize cremes hidratantes adequados para potencializar a recuperação da pele. \r\n✅ Evitar atividades físicas intensas: recomenda-se evitar exercícios por 12 a 48 horas para evitar inchaço e deslocamento do produto aplicado. \r\n✅ Seguir as orientações do profissional: use apenas os produtos recomendados e respeite os intervalos entre sessões."

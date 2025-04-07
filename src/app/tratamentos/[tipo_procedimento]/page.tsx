@@ -14,6 +14,7 @@ interface JsonContent {
     title: string;
     description: string;
     cover: string;
+    order?: number;
     faq: Array<{
         question: string;
         answer: string;
@@ -43,7 +44,7 @@ const Tratamento = async ({ params }: TratamentoProps) => {
         directoryPath: `/assets/content/tratamentos/${tipo_procedimento}`  
     });
     
-    const proceduresData = [];
+    let proceduresData = [];
     for await (const file of files) {
         if (file.type === 'directory') {
             const jsonPath = `${file.url}/content-br.json`;
@@ -52,15 +53,18 @@ const Tratamento = async ({ params }: TratamentoProps) => {
                 proceduresData.push({
                     ...content,
                     image: `${file.url}/${content.cover}`,
-                    href: `/tratamentos/${tipo_procedimento}/${file.name}`
+                    href: `/tratamentos/${tipo_procedimento}/${file.name}`,
+                    order: content.order || 999 // Valor padrão para itens sem ordem definida
                 });
             }
         }
     }
 
+    proceduresData.sort((a, b) => (a.order || 999) - (b.order || 999));
+
     return (
         <Section id="home" className="min-h-[100vh] relative bg-[#E7E1D9]">
-            <Page className="pt-18" title={<h1>{capitalizeText(tipo_procedimento)}</h1>} subtitle={<p>{procedureData.description}</p>}  >
+            <Page className="pt-10" title={<h1>{capitalizeText(tipo_procedimento)}</h1>} subtitle={<p>{procedureData.description}</p>}  >
                 <div>
                     <ProcedureCardList procedures={proceduresData} />
                 </div>

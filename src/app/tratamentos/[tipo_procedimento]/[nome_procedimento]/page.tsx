@@ -93,12 +93,12 @@ const Tratamento = async ({ params }: TratamentoProps) => {
 
         return (
             <Section id="home" className="min-h-[100vh] bg-[#E7E1D9]">
-                <Page className="pt-8 lg:pt-10">
+                <Page className="pt-10 lg:pt-10">
                     <div className="rounded-lg flex flex-col gap-8">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="flex flex-col gap-4">
                                 <h1 className="text-4xl font-bold font-caladea">{title || procedureName}</h1>
-                                <div className="h-full flex flex-col gap-2 border-2 flex-1">
+                                <div className="h-full flex flex-col gap-2 border-2 flex-1 text-justify">
                                     <p dangerouslySetInnerHTML={{ __html: description.replace(/\n/g, '<br />') }} />
                                 </div>
                             </div>

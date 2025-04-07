@@ -9,7 +9,7 @@ export const DEFAULT_PADDING = "p-8 lg:p-20";
 
 export default function Section({ id, className, children, defaultPadding = true }: SectionProps) {
     return (
-        <div id={id} className={`w-screen h-full ${defaultPadding ? DEFAULT_PADDING : ""} ${className}`}>
+        <div id={id} className={`w-screen h-full overflow-x-hidden ${defaultPadding ? DEFAULT_PADDING : ""} ${className}`}>
             {children}
         </div>
     )
