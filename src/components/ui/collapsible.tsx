@@ -3,6 +3,8 @@
 import * as React from "react"
 import * as CollapsiblePrimitive from "@radix-ui/react-collapsible"
 import { cn } from "@/lib/utils"
+import { MarkdownContent } from "./markdown-content"
+import type { Element } from 'hast'
 
 const Collapsible = CollapsiblePrimitive.Root
 
@@ -45,9 +47,10 @@ export { Collapsible, CollapsibleTrigger, CollapsibleContent }
 interface CollapsibleItemProps {
   title: string
   content: string
+  useMarkdown?: boolean
 }
 
-export function CollapsibleItem({ title, content }: CollapsibleItemProps) {
+export function CollapsibleItem({ title, content, useMarkdown = true }: CollapsibleItemProps) {
   return (
     <Collapsible className="w-full">
       <CollapsibleTrigger className="">
@@ -55,7 +58,13 @@ export function CollapsibleItem({ title, content }: CollapsibleItemProps) {
         <span className="text-2xl">+</span>
       </CollapsibleTrigger>
       <CollapsibleContent className="">
-        <p className="text-lg text-gray-600 text-justify" dangerouslySetInnerHTML={{ __html: content.replace(/\n/g, '<br />') }} />
+        {useMarkdown ? (
+          <div className="text-lg text-gray-600">
+            <MarkdownContent content={content} />
+          </div>
+        ) : (
+          <p className="text-lg text-gray-600 text-justify" dangerouslySetInnerHTML={{ __html: content.replace(/\n/g, '<br />') }} />
+        )}
       </CollapsibleContent>
     </Collapsible>
   )

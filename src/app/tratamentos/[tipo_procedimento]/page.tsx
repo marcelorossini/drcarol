@@ -44,7 +44,7 @@ const Tratamento = async ({ params }: TratamentoProps) => {
         directoryPath: `/assets/content/tratamentos/${tipo_procedimento}`  
     });
     
-    let proceduresData = [];
+    const proceduresData = [];
     for await (const file of files) {
         if (file.type === 'directory') {
             const jsonPath = `${file.url}/content-br.json`;

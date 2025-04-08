@@ -7,6 +7,7 @@ import { capitalizeText } from '@/utils/string';
 import { CollapsibleList } from "@/components/ui/collapsible";
 import Image from 'next/image';
 import { CarouselDefault } from "@/components/ui/carousel";
+import { MarkdownContent } from "@/components/ui/markdown-content";
 
 interface TratamentoProps {
     params: Promise<{
@@ -99,7 +100,7 @@ const Tratamento = async ({ params }: TratamentoProps) => {
                             <div className="flex flex-col gap-4">
                                 <h1 className="text-4xl font-bold font-caladea">{title || procedureName}</h1>
                                 <div className="h-full flex flex-col gap-2 border-2 flex-1 text-justify">
-                                    <p dangerouslySetInnerHTML={{ __html: description.replace(/\n/g, '<br />') }} />
+                                    <MarkdownContent content={description} />
                                 </div>
                             </div>
                             <div className='relative w-full h-fit flex items-center'>

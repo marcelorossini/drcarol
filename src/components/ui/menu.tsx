@@ -2,39 +2,27 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import { ClickableAddress } from '@/components/ui/clickable-address'
 
 export default function Menu() {
     const [isSticky, setIsSticky] = useState(false)
     const [isVisible, setIsVisible] = useState(true)
     const [lastScrollY, setLastScrollY] = useState(0)
 
-    function goHome() {
-        window.location.href = '/'
-    }
-
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY
-            const scrollPosition = window.scrollY
-
-            // Determina se o menu deve ser sticky
-            setIsSticky(scrollPosition > 300)
-
-            // Esconde/mostra baseado na direção da rolagem
-            if (currentScrollY > lastScrollY) {
-                // Rolando para baixo
-                setIsVisible(false)
-            } else {
-                // Rolando para cima
-                setIsVisible(true)
-            }
-
+            setIsSticky(currentScrollY > 500)
             setLastScrollY(currentScrollY)
         }
 
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
-    }, [lastScrollY])
+    }, [])
+
+    function goHome() {
+        window.location.href = '/'
+    }
 
     const scrollToSection = (sectionId: string) => {
         if (sectionId === 'home') {
@@ -64,13 +52,20 @@ export default function Menu() {
 
     return (
         <nav className={`w-full lg:text-xl py-4 md:px-8 transition-all duration-300 fixed top-0 right-0 z-100 
-            ${isSticky ? 'bg-gradient-to-b from-[#d2b9a5] via-[#d2b9a5] via-100% to-[transparent]' : 'bg-transparent'}
+            ${isSticky ? 'bg-black text-white' : 'bg-transparent text-black'}
             ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-            <div className="flex flex-row items-center justify-center lg:justify-between">
+            <div className="flex flex-row items-center justify-center lg:justify-between relative w-full">
                 <div className="hidden lg:flex cursor-pointer" onClick={goHome}>
-                    <Image draggable={false} src="/assets/logo.svg" alt="logo" width={100} height={100} />
+                    {isSticky ? (
+                        <Image draggable={false} src="/assets/logo-white.svg" alt="logo" width={128} height={100} />
+                    ) : (
+                        <Image draggable={false} src="/assets/logo-black.svg" alt="logo" width={128} height={100} />
+                    )}
                 </div>
-                <ul className="flex flex-row items-start divide-y-0 divide-x-2 divide-black cursor-pointer">
+                <div className="absolute left-1/2 transform -translate-x-1/2 z-10 hidden lg:flex">
+                    <ClickableAddress className="text-xl" size={16} />
+                </div>
+                <ul className="flex flex-row items-start divide-y-0 divide-x-2 divide-current cursor-pointer">
                     <li className="w-full px-4">
                         <button onClick={() => scrollToSection('home')} className="hover:opacity-70 transition-opacity">
                             HOME
