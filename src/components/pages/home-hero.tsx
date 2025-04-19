@@ -23,11 +23,11 @@ export default function HomeHero() {
                     <FaWhatsapp size={36} className="hidden lg:block" /> Agendar consulta
                 </ButtonOpenUrl>
             </div>
-            <div className="absolute top-0 left-0 w-full h-full md:w-auto">
+            <div className="absolute top-0 left-0 w-full h-full md:w-auto overflow-hidden">
                 <Image draggable={false} src="/assets/1.svg" alt="imagem" width={1000} height={1000} className="rotate-slow -mt-40 w-full h-full blur-md opacity-80" />
             </div>
             <div className="absolute inset-x-0 bottom-0">
-                <div className="w-full h-full flex items-end relative z-20 p-8 md:p-20 pb-20">
+                <div className="w-full h-full flex items-end relative z-20 p-8 md:p-20 pb-8">
                     <div className="flex flex-col gap-8 h-1/5">
                         <p className="text-4xl md:text-6xl text-white font-light drop-shadow-md font-caladea font-bold lg:hidden">
                             <span>Você em harmonia<br /> com a </span><strong>sua beleza</strong>

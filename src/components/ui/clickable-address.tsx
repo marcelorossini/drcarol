@@ -22,7 +22,7 @@ export function ClickableAddress({
             onClick={() => openMaps(address, coordinates)}
         >
             <FaMapMarkerAlt size={size} />
-            <p className="font-medium">Moema, São Paulo</p>
+            <p className="font-medium text-sm lg:text-lg">Moema, São Paulo</p>
         </div>
     );
 } 

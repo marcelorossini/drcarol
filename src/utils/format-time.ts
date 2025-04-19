@@ -22,6 +22,9 @@ export function formatTimeAgo(timeString: string): string {
     const interval = Math.floor(diffInSeconds / secondsInUnit);
     
     if (interval >= 1) {
+      if (unit === 'mês' && interval > 1) {
+        return `${interval} meses atrás`;
+      }
       const plural = interval > 1 ? 's' : '';
       return `${interval} ${unit}${plural} atrás`;
     }

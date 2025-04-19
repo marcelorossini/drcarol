@@ -14,7 +14,7 @@ export default function Home() {
       <Section id="home" className="min-h-[100vh] relative bg-gradient-to-b from-[#d2b9a5] via-[#d2b9a5] via-35% to-[#a9856d]">
         <HomeHero />
       </Section>
-      <Section id="tratamentos" className="bg-[#eee9e3]">
+      <Section id="tratamentos" className="bg-[#eee9e3]" hideOverflowX={false}>
         <HomeTreatments />
       </Section>
       <Section id="resultados" className="bg-[#957665]">

@@ -24,9 +24,9 @@ export default function HomeResults() {
             title: "Resultado 4"
         },
         {
-            before: "./assets/content/antes-depois/5-antes.webp",
-            after: "./assets/content/antes-depois/5-depois.webp",
-            title: "Resultado 5"
+            before: "./assets/content/antes-depois/7-antes.webp",
+            after: "./assets/content/antes-depois/7-depois.webp",
+            title: "Resultado 7"
         },
         {
             before: "./assets/content/antes-depois/6-antes.webp",
@@ -40,7 +40,7 @@ export default function HomeResults() {
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-6 gap-6">
                 {results.map((result, index) => (
                     <div key={index} className="flex flex-col gap-4">
-                        <AfterBefore images={result} />
+                        <AfterBefore images={result} index={index} />
                         {/*<h3 className="text-lg font-bold">{result.title}</h3>*/}
                     </div>
                 ))}

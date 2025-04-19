@@ -2,23 +2,12 @@
 import { Card, CardContent, CardTitle, CardHeader } from "@/components/ui/card";
 import Link from "next/link";
 import Image from "next/image";
-import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion";
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import AnimatedWrapper from "@/components/ui/animated-wrapper";
 
 export function ProcedureCard({ procedure, index }: { procedure: { title: string; image: string; href: string }, index: number }) {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.5, delay: index * 0.2 }}
-    >
+    <AnimatedWrapper index={index}>
       <Link
         href={procedure.href}
         className="flex cursor-pointer flex-col gap-4 relative cursor-pointer transition-transform duration-300 hover:scale-105"
@@ -36,7 +25,7 @@ export function ProcedureCard({ procedure, index }: { procedure: { title: string
           </div>
         </div>
       </Link>
-    </motion.div>
+    </AnimatedWrapper>
   );
 }
 
