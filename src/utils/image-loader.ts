@@ -1,9 +1,9 @@
 import { loadFilesFromDirectory, FileInfo } from './file';
 
-const imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+const imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'heic'];
 
-export function loadImagesFromDirectory(directoryPath: string): FileInfo[] {
-    const files = loadFilesFromDirectory({
+export async function loadImagesFromDirectory(directoryPath: string): Promise<FileInfo[]> {
+    const files = await loadFilesFromDirectory({
         directoryPath,
         fileExtensions: imageExtensions
     });
@@ -15,8 +15,8 @@ export interface ImageFile {
     alt: string;
 }
 
-export function loadImagesFromDirectoryAlt(directoryPath: string, altText: string): ImageFile[] {
-    const files = loadFilesFromDirectory({
+export async function loadImagesFromDirectoryAlt(directoryPath: string, altText: string): Promise<ImageFile[]> {
+    const files = await loadFilesFromDirectory({
         directoryPath,
         fileExtensions: imageExtensions
     });

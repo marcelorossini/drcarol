@@ -27,7 +27,7 @@ function createFileInfo(relativePath: string, fileName: string, type: 'file' | '
     };
 }
 
-export function loadFilesFromDirectory(config: LoadFilesConfig): FileInfo[] | FileTreeInfo[] {
+export async function loadFilesFromDirectory(config: LoadFilesConfig): Promise<FileInfo[] | FileTreeInfo[]> {
     const {
         directoryPath,
         recursive = false,
@@ -61,7 +61,7 @@ export function loadFilesFromDirectory(config: LoadFilesConfig): FileInfo[] | Fi
                 let subDirFiles: (FileInfo | FileTreeInfo)[] = [];
                 
                 if (recursive) {
-                    subDirFiles = loadFilesFromDirectory({
+                    subDirFiles = await loadFilesFromDirectory({
                         directoryPath: relativePath,
                         recursive,
                         asTree,
@@ -119,6 +119,29 @@ export async function readJsonFile<T>(filePath: string): Promise<T | null> {
         return JSON.parse(fileContent) as T;
     } catch (error) {
         console.error(`Erro ao ler arquivo JSON ${filePath}:`, error);
+        return null;
+    }
+}
+
+/**
+ * Lê o conteúdo de um arquivo Markdown
+ * @param filePath Caminho relativo do arquivo Markdown (em relação à pasta public)
+ * @returns Conteúdo do arquivo Markdown ou null se não for possível ler
+ */
+export async function readMarkdownFile(filePath: string): Promise<string | null> {
+    try {
+        const publicPath = path.join(process.cwd(), 'public');
+        const fullPath = path.join(publicPath, filePath);
+        
+        if (!fs.existsSync(fullPath)) {
+            console.log(`Arquivo não encontrado: ${fullPath}`);
+            return null;
+        }
+        
+        const fileContent = fs.readFileSync(fullPath, 'utf-8');
+        return fileContent;
+    } catch (error) {
+        console.error(`Erro ao ler arquivo Markdown ${filePath}:`, error);
         return null;
     }
 } 

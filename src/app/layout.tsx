@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Rosario, Caladea } from "next/font/google";
 import "./globals.css";
-import Menu from '@/components/ui/menu';
-
 
 const rosario = Rosario({
   variable: "--font-rosario",
@@ -32,7 +30,6 @@ export default function RootLayout({
       <body
         className={`${rosario.variable} ${caladea.variable} font-sans antialiased`}
       >
-        <Menu />
         {children}
         <footer className="h-10">
           

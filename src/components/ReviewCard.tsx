@@ -72,7 +72,7 @@ export function ReviewCard({ review }: ReviewCardProps) {
           </div>
         </div>
         <div className="space-y-2 flex-1">
-          <p className="text-gray-600 text-justify">{currentText}</p>
+          <p className="text-gray-600 lg:text-justify">{currentText}</p>
           {diferentLanguage && !showOriginal && (
             <p className="text-xs text-gray-500 italic">
               {isPortuguese ? '(Translated from portuguese)' : '(Traduzido do inglês)'}

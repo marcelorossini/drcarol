@@ -17,11 +17,29 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
         fontSize: 'inherit',
         lineHeight: 'inherit',
       }}
+      components={{
+        ul: ({ children }) => (
+          <ul style={{ 
+            listStyleType: 'disc',
+            paddingLeft: '1.5em'
+          }}>
+            {children}
+          </ul>
+        ),
+        li: ({ children }) => (
+          <li style={{
+            display: 'list-item',
+            listStyleType: 'inherit'
+          }}>
+            {children}
+          </li>
+        )
+      }}
       rehypeRewrite={(node, index, parent) => {
         if (node.type === 'element' && node.tagName === 'p') {
           node.properties = {
             ...node.properties,
-            className: "text-justify"
+            className: "lg:text-justify"
           };
         }
         return node;

@@ -46,14 +46,13 @@ export default function HomeTypeProcedures() {
     {
       title: "TECNOLOGIAS",
       description: "Ultraformer MTP, Laser Lavieen",
-      image: "/assets/images/home-procedures/tecnologias.jpg",
+      image: "/assets/images/home-procedures/tecnologias.webp",
       href: "/tratamentos/tecnologias"
     },
   ]
 
   return (
     <div className="flex flex-col gap-4">
-      <p className="text-gray-500">Conheça nossos tratamentos</p>
       <ProcedureCardList procedures={procedures} />
     </div>
   );

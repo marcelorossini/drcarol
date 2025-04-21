@@ -4,15 +4,17 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { ClickableAddress } from '@/components/ui/clickable-address'
 
-export default function Menu() {
+export default function Menu({ isSticky: isStickyProp = false, dark: darkProp = false }: { isSticky: boolean, dark?: boolean }) {
     const [isSticky, setIsSticky] = useState(false)
     const [lastScrollY, setLastScrollY] = useState(0)
 
     useEffect(() => {
+        if (isStickyProp === false) return;
+
         const handleScroll = () => {
             const currentScrollY = window.scrollY
             const windowHeight = window.innerHeight
-            
+
             // Mostra o menu apenas quando passar da primeira página
             setIsSticky(currentScrollY > windowHeight)
             setLastScrollY(currentScrollY)
@@ -21,9 +23,9 @@ export default function Menu() {
         window.addEventListener('scroll', handleScroll)
         // Executa uma vez no carregamento para definir o estado inicial
         handleScroll()
-        
+
         return () => window.removeEventListener('scroll', handleScroll)
-    }, [])
+    }, [isStickyProp])
 
     function goHome() {
         window.location.href = '/'
@@ -54,16 +56,17 @@ export default function Menu() {
             }
         }
     }
-//${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}
-//fixed top-0 left-0 w-full transition-all duration-300 z-50
+    //${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}
+    //fixed top-0 left-0 w-full transition-all duration-300 z-50
     return (
         <div className={`w-full z-50 transition-all duration-500 ease-in-out transform
             ${isSticky ? 'translate-y-0 h-fit opacity-100 fixed' : 'relative h-[0px] -translate-y-full'}`}>
             <nav className={`w-full lg:text-xl py-4 md:px-8
-                ${isSticky ? 'bg-black text-white transition-colors duration-500' : 'bg-transparent text-black'}`}>
+                ${isSticky ? 'transition-colors duration-500' : ''}
+                ${isSticky || darkProp ? 'bg-black text-white' : 'bg-transparent text-black'}`}>
                 <div className="flex flex-row items-center justify-center lg:justify-between relative w-full">
                     <div className="hidden lg:flex cursor-pointer" onClick={goHome}>
-                        {isSticky ? (
+                        {isSticky || darkProp ? (
                             <Image draggable={false} src="/assets/logo-white.svg" alt="logo" width={128} height={100} />
                         ) : (
                             <Image draggable={false} src="/assets/logo-black.svg" alt="logo" width={128} height={100} />

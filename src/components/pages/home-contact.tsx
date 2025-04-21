@@ -55,7 +55,7 @@ export default function HomeContact() {
                             className="text-lg font-semibold mb-2 cursor-pointer hover:text-primary transition-colors"
                             onClick={openMaps}
                         >
-                            {address} (Condomínio Mundeo)
+                            {address} (Edifício Mundeo Moema Business)
                         </h3>
                         <h3 className="text-lg font-semibold mb-2">Possui estacionamento no local com manobrista.</h3>
                         <div className="w-full h-[400px] rounded-lg overflow-hidden shadow-lg">

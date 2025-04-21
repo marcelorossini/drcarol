@@ -4,8 +4,8 @@ import { loadImagesFromDirectoryAlt } from "@/utils/image-loader";
 import Image from "next/image";
 import { DEFAULT_PADDING } from "@/components/ui/section";
 
-export default function HomeAboutDoctor() {
-    const images = loadImagesFromDirectoryAlt('/assets/images/home-about', 'Dra Carolina Macedo');
+export default async function HomeAboutDoctor() {
+    const images = await loadImagesFromDirectoryAlt('/assets/images/home-about', 'Dra Carolina Macedo');
     return (
         <div className="relative">
             <div className="w-full h-10 lg:h-16 bg-[#957665]" />
@@ -18,7 +18,7 @@ export default function HomeAboutDoctor() {
                         <div className="relative w-full h-1/2 bg-gradient-to-b from-transparent via-[#121212] via-50% to-[#121212]" />
                         <div className="w-full h-full bg-[#121212]" />
                     </div>
-                    <div className="flex flex-col gap-6 text-lg text-white relative z-15 text-justify">
+                    <div className="flex flex-col gap-6 text-lg text-white relative z-15 lg:text-justify">
                         <p>
                             <strong>Dra. Carolina Macedo</strong> é <strong>Biomédica Esteta</strong>, <strong>Mestre pela USP e Pós-Graduada em Saúde Estética</strong>. Sempre em constante atualização, vem trilhando uma carreira repleta de aperfeiçoamento para melhor atender seus pacientes. Já participou de diversos <strong>congressos nacionais e internacionais</strong>, bem como se especializou em inúmeros cursos voltados para conteúdos inovadores da sua área de atuação.
                         </p>
