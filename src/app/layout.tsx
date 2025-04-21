@@ -34,7 +34,7 @@ export default function RootLayout({
       >
         {children}
         <footer className="bg-primary p-4 flex items-center justify-end gap-2 text-white cursor-pointer">
-          Desenvolvido por
+          
           <a href="https://www.agenciaclinica.com.br/" target="_blank" rel="noopener noreferrer">
             <Image src={"/assets/logo-ag.svg"} alt="logo" width={80} height={80} />
           </a>
