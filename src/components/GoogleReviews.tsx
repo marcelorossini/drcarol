@@ -28,7 +28,7 @@ export async function GoogleReviews() {
           rel="noopener noreferrer"
           className="w-fit px-6 py-3 bg-primary text-xl text-white rounded-full hover:bg-primary/90 transition-colors duration-200 font-medium flex items-center gap-2 flex-col lg:flex-row"
         >
-          <span>Veja mais avaliações e porque somos uma clínica 5 estrelas</span>
+          <span>Veja mais avaliações, e porque somos uma clínica 5 estrelas</span>
           <div className="flex justify-center items-center gap-1 text-yellow-400">
             {[...Array(5)].map((_, i) => (
               <FaStar key={i} className="w-6 h-6" />
