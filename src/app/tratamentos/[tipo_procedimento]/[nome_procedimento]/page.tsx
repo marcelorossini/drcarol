@@ -170,12 +170,19 @@ const Tratamento = async ({ params }: TratamentoProps) => {
 
                 // Processar cada imagem do carrossel
                 const processedPhotos = await Promise.all(photos.map(async (photo) => {
-                    const fullPhotoPath = path.join(process.cwd(), 'public', photo.url);
-                    const optimizedPath = await processImage(fullPhotoPath, 1024);
-                    return {
-                        ...photo,
-                        url: optimizedPath
-                    };
+                    try {
+                        const fullPhotoPath = path.join(process.cwd(), 'public', photo.url);
+                        console.log(`Processando imagem do carrossel: ${fullPhotoPath}`);
+                        const optimizedPath = await processImage(fullPhotoPath, 1024);
+                        return {
+                            ...photo,
+                            url: optimizedPath
+                        };
+                    } catch (error) {
+                        console.error(`Erro ao processar imagem do carrossel ${photo.url}:`, error);
+                        // Em caso de erro, retornar a imagem original
+                        return photo;
+                    }
                 }));
 
                 if (processedPhotos.length > 0) {

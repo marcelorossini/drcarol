@@ -49,14 +49,21 @@ export async function processImage(
 
     if (isHeic) {
       console.log(`Convertendo imagem HEIC: ${imagePath}`);
-      // Ler o arquivo HEIC
-      const inputBuffer = await fs.promises.readFile(imagePath);
-      // Converter HEIC para JPEG
-      imageBuffer = await heicConvert({
-        buffer: inputBuffer,
-        format: 'JPEG',
-        quality: 1
-      });
+      try {
+        // Ler o arquivo HEIC
+        const inputBuffer = await fs.promises.readFile(imagePath);
+        // Converter HEIC para JPEG
+        imageBuffer = await heicConvert({
+          buffer: inputBuffer,
+          format: 'JPEG',
+          quality: 1
+        });
+        console.log(`Conversão HEIC bem sucedida para: ${imagePath}`);
+      } catch (heicError) {
+        console.error(`Erro na conversão HEIC para ${imagePath}:`, heicError);
+        // Em caso de erro na conversão HEIC, tentar usar o arquivo original
+        imageBuffer = await fs.promises.readFile(imagePath);
+      }
     } else {
       // Para outros formatos, usar o buffer original
       imageBuffer = await fs.promises.readFile(imagePath);
