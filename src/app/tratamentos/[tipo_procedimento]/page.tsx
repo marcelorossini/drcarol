@@ -54,7 +54,7 @@ const Tratamento = async ({ params }: TratamentoProps) => {
     const cover = coverMatch ? coverMatch[1].trim() : '';
     
     // Extrair ordem usando a tag order
-    const orderMatch = markdownContent.match(/<!-- order:start -->\s*([\s\S]*?)\s*<!-- order:end -->/);
+    const orderMatch = markdownContent.match(/<!-- order:(\d+) -->/);
     const order = orderMatch ? parseInt(orderMatch[1].trim()) : undefined;
     
     const procedureData: MarkdownContent = {
@@ -95,7 +95,7 @@ const Tratamento = async ({ params }: TratamentoProps) => {
                 }
                 
                 // Extrair ordem
-                const itemOrderMatch = content.match(/<!-- order:start -->\s*([\s\S]*?)\s*<!-- order:end -->/);
+                const itemOrderMatch = content.match(/<!-- order:(\d+) -->/);
                 const itemOrder = itemOrderMatch ? parseInt(itemOrderMatch[1].trim()) : 999;
                 
                 proceduresData.push({
