@@ -14,8 +14,8 @@ import { processImage } from '@/utils/image-processor';
 
 // Definir o tipo CarouselImage para usar no componente
 interface CarouselImage {
-  url: string;
-  alt: string;
+    url: string;
+    alt: string;
 }
 
 interface TratamentoProps {
@@ -39,13 +39,13 @@ export async function generateStaticParams() {
     }) as FileTreeInfo[];
 
     // Lista de tipos de procedimentos disponíveis
-    const filesGeneratedFlat = files.flatMap(procedures => 
+    const filesGeneratedFlat = files.flatMap(procedures =>
         procedures.children?.map(procedure => ({
             tipo_procedimento: procedures.name,
             nome_procedimento: procedure.name
         })) || []
     );
-    
+
     return filesGeneratedFlat;
 }
 
@@ -57,52 +57,66 @@ const Tratamento = async ({ params }: TratamentoProps) => {
     try {
         // Ler o conteúdo do arquivo Markdown
         const markdownContent = await readMarkdownFile(`/assets/content/tratamentos/${procedureType}/${procedureName}/content-br.md`);
-        
+
         if (!markdownContent) {
             throw new Error('Conteúdo não encontrado');
         }
-        
+
         // Extrair título usando a tag title
         const titleMatch = markdownContent.match(/<!-- title:start -->\s*([\s\S]*?)\s*<!-- title:end -->/);
-        const title = titleMatch ? titleMatch[1].trim().replaceAll('#', '') : procedureName;
-        
+        const title = titleMatch ? titleMatch[1].trim().replaceAll('#', '').toUpperCase() : procedureName;
+
         // Extrair subtítulo usando a tag subtitle
         const subtitleMatch = markdownContent.match(/<!-- subtitle:start -->\s*([\s\S]*?)\s*<!-- subtitle:end -->/);
         const subtitle = subtitleMatch ? subtitleMatch[1].trim().replaceAll('#', '') : '';
-        
+
         // Extrair descrição usando a tag description
         const descriptionMatch = markdownContent.match(/<!-- description:start -->\s*([\s\S]*?)\s*<!-- description:end -->/);
         const description = descriptionMatch ? descriptionMatch[1].trim().replaceAll('#', '') : '';
-        
-        // Extrair photo1 e photo2 usando as tags photo1 e photo2
+
+        // Extrair photo1 usando a tag photo1
         const photo1Match = markdownContent.match(/<!-- photo1:start -->\s*([\s\S]*?)\s*<!-- photo1:end -->/);
         const photo1Path = photo1Match && photo1Match[1].trim() !== '' ? photo1Match[1].trim() : '';
         const photo1 = photo1Path ? `/assets/content/tratamentos/${procedureType}/${procedureName}/${photo1Path}` : '';
-        
-        const photo2Match = markdownContent.match(/<!-- photo2:start -->\s*([\s\S]*?)\s*<!-- photo2:end -->/);
-        const photo2Path = photo2Match && photo2Match[1].trim() !== '' ? photo2Match[1].trim() : '';
-        const photo2 = photo2Path ? `/assets/content/tratamentos/${procedureType}/${procedureName}/${photo2Path}` : '';
-        
-        // Processar as imagens photo1 e photo2
-        let optimizedPhoto1 = photo1;
-        let optimizedPhoto2 = photo2;
-        
+
+        // Extrair cover usando a tag cover
+        const coverMatch = markdownContent.match(/<!-- cover:start -->\s*([\s\S]*?)\s*<!-- cover:end -->/);
+        const coverPath = coverMatch ? coverMatch[1].trim() : '';
+        const cover = coverPath ? `/assets/content/tratamentos/${procedureType}/${procedureName}/${coverPath}` : '';
+
+        // Processar a imagem photo1
+        let optimizedPhoto1 = null;
+
         if (photo1Path) {
             const fullPhoto1Path = path.join(process.cwd(), 'public', photo1);
-            optimizedPhoto1 = await processImage(fullPhoto1Path, 1024);
+            if (fs.existsSync(fullPhoto1Path)) {
+                optimizedPhoto1 = await processImage(fullPhoto1Path, 1024);
+            } else {
+                console.warn(`Arquivo não encontrado: ${fullPhoto1Path}`);
+            }
         }
-        
-        if (photo2Path) {
-            const fullPhoto2Path = path.join(process.cwd(), 'public', photo2);
-            optimizedPhoto2 = await processImage(fullPhoto2Path, 1024);
+
+        // Processar a imagem de capa
+        let optimizedCover = null;
+
+        if (coverPath) {
+            const fullCoverPath = path.join(process.cwd(), 'public', cover);
+            if (fs.existsSync(fullCoverPath)) {
+                optimizedCover = await processImage(fullCoverPath, 1024);
+                console.log(optimizedCover);
+            } else {
+                console.warn(`Arquivo não encontrado: ${fullCoverPath}`);
+            }
         }
-        
+
+        const finalPhoto1 = optimizedPhoto1 ? optimizedPhoto1 : optimizedCover;
+
         // Extrair carrosséis usando a tag carousel
         const carouselMatches = markdownContent.match(/<!-- carousel:start -->\s*([\s\S]*?)\s*<!-- carousel:end -->/g) || [];
         const carousels: { title: string, path: string, description?: string }[] = [];
-        
+
         for (const match of carouselMatches) {
-            const content = match.replace(/<!-- carousel:start -->|<!-- carousel:end -->/g, '').trim();            
+            const content = match.replace(/<!-- carousel:start -->|<!-- carousel:end -->/g, '').trim();
             const lines = content.split('\n');
             if (lines.length >= 2) {
                 const title = lines[0].replaceAll('#', '').trim();
@@ -111,14 +125,14 @@ const Tratamento = async ({ params }: TratamentoProps) => {
                 carousels.push({ title, path, description });
             }
         }
-        
+
         // Extrair FAQ usando a tag faq
         const faqMatches = markdownContent.match(/<!-- faq:start -->\s*([\s\S]*?)\s*<!-- faq:end -->/g) || [];
         const faqItems: FaqItem[] = [];
-        
+
         for (const match of faqMatches) {
-            const content = match.replace(/<!-- faq:start -->|<!-- faq:end -->/g, '').trim();                    
-            
+            const content = match.replace(/<!-- faq:start -->|<!-- faq:end -->/g, '').trim();
+
             // Verificar se é uma pergunta (começa com ###)
             if (content.startsWith('###')) {
                 const lines = content.split('\n');
@@ -136,25 +150,24 @@ const Tratamento = async ({ params }: TratamentoProps) => {
                 }
             }
         }
-        
-        
+
+
         // Processar carrosséis personalizados
-        let photoDirectoriesWithPhotosCarousel: { name: string, description?: string, photos: CarouselImage[] }[] = [];
-        
+        const photoDirectoriesWithPhotosCarousel: { name: string, description?: string, photos: CarouselImage[] }[] = [];
+
         // Só carregar imagens se houver carrosséis definidos no markdown
         if (carousels.length > 0) {
             // Carregar diretórios de fotos apenas se houver carrosséis
             const photoDirectories = await loadFilesFromDirectory({
                 directoryPath: `/assets/content/tratamentos/${procedureType}/${procedureName}/photos`
             });
-            
+
             for (const carousel of carousels) {
                 const photos = await loadImagesFromDirectoryAlt(
-                    `/assets/content/tratamentos/${procedureType}/${procedureName}/${carousel.path}`, 
+                    `/assets/content/tratamentos/${procedureType}/${procedureName}/${carousel.path}`,
                     carousel.title
                 );
-                console.log(photos)
-                
+
                 // Processar cada imagem do carrossel
                 const processedPhotos = await Promise.all(photos.map(async (photo) => {
                     const fullPhotoPath = path.join(process.cwd(), 'public', photo.url);
@@ -164,10 +177,10 @@ const Tratamento = async ({ params }: TratamentoProps) => {
                         url: optimizedPath
                     };
                 }));
-                
+
                 if (processedPhotos.length > 0) {
                     photoDirectoriesWithPhotosCarousel.push({
-                        name: carousel.title,
+                        name: carousel.title.toUpperCase(),
                         description: carousel.description,
                         photos: processedPhotos as CarouselImage[]
                     });
@@ -179,39 +192,37 @@ const Tratamento = async ({ params }: TratamentoProps) => {
             <Section id="home" className="min-h-[100vh] bg-[#E7E1D9]">
                 <Page className="pt-10 lg:pt-10">
                     <div className="rounded-lg flex flex-col gap-8">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="flex flex-col gap-4">
-                                <h1 className="text-4xl font-bold font-caladea">{title}</h1>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white rounded-xl shadow-xs pl-6 overflow-hidden">
+                            <div className="flex flex-col gap-4 py-6">
+                                <h1 className="text-4xl font-bold font-caladea text-primary">{title}</h1>
                                 {subtitle && <h2 className="text-xl font-medium">{subtitle}</h2>}
-                                <div className="h-full flex flex-col gap-2 border-2 flex-1 lg:text-justify">
+                                <div className="h-full flex flex-col gap-2 flex-1 lg:text-justify">
                                     <MarkdownContent content={description} />
                                 </div>
                             </div>
-                            <div className={`flex ${photo1 && photo2 ? 'justify-between' : 'justify-center'} gap-4`}>
-                                {photo1 && (
-                                    <div className='relative w-full h-fit flex items-center'>
-                                        <Image draggable={false} src={optimizedPhoto1} alt={title || procedureName} width={1000} height={1000} className="bottom-0 w-full h-auto max-w-[300px] lg:max-w-[400px] object-contain mx-auto" />         
-                                        <div className="absolute -bottom-5 w-full h-20 bg-gradient-to-t from-[#E7E1D9] via-[#E7E1D9] to-transparent"/>                   
-                                    </div>
-                                )}
-                                {photo2 && (
-                                    <div className='relative w-full h-fit flex items-center'>
-                                        <Image draggable={false} src={optimizedPhoto2} alt={title || procedureName} width={1000} height={1000} className="bottom-0 w-full h-auto max-w-[300px] lg:max-w-[400px] object-contain mx-auto" />         
-                                        <div className="absolute -bottom-5 w-full h-20 bg-gradient-to-t from-[#E7E1D9] via-[#E7E1D9] to-transparent"/>                   
-                                    </div>
-                                )}
+                            <div className="flex justify-center gap-4">
+                                <div className='relative w-full h-fit flex items-center justify-end'>
+                                    {finalPhoto1 && (
+                                        <Image draggable={false} src={finalPhoto1} alt={title || procedureName} width={1000} height={1000} className="bottom-0 w-full h-auto max-w-[300px] lg:max-w-[400px] object-contain" />
+                                    )}
+                                    {optimizedPhoto1 && (
+                                        <div className='w-12 h-full '/>
+                                    ) }
+                                </div>
                             </div>
                         </div>
                         {photoDirectoriesWithPhotosCarousel.map(photoDirectory => (
                             <div key={photoDirectory.name}>
-                                <h2 className="text-2xl">{photoDirectory.name}</h2>
+                                <h2 className="text-4xl font-caladea font-bold">{photoDirectory.name}</h2>
                                 {photoDirectory.description && (
                                     <p className="mb-4 text-xl">{photoDirectory.description}</p>
                                 )}
                                 <CarouselDefault images={photoDirectory.photos} />
                             </div>
                         ))}
-                        <CollapsibleList items={faqItems} />
+                        <div className="bg-white rounded-xl shadow-xs p-6">
+                            <CollapsibleList items={faqItems} />
+                        </div>
                     </div>
                 </Page>
             </Section>
