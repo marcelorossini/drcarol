@@ -45,14 +45,20 @@ export default function Menu({ isSticky: isStickyProp = false, dark: darkProp = 
                 goHome()
             }
         } else {
-            // Para outras seções, mantém o comportamento atual
-            const section = document.getElementById(sectionId)
-            if (section) {
-                const offsetTop = section.offsetTop - 80
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                })
+            // Para outras seções
+            if (window.location.pathname === '/') {
+                // Se já estiver na página inicial, apenas rola para a seção
+                const section = document.getElementById(sectionId)
+                if (section) {
+                    const offsetTop = section.offsetTop - 80
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    })
+                }
+            } else {
+                // Se não estiver na página inicial, redireciona para /#section
+                window.location.href = `/#${sectionId}`
             }
         }
     }

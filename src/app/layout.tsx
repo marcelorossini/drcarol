@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Rosario, Caladea } from "next/font/google";
 import "./globals.css";
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
 
 const rosario = Rosario({
   variable: "--font-rosario",
@@ -33,6 +34,7 @@ export default function RootLayout({
         className={`${rosario.variable} ${caladea.variable} font-sans antialiased`}
       >
         {children}
+        <WhatsAppButton />
         <footer className="bg-primary p-4 flex items-center justify-end gap-2 text-white cursor-pointer">
           
           <a href="https://www.agenciaclinica.com.br/" target="_blank" rel="noopener noreferrer">

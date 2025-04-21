@@ -42,7 +42,7 @@ Com o passar do tempo, a pele perde firmeza e pode apresentar rugas, manchas, ci
 Depende do objetivo de cada pessoa, mas geralmente são indicadas de 3 a 5 sessões, com intervalos de 30 dias entre elas.
 <!-- faq:end -->
 <!-- faq:start -->
-### O procedimento doi?  
+### O procedimento dói?  
 Não, o microagulhamento é muito bem tolerado pois utilizamos uma pomada anestésica para maior conforto.
 <!-- faq:end -->
 <!-- faq:start -->

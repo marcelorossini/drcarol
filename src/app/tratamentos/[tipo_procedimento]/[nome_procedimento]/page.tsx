@@ -201,26 +201,26 @@ const Tratamento = async ({ params }: TratamentoProps) => {
                     <div className="rounded-lg flex flex-col gap-8">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white rounded-xl shadow-xs overflow-hidden">
                             <div className="flex flex-col gap-4 p-6">
-                                <h1 className="text-4xl font-bold font-caladea text-primary">{title}</h1>
+                                <h1 className="text-2xl lg:text-4xl font-bold font-caladea text-primary">{title}</h1>
                                 {subtitle && <h2 className="text-xl font-medium">{subtitle}</h2>}
                                 <div className="h-full flex flex-col gap-2 flex-1 lg:text-justify">
                                     <MarkdownContent content={description} />
                                 </div>
                             </div>
                             <div className="flex justify-center gap-4">
-                                <div className='relative w-full h-fit flex items-center justify-end'>
+                                <div className='relative w-full h-fit flex items-center justify-center lg:justify-end'>
                                     {finalPhoto1 && (
-                                        <Image draggable={false} src={finalPhoto1} alt={title || procedureName} width={1000} height={1000} className="bottom-0 w-full h-auto max-w-[300px] lg:max-w-[400px] object-contain" />
+                                        <Image draggable={false} src={finalPhoto1} alt={title || procedureName} width={1000} height={1000} className="bottom-0 w-full h-auto lg:max-w-[400px] object-contain" />
                                     )}
                                     {optimizedPhoto1 && (
-                                        <div className='w-12 h-full '/>
+                                        <div className='display:none w-12 h-full '/>
                                     ) }
                                 </div>
                             </div>
                         </div>
                         {photoDirectoriesWithPhotosCarousel.map(photoDirectory => (
                             <div key={photoDirectory.name}>
-                                <h2 className="text-4xl font-caladea font-bold">{photoDirectory.name}</h2>
+                                <h2 className="text-2xl lg:text-4xl font-caladea font-bold">{photoDirectory.name}</h2>
                                 {photoDirectory.description && (
                                     <p className="mb-4 text-xl">{photoDirectory.description}</p>
                                 )}
