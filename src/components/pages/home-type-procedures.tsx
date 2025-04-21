@@ -18,7 +18,7 @@ export function ProcedureCard({ procedure, index }: { procedure: { title: string
             alt={"imagem do procedimento"}
             width={400}
             height={160}
-            className="w-full h-40 object-cover object-top lg:h-80"
+            className="w-full h-56 object-cover object-top lg:h-80"
           />
           <div className="flex items-center h-16 text-center justify-center gap-2 text-xl p-4 bg-[#a4826b]">
             <strong>{procedure.title}</strong> <div><FaArrowAltCircleRight size={26}/></div>
