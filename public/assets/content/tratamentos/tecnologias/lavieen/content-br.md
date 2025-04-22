@@ -17,8 +17,6 @@ O Laser Lavieen é um tratamento inovador que utiliza a tecnologia de Laser Thul
 ./photos
 <!-- carousel:end -->
 
-
-
 <!-- faq:start -->
 ### Importância do Procedimento  
 Com o tempo, a pele sofre agressões externas e o processo natural de envelhecimento, resultando em manchas, textura irregular, poros dilatados e perda de viço. O Laser Lavieen estimula a regeneração e a produção de colágeno, proporcionando um aspecto rejuvenescido e saudável para a pele.

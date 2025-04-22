@@ -258,14 +258,14 @@ interface CarouselImage {
   alt: string;
 }
 
-const CarouselDefault = ({ images }: { images: CarouselImage[] }) => {
+const CarouselDefault = ({ images, maxSize }: { images: CarouselImage[]; maxSize?: string }) => {
   const autoplayOptions = {
     delay: 3000,
     rootNode: (emblaRoot: HTMLElement) => emblaRoot.parentElement,
   }
 
   return (
-    <Carousel 
+    <Carousel
       opts={{
         align: "center",
         containScroll: "trimSnaps",
@@ -278,7 +278,7 @@ const CarouselDefault = ({ images }: { images: CarouselImage[] }) => {
     >
       <CarouselContent className="overflow-visible">
         {images.map((image, index) => (
-          <CarouselItem key={index} className="basis-[70%] md:basis-1/3">
+          <CarouselItem key={index} className="basis-[70%] md:basis-1/3" style={{ maxHeight: maxSize, maxWidth: maxSize }}>
             <div className="p-0.5">
               <div className="flex aspect-square items-center justify-center p-2">
                 <Image
@@ -286,7 +286,7 @@ const CarouselDefault = ({ images }: { images: CarouselImage[] }) => {
                   alt={image.alt}
                   width={800}
                   height={800}
-                  className="w-full h-full object-cover rounded-4xl"
+                  className={`w-full h-full object-cover rounded-4xl`}
                 />
               </div>
             </div>
@@ -299,10 +299,10 @@ const CarouselDefault = ({ images }: { images: CarouselImage[] }) => {
   )
 }
 
-const CarouselHighlight = ({ 
-  images, 
-  enableBlur = true 
-}: { 
+const CarouselHighlight = ({
+  images,
+  enableBlur = true
+}: {
   images: CarouselImage[];
   enableBlur?: boolean;
 }) => {
@@ -319,7 +319,7 @@ const CarouselHighlight = ({
   }, [])
 
   return (
-    <Carousel       
+    <Carousel
       opts={{
         align: "center",
         containScroll: "trimSnaps",
@@ -340,8 +340,8 @@ const CarouselHighlight = ({
             <div className="p-0.5">
               <div className={cn(
                 "flex aspect-square items-center justify-center p-2 transition-transform duration-300 relative",
-                selectedIndex === index 
-                  ? "scale-140 z-10" 
+                selectedIndex === index
+                  ? "scale-140 z-10"
                   : "scale-100 z-0 opacity-50",
                 enableBlur && selectedIndex !== index && "blur-xs"
               )}>

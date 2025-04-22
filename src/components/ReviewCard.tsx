@@ -22,6 +22,7 @@ interface ReviewCardProps {
 export function ReviewCard({ review }: ReviewCardProps) {
   const [showOriginal, setShowOriginal] = useState(true);
   const [deviceLanguage, setDeviceLanguage] = useState<string>('');
+  const [isExpanded, setIsExpanded] = useState(false);
   
   useEffect(() => {
     // Detecta o idioma do dispositivo
@@ -39,6 +40,17 @@ export function ReviewCard({ review }: ReviewCardProps) {
   // Só mostra o botão se o idioma do review for diferente do idioma do dispositivo
   const shouldShowTranslationButton = !(isPortuguese && isDevicePortuguese);
   const diferentLanguage = isPortuguese !== isDevicePortuguese;
+
+  // Função para truncar o texto
+  const truncateText = (text: string, maxChars: number) => {
+    if (isExpanded) return text;
+    if (text.length <= maxChars) return text;
+    return text.slice(0, maxChars) + '...';
+  };
+
+  const maxChars = 510; 
+  const displayText = truncateText(currentText, maxChars);
+  const hasMoreText = currentText.length > maxChars;
 
   return (
     <Card className="hover:shadow-lg transition-shadow">
@@ -72,7 +84,19 @@ export function ReviewCard({ review }: ReviewCardProps) {
           </div>
         </div>
         <div className="space-y-2 flex-1">
-          <p className="text-gray-600 lg:text-justify">{currentText}</p>
+          <div className="text-gray-600 lg:text-justify">
+            <span dangerouslySetInnerHTML={{ __html: displayText.replace(/\n/g, '<br />') }} />
+            {hasMoreText && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="text-xs text-blue-600 hover:text-blue-800 inline-block ml-1"
+              >
+                {isExpanded ? 'Ver menos' : 'Ver mais'}
+              </Button>
+            )}
+          </div>
           {diferentLanguage && !showOriginal && (
             <p className="text-xs text-gray-500 italic">
               {isPortuguese ? '(Translated from portuguese)' : '(Traduzido do inglês)'}

@@ -224,7 +224,7 @@ const Tratamento = async ({ params }: TratamentoProps) => {
                                 {photoDirectory.description && (
                                     <p className="mb-4 text-xl">{photoDirectory.description}</p>
                                 )}
-                                <CarouselDefault images={photoDirectory.photos} />
+                                <CarouselDefault images={photoDirectory.photos} maxSize="512px" />
                             </div>
                         ))}
                         <div className="bg-white rounded-xl shadow-xs p-6">

@@ -1,7 +1,6 @@
+import { isMobile } from 'react-device-detect';
+
 export const openMaps = (address: string, coordinates: string) => {
-    // Verifica se é um dispositivo móvel
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    
     if (isMobile) {
         // Para dispositivos móveis, abre o aplicativo de mapas nativo
         window.location.href = `geo:${coordinates}?q=${encodeURIComponent(address)}`;

@@ -18,6 +18,11 @@ O **PEIM** (Procedimento Estético Injetável para Microvasos), também conhecid
 ./peim.webp
 <!-- photo1:end -->
 
+<!-- carousel:start -->
+# FOTOS
+./photos
+<!-- carousel:end -->
+
 <!-- photo2:start -->
 
 <!-- photo2:end -->

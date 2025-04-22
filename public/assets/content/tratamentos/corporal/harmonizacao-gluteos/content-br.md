@@ -18,6 +18,11 @@ A **Harmonização de Glúteos** é um procedimento estético não cirúrgico qu
 ./harmonizacao_gluteos.webp
 <!-- photo1:end -->
 
+<!-- carousel:start -->
+# FOTOS
+./photos
+<!-- carousel:end -->
+
 <!-- photo2:start -->
 
 <!-- photo2:end -->

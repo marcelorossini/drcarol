@@ -13,10 +13,22 @@ export async function GoogleReviews() {
     );
   }
 
+  // Ordena as avaliações do mais novo para o mais antigo
+  const sortedReviews = [...reviews].sort((a, b) => {
+    // Converte as strings de data no formato DD/MM/YYYY para objetos Date
+    const [dayA, monthA, yearA] = a.time.split('/');
+    const [dayB, monthB, yearB] = b.time.split('/');
+    
+    const dateA = new Date(Number(yearA), Number(monthA) - 1, Number(dayA));
+    const dateB = new Date(Number(yearB), Number(monthB) - 1, Number(dayB));
+    
+    return dateB.getTime() - dateA.getTime();
+  });
+
   return (
     <div className="space-y-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {reviews.map((review, index) => (
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+        {sortedReviews.map((review, index) => (
           <ReviewCard key={index} review={review} />
         ))}
       </div>

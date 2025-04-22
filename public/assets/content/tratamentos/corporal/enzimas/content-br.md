@@ -18,6 +18,11 @@ A **Intradermoterapia**, conhecida como aplicação de **enzimas injetáveis**, 
 ./enzimas.webp
 <!-- photo1:end -->
 
+<!-- carousel:start -->
+# FOTOS
+./photos
+<!-- carousel:end -->
+
 <!-- photo2:start -->
 
 <!-- photo2:end -->

@@ -11,6 +11,12 @@ O Ultraformer MPT é um tratamento de última geração que utiliza a tecnologia
 <!-- photo1:start -->
 ./photo1.webp
 <!-- photo1:end -->
+
+<!-- carousel:start -->
+# FOTOS
+./photos
+<!-- carousel:end -->
+
 <!-- faq:start -->
 ### Importância do Procedimento  
 Com o passar dos anos, a produção natural de colágeno e elastina diminui, resultando em flacidez, perda de firmeza e menos definição dos contornos faciais. Esse processo pode ser intensificado por fatores como envelhecimento, exposição solar, alterações de peso e estilo de vida. O Ultraformer MPT atua de forma profunda e precisa na pele e nos tecidos subcutâneos resultando em um rejuvenescimento natural e progressivo, sem necessidade de agulhas, cortes, anestesia ou tempo de recuperação.
