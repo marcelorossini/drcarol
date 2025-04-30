@@ -1,13 +1,13 @@
 <!-- order:10 -->
 
 <!-- title:start -->
-# Toxina Botulínica (Botox)
+# Toxina Botulínica
 <!-- title:end -->
 <!-- subtitle:start -->
 Descubra o poder do rejuvenescimento natural
 <!-- subtitle:end -->
 <!-- description:start -->
-A Toxina Botulínica, também conhecida como Botox, é um dos procedimentos mais procurados para o rejuvenescimento facial. Quando injetada na pele age bloqueando temporariamente os sinais nervosos dos músculos, resultando em um relaxamento da musculatura, o que diminui a formação de rugas e suaviza as existentes, causadas pelo envelhecimento e pelos movimentos repetitivos do rosto.
+A Toxina Botulínica, também conhecida como BOTOX®, é um dos procedimentos mais procurados para o rejuvenescimento facial. Quando injetada na pele age bloqueando temporariamente os sinais nervosos dos músculos, resultando em um relaxamento da musculatura, o que diminui a formação de rugas e suaviza as existentes, causadas pelo envelhecimento e pelos movimentos repetitivos do rosto.
 
 Além da estética, também é utilizada para tratar questões funcionais, como bruxismo e hiperidrose (suor excessivo).
 <!-- description:end -->

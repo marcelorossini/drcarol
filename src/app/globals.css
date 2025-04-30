@@ -84,7 +84,13 @@
 }
 
 html, body {
+  font-size: 16px; /* Tamanho padrão para desktop */
+}
 
+@media (max-width: 768px) {
+  html, body {
+    font-size: 18px; /* Tamanho aumentado apenas para mobile */
+  }
 }
 
 .text-primary {

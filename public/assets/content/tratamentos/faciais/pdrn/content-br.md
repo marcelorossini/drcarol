@@ -15,7 +15,7 @@ A Estética Regenerativa é uma abordagem inovadora que vai além do rejuvenesci
 ### Como funciona?  
 O protocolo combina dois ativos extremamente potentes:  
 - Exossomos: pequenas vesículas extracelulares que atuam como mensageiros entre as células, promovendo comunicação celular eficiente, estímulo à regeneração tecidual, aumento da produção de colágeno e reparação de danos cutâneos.  
-- PDRN+: composto derivado do DNA do salmão, com alta capacidade de regeneração celular, efeito anti-inflamatório e estímulo à cicatrização e elasticidade da pele.  
+- PDRN: composto derivado do DNA do salmão, com alta capacidade de regeneração celular, efeito anti-inflamatório e estímulo à cicatrização e elasticidade da pele.  
 
 A aplicação dos ativos pode ser feita por meio de microagulhamento ou com o auxílio de tecnologias como o Laser Lavieen, que aumentam a absorção e a eficácia dos componentes.
 <!-- faq:end -->

@@ -27,7 +27,7 @@ export default function HomeFAQ() {
 
         {
             "title": "Quais são os cuidados após os procedimentos?",
-            "content": "Os cuidados pós-procedimento são essenciais para garantir uma recuperação tranquila. Embora cada tratamento tenha suas recomendações específicas, algumas orientações gerais incluem: \r\n✅ Evitar exposição solar: use protetor solar diariamente e evite o sol intenso nos primeiros dias para prevenir manchas e irritações. \r\n✅ Manter a hidratação: beba bastante água e utilize cremes hidratantes adequados para potencializar a recuperação da pele. \r\n✅ Evitar atividades físicas intensas: recomenda-se evitar exercícios por 12 a 48 horas para evitar inchaço e deslocamento do produto aplicado. \r\n✅ Seguir as orientações do profissional: use apenas os produtos recomendados e respeite os intervalos entre sessões."
+            "content": "Os cuidados pós-procedimento são essenciais para garantir uma recuperação tranquila. Embora cada tratamento tenha suas recomendações específicas, algumas orientações gerais incluem: \r\n\r\n Evitar exposição solar: use protetor solar diariamente e evite o sol intenso nos primeiros dias para prevenir manchas e irritações. \r\n\r\n Manter a hidratação: beba bastante água e utilize cremes hidratantes adequados para potencializar a recuperação da pele. \r\n\r\n Evitar atividades físicas intensas: recomenda-se evitar exercícios por 12 a 48 horas para evitar inchaço e deslocamento do produto aplicado. \r\n\r\n Seguir as orientações do profissional: use apenas os produtos recomendados e respeite os intervalos entre sessões."
         },
         {
             "title": "Posso combinar diferentes procedimentos estéticos?",

@@ -9,7 +9,7 @@ import type { EmblaPluginType } from "embla-carousel"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import Image from "next/image"
+import { ImageWithMark } from "./image"
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>[0]
@@ -281,7 +281,7 @@ const CarouselDefault = ({ images, maxSize }: { images: CarouselImage[]; maxSize
           <CarouselItem key={index} className="basis-[70%] md:basis-1/3" style={{ maxHeight: maxSize, maxWidth: maxSize }}>
             <div className="p-0.5">
               <div className="flex aspect-square items-center justify-center p-2">
-                <Image
+                <ImageWithMark
                   src={image.url}
                   alt={image.alt}
                   width={800}
@@ -345,7 +345,7 @@ const CarouselHighlight = ({
                   : "scale-100 z-0 opacity-50",
                 enableBlur && selectedIndex !== index && "blur-xs"
               )}>
-                <Image
+                <ImageWithMark
                   src={image.url}
                   alt={image.alt}
                   width={800}

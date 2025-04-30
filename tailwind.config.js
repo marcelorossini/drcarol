@@ -9,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        base: ['18px', '1.5'],
+      },
       fontFamily: {
         sans: ['var(--font-rosario)'],
         caladea: ['var(--font-caladea)', 'serif'],

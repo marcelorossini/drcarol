@@ -5,6 +5,8 @@
 <!-- title:end -->
 <!-- description:start -->
 Os preenchimentos faciais com ácido hialurônico são procedimentos que restauram o volume, reestruturam os tecidos da pele, suavizam as rugas e sulcos profundos, corrigem assimetrias e melhoram o contorno facial.
+
+Com o envelhecimento, há perda de colágeno, gordura, sustentação no rosto e reabsorção óssea, resultando em flacidez, sulcos profundos e rugas. O ácido hialurônico é uma substância que está presente naturalmente na nossa pele, responsável por manter a hidratação e sustentação da face. Os geis de ácido hialurônico são preenchimentos temporários e biocompatíveis que tem como objetivo reduzir os sinais do envelhecimento de uma forma natural e harmoniosa.
 <!-- description:end -->
 <!-- cover:start -->
 ./cover.jpg
@@ -25,7 +27,7 @@ Melhora o aspecto profundo das olheiras, aliviando o ar de cansaço e proporcion
 Essa região é um dos principais pilares de sustentação da nossa face. O preenchimento de malar repõe o volume perdido na região, promovendo um efeito de sustentação e lifting, realçando o contorno facial e embelezando a face. 
 <!-- carousel:end -->
 <!-- carousel:start -->
-# BIGODE CHINES (Sulco Nasolabial)
+# BIGODE CHINÊS (Sulco Nasolabial)
 ./photos/BIGODE CHINES
 Ameniza os sulcos profundos entre o nariz e a boca, causados pelo processo de envelhecimento ou perda de peso. 
 <!-- carousel:end -->
@@ -35,27 +37,23 @@ Ameniza os sulcos profundos entre o nariz e a boca, causados pelo processo de en
 Corrige assimetrias, projeta e define essa região, melhorando as proporções faciais, resultando em um perfil harmonioso. Ajuda a disfarçar o queixo duplo, a famosa papada.  
 <!-- carousel:end -->
 <!-- carousel:start -->
-# LABIOS
+# LÁBIOS
 ./photos/LABIOS
 Aumenta o volume, melhora o contorno, corrige assimetrias e proporciona hidratação, deixando os lábios mais harmônicos e definidos. O preenchimento labial é feito de forma sutil, visando resultados naturais.  
 <!-- carousel:end -->
 
 <!-- carousel:start -->
-# MANDIBULA
+# MANDÍBULA
 ./photos/MANDIBULA
 O preenchimento da mandíbula proporciona um contorno e ângulos mais realçados e harmoniosos. Esse procedimento alonga e define o rosto, resultando no rejuvenescimento do terço inferior da face.  
 <!-- carousel:end -->
 
 <!-- carousel:start -->
-# RINO
+# RINOMODELAÇÃO
 ./photos/RINO
 A rinomodelação é um procedimento estético que tem como objetivo deixar o nariz mais harmônico, corrigindo pequenas imperfeições, como desníveis no dorso (deixá-lo mais reto), queda da ponta (deixá-lo mais empinado), sem necessidade de cirurgia.  
 <!-- carousel:end -->
 
-<!-- faq:start -->
-### Importância do Procedimento  
-Com o envelhecimento, há perda de colágeno, gordura, sustentação no rosto e reabsorção óssea, resultando em flacidez, sulcos profundos e rugas. O ácido hialurônico é uma substância que está presente naturalmente na nossa pele, responsável por manter a hidratação e sustentação da face. Os geis de ácido hialurônico são preenchimentos temporários e biocompatíveis que tem como objetivo reduzir os sinais do envelhecimento de uma forma natural e harmoniosa.
-<!-- faq:end -->
 <!-- faq:start -->
 ### Benefícios  
 - Recuperação do volume e contorno facial  

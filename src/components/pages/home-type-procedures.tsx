@@ -1,7 +1,7 @@
 'use client'
 import { Card, CardContent, CardTitle, CardHeader } from "@/components/ui/card";
 import Link from "next/link";
-import Image from "next/image";
+import { ImageWithMark } from "@/components/ui/image";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import AnimatedWrapper from "@/components/ui/animated-wrapper";
 
@@ -12,7 +12,7 @@ export function ProcedureCard({ procedure, index, animation = true }: { procedur
       className="flex cursor-pointer flex-col gap-4 relative cursor-pointer transition-transform duration-300 hover:scale-105"
     >
       <div className="rounded-4xl z-10 drop-shadow-sm overflow-hidden border-2 border-[#a4826b] text-white bg-white">
-        <Image
+        <ImageWithMark
           src={procedure.image}
           alt={"imagem do procedimento"}
           width={400}

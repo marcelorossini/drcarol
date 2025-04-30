@@ -46,7 +46,7 @@ export function AboutCards() {
                     <ul className="list-disc list-inside space-y-2 text-gray-700 lg:text-justify">
                         <li>Profissionalismo e excelência em cada atendimento</li>
                         <li>Cuidado e respeito com a vontade de cada paciente</li>
-                        <li>Resultados que valorizam a naturalidade e a beleza</li>
+                        <li>Resultados que valorizam a naturalidade e a beleza individual</li>
                         <li>Compromisso com segurança e humanização</li>
                         <li>Atualização científica contínua e responsabilidade ética</li>
                     </ul>

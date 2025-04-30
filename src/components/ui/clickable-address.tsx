@@ -13,7 +13,7 @@ interface ClickableAddressProps {
 export function ClickableAddress({ 
     size = 22, 
     className = "", 
-    address = "Avenida Moaci, 395, conjunto 44 - Moema, São Paulo - SP",
+    address = " Moaci, 395, conjunto 44 - Moema, São Paulo - SP",
     coordinates = "-23.5937,-46.6731"
 }: ClickableAddressProps) {
     return (

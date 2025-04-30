@@ -10,7 +10,7 @@ import { FaRegClock, FaMapMarkerAlt } from "react-icons/fa";
 export default function HomeContact() {
     const whatsappUrl = "https://api.whatsapp.com/send?phone=5511933110909&text=Gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+os+procedimentos+est%C3%A9ticos";
     
-    const address = "Avenida Moaci, 395, conjunto 44 - Moema, São Paulo - SP";
+    const address = "Avenida Moaci, 395 - Conj. 44 - Moema, São Paulo - SP (Edifício Mundeo Moema Business)";
     const coordinates = "-23.5937,-46.6731"; // Coordenadas aproximadas de Moema, SP
     
     const openMaps = () => {
@@ -55,12 +55,12 @@ export default function HomeContact() {
                             className="text-lg font-semibold mb-2 cursor-pointer hover:text-primary transition-colors"
                             onClick={openMaps}
                         >
-                            {address} (Edifício Mundeo Moema Business)
+                            {address}
                         </h3>
                         <h3 className="text-lg font-semibold mb-2">Possui estacionamento no local com manobrista.</h3>
                         <div className="w-full h-[400px] rounded-lg overflow-hidden shadow-lg">
                             <iframe
-                                src="https://maps.google.com/maps?width=600&height=400&hl=pt-BR&q=Avenida+Moaci%2C+395%2C+conjunto+44+-+Moema%2C+S%C3%A3o+Paulo+-+SP&t=&z=17&ie=UTF8&iwloc=B&output=embed"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.197587029925!2d-46.6661953!3d-23.6110294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5b0bff046591%3A0x860df1209a40a93b!2sCl%C3%ADnica%20de%20Est%C3%A9tica%20Avan%C3%A7ada%20Carolina%20Macedo%20-%20Moema%20%E2%80%A2%20Botox%20%E2%80%A2%20Preenchimentos%20Faciais%20%E2%80%A2%20Bioestimuladores%20de%20Col%C3%A1geno!5e0!3m2!1spt-BR!2sbr!4v1710861234567!5m2!1spt-BR!2sbr"
                                 width="100%"
                                 height="100%"
                                 style={{ border: 0 }}
