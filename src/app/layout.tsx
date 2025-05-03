@@ -23,10 +23,18 @@ const caladea = Caladea({
 export const metadata: Metadata = {
   title: "Dra. Carolina Macedo",
   description: "Você em harmonia com a sua beleza",
-  viewport: "width=device-width, initial-scale=1",
-  themeColor: "#d2b9a5",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    themeColor: "#d2b9a5"
+  },
   other: {
-    "preload": "/assets/home-background.webp"
+    "preload": [
+      "/assets/home-background.webp",
+      "/assets/logo-black.svg",
+      "/assets/1.svg",
+      "/assets/home-carol.webp"
+    ]
   }
 };
 

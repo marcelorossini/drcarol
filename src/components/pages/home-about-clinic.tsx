@@ -20,14 +20,14 @@ export default async function HomeAboutClinic() {
                 <div className="w-full max-w-sm mx-auto lg:mx-0 lg:justify-self-end rounded-lg overflow-hidden">
                     <div className="relative pb-[177.78%] h-0">
                         <LazyLoad className="absolute top-0 left-0 w-full h-full">
-                        <iframe
-                            className="absolute top-0 left-0 w-full h-full"
-                            src="https://www.youtube.com/embed/JR3iOU_B7lo?controls=0&modestbranding=1&rel=0&showinfo=0"
-                            title="Vídeo da Clínica Dra. Carolina Macedo"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            loading="lazy"
-                        />
+                            <iframe
+                                className="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/JR3iOU_B7lo?controls=0&modestbranding=1&rel=0&showinfo=0"
+                                title="Vídeo da Clínica Dra. Carolina Macedo"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                                loading="lazy"
+                            />
                         </LazyLoad>
                     </div>
                 </div>

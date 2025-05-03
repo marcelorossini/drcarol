@@ -24,7 +24,7 @@ export default function HomeHero() {
                 </ButtonOpenUrl>
             </div>
             <div className="absolute top-0 left-0 w-full h-full md:w-auto overflow-hidden">
-                <Image draggable={false} src="/assets/1.svg" alt="imagem" width={1000} height={1000} className="rotate-slow -mt-40 w-full h-full blur-md opacity-80" loading="lazy" />
+                <Image draggable={false} src="/assets/1.svg" alt="animação" width={1000} height={1000} className="rotate-slow -mt-40 w-full h-full blur-md opacity-80" priority quality={75} />
             </div>
             <div className="absolute inset-x-0 bottom-0">
                 <div className="w-full h-full flex items-end relative z-20 p-8 md:p-20 pb-8">
@@ -39,7 +39,7 @@ export default function HomeHero() {
                 </div>
                 <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-[#a9856d] via-60% to-[#a9856d]" />
             </div>
-            <Image draggable={false} src="/assets/home-carol.webp" alt="imagem" width={1000} height={1000} className="transition-all duration-300 absolute bottom-16 sm:bottom-0 md:bottom-8 -left-[3%] z-1 h-full max-h-[70vh] md:max-h-[60vh] xl:max-h-[90vh] w-auto object-contain object-left-bottom pb-24 md:pb-0 md:left-10 xl:left-30" loading="lazy" />
+            <Image draggable={false} src="/assets/home-carol.webp" priority alt="foto da carol" width={1000} height={1000} className="transition-all duration-300 absolute bottom-16 sm:bottom-0 md:bottom-8 -left-[3%] z-1 h-full max-h-[70vh] md:max-h-[60vh] xl:max-h-[90vh] w-auto object-contain object-left-bottom pb-24 md:pb-0 md:left-10 xl:left-30" />
             <Image
                 draggable={false}
                 src="/assets/home-background.webp"
