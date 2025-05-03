@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   description: "Você em harmonia com a sua beleza",
   viewport: "width=device-width, initial-scale=1",
   themeColor: "#d2b9a5",
+  other: {
+    "preload": "/assets/home-background.webp"
+  }
 };
 
 export default function RootLayout({

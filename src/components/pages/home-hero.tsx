@@ -40,7 +40,16 @@ export default function HomeHero() {
                 <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-[#a9856d] via-60% to-[#a9856d]" />
             </div>
             <Image draggable={false} src="/assets/home-carol.webp" alt="imagem" width={1000} height={1000} className="transition-all duration-300 absolute bottom-16 sm:bottom-0 md:bottom-8 -left-[3%] z-1 h-full max-h-[70vh] md:max-h-[60vh] xl:max-h-[90vh] w-auto object-contain object-left-bottom pb-24 md:pb-0 md:left-10 xl:left-30" loading="lazy" />
-            <Image draggable={false} src="/assets/home-background.webp" alt="imagem" fill className="absolute opacity-50 blur-sm bottom-0 -left-10 z-0 h-full w-auto object-cover object-right-bottom pb-24 md:pb-0 md:left-30" loading="lazy" />
+            <Image
+                draggable={false}
+                src="/assets/home-background.webp"
+                alt="imagem"
+                width={1920}
+                height={1080}
+                priority
+                quality={75}
+                className="absolute opacity-50 blur-sm bottom-0 left-0 top-0 z-0 h-full w-full object-cover"
+            />
         </>
     )
 } 

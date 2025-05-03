@@ -72,6 +72,7 @@ export default function HomeContact() {
                                 allowFullScreen
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
+                                title="Mapa da localização da Clínica de Estética Avançada Carolina Macedo em Moema, São Paulo"
                             ></iframe>
                         </div>
                     </div>
