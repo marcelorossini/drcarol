@@ -4,6 +4,7 @@ import Page from "@/components/ui/page";
 import { ButtonOpenUrl } from "@/components/ui/button";
 import InstagramFeed from "@/components/InstagramFeed";
 import TikTokFeed from "@/components/TikTokFeed";
+import LazyLoad from "@/components/ui/lazy-load";
 
 import { FaRegClock, FaMapMarkerAlt } from "react-icons/fa";
 
@@ -38,8 +39,12 @@ export default function HomeContact() {
                     <div>
                         <h2 className="text-xl font-semibold mb-4">Redes Sociais</h2>
                         <div className="flex flex-col lg:flex-row gap-4">
-                            <InstagramFeed username="dra.carolinamacedo" />
-                            <TikTokFeed username="dra.carolinamacedo" />
+                            <LazyLoad className="flex-1">
+                                <InstagramFeed username="dra.carolinamacedo" />
+                            </LazyLoad>
+                            <LazyLoad className="flex-1">
+                                <TikTokFeed username="dra.carolinamacedo" />
+                            </LazyLoad>
                         </div>
                     </div>
                     <div>
