@@ -25,8 +25,7 @@ export const metadata: Metadata = {
   description: "Você em harmonia com a sua beleza",
   viewport: {
     width: "device-width",
-    initialScale: 1,
-    themeColor: "#d2b9a5"
+    initialScale: 1
   },
   other: {
     "preload": [
@@ -34,7 +33,8 @@ export const metadata: Metadata = {
       "/assets/logo-black.svg",
       "/assets/1.svg",
       "/assets/home-carol.webp"
-    ]
+    ],
+    "theme-color": "#d2b9a5"
   }
 };
 
