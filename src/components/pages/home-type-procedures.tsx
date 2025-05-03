@@ -43,13 +43,13 @@ export default function HomeTypeProcedures() {
     {
       title: "FACIAIS",
       description: "Microagulhamento, Fios Lisos PDO, PDRN/Exossomos, Limpeza de pele Premium, Skinboosting",
-      image: "/assets/images/home-procedures/face.jpg",
+      image: "/assets/images/home-procedures/face.webp",
       href: "/tratamentos/faciais"
     },
     {
       title: "CORPORAIS",
       description: "Bioestimulador de colágeno, PEIM, ENZIMAS, HARMONIZAÇÃO DE GLÚTEOS",
-      image: "/assets/images/home-procedures/corpo.jpg",
+      image: "/assets/images/home-procedures/corpo.webp",
       href: "/tratamentos/corporal"
     },
     {
