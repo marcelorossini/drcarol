@@ -7,6 +7,13 @@
 Os preenchimentos faciais com ácido hialurônico são procedimentos que restauram o volume, reestruturam os tecidos da pele, suavizam as rugas e sulcos profundos, corrigem assimetrias e melhoram o contorno facial.
 
 Com o envelhecimento, há perda de colágeno, gordura, sustentação no rosto e reabsorção óssea, resultando em flacidez, sulcos profundos e rugas. O ácido hialurônico é uma substância que está presente naturalmente na nossa pele, responsável por manter a hidratação e sustentação da face. Os geis de ácido hialurônico são preenchimentos temporários e biocompatíveis que tem como objetivo reduzir os sinais do envelhecimento de uma forma natural e harmoniosa.
+
+### Benefícios  
+- Recuperação do volume e contorno facial  
+- Suavização de rugas e sulcos profundos  
+- Melhora da hidratação da pele  
+- Procedimento seguro, minimamente invasivo e com resultados imediatos  
+- Face rejuvenescida e harmoniosa  
 <!-- description:end -->
 <!-- cover:start -->
 ./cover.jpg
@@ -54,14 +61,7 @@ O preenchimento da mandíbula proporciona um contorno e ângulos mais realçados
 A rinomodelação é um procedimento estético que tem como objetivo deixar o nariz mais harmônico, corrigindo pequenas imperfeições, como desníveis no dorso (deixá-lo mais reto), queda da ponta (deixá-lo mais empinado), sem necessidade de cirurgia.  
 <!-- carousel:end -->
 
-<!-- faq:start -->
-### Benefícios  
-- Recuperação do volume e contorno facial  
-- Suavização de rugas e sulcos profundos  
-- Melhora da hidratação da pele  
-- Procedimento seguro, minimamente invasivo e com resultados imediatos  
-- Face rejuvenescida e harmoniosa  
-<!-- faq:end -->
+
 <!-- faq:start -->
 ### Contraindicações  
 - Gestantes e lactantes  

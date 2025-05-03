@@ -5,6 +5,16 @@
 <!-- title:end -->
 <!-- description:start -->
 Os Skinboosters são injeções de ácido hialurônico, vitaminas e minerais, que promovem a bio revitalização, hidratação profunda, melhorando a qualidade e textura da pele.
+
+### Importância do Procedimento  
+Com o passar dos anos, a pele perde hidratação, elasticidade e viço devido à perda natural do nosso ácido hialurônico. Fatores externos, como exposição solar, poluição e hábitos de vida aceleram esse processo, deixando a pele opaca e sem vitalidade. Os Skinboosters são fundamentais para devolver essa hidratação e melhorar a saúde da sua pele de dentro para fora.
+
+### Benefícios  
+- Hidratação profunda  
+- Melhora da firmeza e elasticidade da pele  
+- Redução de linhas finas  
+- Estímulo à produção de colágeno  
+- Pele mais iluminada e rejuvenescida  
 <!-- description:end -->
 <!-- cover:start -->
 ./cover.jpg
@@ -19,18 +29,6 @@ Os Skinboosters são injeções de ácido hialurônico, vitaminas e minerais, qu
 ./photos
 <!-- carousel:end -->
 
-<!-- faq:start -->
-### Importância do Procedimento  
-Com o passar dos anos, a pele perde hidratação, elasticidade e viço devido à perda natural do nosso ácido hialurônico. Fatores externos, como exposição solar, poluição e hábitos de vida aceleram esse processo, deixando a pele opaca e sem vitalidade. Os Skinboosters são fundamentais para devolver essa hidratação e melhorar a saúde da sua pele de dentro para fora.
-<!-- faq:end -->
-<!-- faq:start -->
-### Benefícios  
-- Hidratação profunda  
-- Melhora da firmeza e elasticidade da pele  
-- Redução de linhas finas  
-- Estímulo à produção de colágeno  
-- Pele mais iluminada e rejuvenescida  
-<!-- faq:end -->
 <!-- faq:start -->
 ### Em quais regiões do corpo podem ser aplicados?  
 Indicado para rosto, pescoço, colo e mãos

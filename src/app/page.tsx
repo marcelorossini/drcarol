@@ -1,13 +1,16 @@
 import Section from "@/components/ui/section";
 import HomeHero from "@/components/pages/home-hero";
-import HomeTreatments from "@/components/pages/home-treatments";
-import HomeResults from "@/components/pages/home-results";
-import HomeAboutClinic from "@/components/pages/home-about-clinic";
-import HomeFAQ from "@/components/pages/home-faq";
-import HomeAboutDoctor from "@/components/pages/home-about";
-import HomeTestimonials from "@/components/pages/home-testimonials";
-import HomeContact from "@/components/pages/home-contact";
+import dynamic from 'next/dynamic';
 import Menu from '@/components/ui/menu';
+
+// Carregar componentes não críticos de forma lazy
+const HomeTreatments = dynamic(() => import('@/components/pages/home-treatments'));
+const HomeResults = dynamic(() => import('@/components/pages/home-results'));
+const HomeAboutClinic = dynamic(() => import('@/components/pages/home-about-clinic'));
+const HomeFAQ = dynamic(() => import('@/components/pages/home-faq'));
+const HomeAboutDoctor = dynamic(() => import('@/components/pages/home-about'));
+const HomeTestimonials = dynamic(() => import('@/components/pages/home-testimonials'));
+const HomeContact = dynamic(() => import('@/components/pages/home-contact'));
 
 export default function Home() {
   return (

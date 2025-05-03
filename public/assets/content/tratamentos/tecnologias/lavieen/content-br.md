@@ -3,6 +3,19 @@
 <!-- title:end -->
 <!-- description:start -->
 O Laser Lavieen é um tratamento inovador que utiliza a tecnologia de Laser Thulium 1927nm para cuidar da saúde e beleza da sua pele. Ele atua estimulando a renovação celular, tratando manchas, poros dilatados, linhas finas e promovendo um efeito de “pele de porcelana” com rápido tempo de recuperação.
+
+### Importância do Procedimento  
+Com o tempo, a pele sofre agressões externas e o processo natural de envelhecimento, resultando em manchas, textura irregular, poros dilatados e perda de viço. O Laser Lavieen estimula a regeneração e a produção de colágeno, proporcionando um aspecto rejuvenescido e saudável para a pele.
+
+### Benefícios  
+- Uniformização do tom da pele  
+- Melhora a textura e luminosidade  
+- Clareamento de manchas (Melasma, Melanoses Solar Senis) e hiperpigmentações  
+- Estímulo à produção de colágeno para melhora da firmeza e elasticidade  
+- Redução de poros dilatados e controle da oleosidade  
+- Suavização de rugas finas  
+- Recuperação rápida, permitindo retorno rápido às atividades diárias  
+- Indicado para todos tipos de pele, incluindo peles sensíveis e com rosácea  
 <!-- description:end -->
 <!-- cover:start -->
 ./cover.webp
@@ -17,21 +30,6 @@ O Laser Lavieen é um tratamento inovador que utiliza a tecnologia de Laser Thul
 ./photos
 <!-- carousel:end -->
 
-<!-- faq:start -->
-### Importância do Procedimento  
-Com o tempo, a pele sofre agressões externas e o processo natural de envelhecimento, resultando em manchas, textura irregular, poros dilatados e perda de viço. O Laser Lavieen estimula a regeneração e a produção de colágeno, proporcionando um aspecto rejuvenescido e saudável para a pele.
-<!-- faq:end -->
-<!-- faq:start -->
-### Benefícios  
-- Uniformização do tom da pele  
-- Melhora a textura e luminosidade  
-- Clareamento de manchas (Melasma, Melanoses Solar Senis) e hiperpigmentações  
-- Estímulo à produção de colágeno para melhora da firmeza e elasticidade  
-- Redução de poros dilatados e controle da oleosidade  
-- Suavização de rugas finas  
-- Recuperação rápida, permitindo retorno rápido às atividades diárias  
-- Indicado para todos tipos de pele, incluindo peles sensíveis e com rosácea  
-<!-- faq:end -->
 <!-- faq:start -->
 ### Contraindicações  
 - Gestantes e lactantes  

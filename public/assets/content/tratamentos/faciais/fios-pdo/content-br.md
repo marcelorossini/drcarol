@@ -10,7 +10,17 @@
 
 <!-- description:start -->
 Os fios lisos de PDO (Polidioxanona) são fios absorvíveis inseridos na pele para estimular a produção natural de colágeno. Eles melhoram a flacidez, textura da pele e redução das rugas finas, sem alterar o volume ou a expressão facial.
+
+### Importância do Procedimento
+Com o envelhecimento, a produção de colágeno diminui, resultando em flacidez, rugas finas e perda da elasticidade da pele. Os fios lisos de PDO atuam como um bioestímulo, promovendo uma melhoria gradual da firmeza e qualidade da pele sem intervenções invasivas. Estes fios são ideais para áreas delicadas como glabela (ruga e bravo), pálpebras inferiores (abaixo dos olhos) e região periorbital (código de barras). 
+
+### Benefícios
+- Estímulo natural de produção de colágeno
+- Melhora da firmeza e elasticidade da pele
+- Redução de rugas finas e linhas de expressão
+- Procedimento minimamente invasivo, sem cortes ou cicatrizes
 <!-- description:end -->
+
 
 <!-- cover:start -->
 ./cover.jpg
@@ -19,6 +29,7 @@ Os fios lisos de PDO (Polidioxanona) são fios absorvíveis inseridos na pele pa
 <!-- photo1:start -->
 ./photo1.webp
 <!-- photo1:end -->
+<!-- photo1:style={"maxWidth": "600px"} -->
 
 <!-- photo2:start -->
 
@@ -29,18 +40,6 @@ Os fios lisos de PDO (Polidioxanona) são fios absorvíveis inseridos na pele pa
 ./photos
 <!-- carousel:end -->
 
-<!-- faq:start -->
-### Importância do Procedimento
-Com o envelhecimento, a produção de colágeno diminui, resultando em flacidez, rugas finas e perda da elasticidade da pele. Os fios lisos de PDO atuam como um bioestímulo, promovendo uma melhoria gradual da firmeza e qualidade da pele sem intervenções invasivas. Estes fios são ideais para áreas delicadas como glabela (ruga e bravo), pálpebras inferiores (abaixo dos olhos) e região periorbital (código de barras). 
-<!-- faq:end -->
-
-<!-- faq:start -->
-### Benefícios
-- Estímulo natural de produção de colágeno
-- Melhora da firmeza e elasticidade da pele
-- Redução de rugas finas e linhas de expressão
-- Procedimento minimamente invasivo, sem cortes ou cicatrizes
-<!-- faq:end -->
 
 <!-- faq:start -->
 ### Contraindicações

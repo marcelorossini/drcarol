@@ -10,6 +10,18 @@ Redescubra a Firmeza e a Juventude da Sua Pele
 
 <!-- description:start -->
 São substâncias injetáveis que ativam os processos naturais de produção de colágeno no organismo. Eles atuam diretamente nas células responsáveis, estimulando-as a produzir mais colágeno de forma progressiva e duradoura, melhorando a qualidade da pele de dentro para fora.
+
+### Importância do Procedimento
+Com o passar do tempo, a produção natural de colágeno diminui, resultando em flacidez, perda de volume e uma pele mais fina sem sustentação. Fatores como exposição solar, estresse e o próprio envelhecimento aceleram esse processo, causando a sensação de “derretimento” do rosto.
+Os bioestimuladores ajudam a reverter esse processo, restaurando a firmeza da pele e retardando os sinais do envelhecimento.
+
+### Benefícios
+- Estímulo de produção de colágeno de forma natural
+- Melhora da firmeza e elasticidade da pele
+- Redução da flacidez da face, pescoço, colo, papada, abdômen, mãos, braços, interno de coxas e glúteos
+- Resultados naturais, progressivos e duradouros
+- Melhora a qualidade da pele sem mudanças bruscas na fisionomia
+
 <!-- description:end -->
 
 <!-- cover:start -->
@@ -19,6 +31,8 @@ São substâncias injetáveis que ativam os processos naturais de produção de 
 <!-- photo1:start -->
 ./photo1.webp
 <!-- photo1:end -->
+<!-- photo1:style={"maxWidth": "800px"} -->
+
 
 <!-- photo2:start -->
 
@@ -29,28 +43,6 @@ São substâncias injetáveis que ativam os processos naturais de produção de 
 ./photos
 <!-- carousel:end -->
 
-<!-- faq:start -->
-### Benefícios
-- Estímulo de produção de colágeno de forma natural
-- Melhora da firmeza e elasticidade da pele
-- Redução da flacidez da face, pescoço, colo, papada, abdômen, mãos, braços, interno de coxas e glúteos
-- Resultados naturais, progressivos e duradouros
-<!-- faq:end -->
-
-<!-- faq:start -->
-### Importância do Procedimento
-Com o passar do tempo, a produção natural de colágeno diminui, resultando em flacidez, perda de volume e uma pele mais fina sem sustentação. Fatores como exposição solar, estresse e o próprio envelhecimento aceleram esse processo, causando a sensação de “derretimento” do rosto.
-Os bioestimuladores ajudam a reverter esse processo, restaurando a firmeza da pele e retardando os sinais do envelhecimento.
-<!-- faq:end -->
-
-<!-- faq:start -->
-### Benefícios
-- Estímulo de produção de colágeno de forma natural
-- Melhora da firmeza e elasticidade da pele
-- Redução da flacidez da face, pescoço, colo, papada, abdômen, mãos, braços, interno de coxas e glúteos
-- Resultados naturais, progressivos e duradouros
-- Melhora a qualidade da pele sem mudanças bruscas na fisionomia
-<!-- faq:end -->
 
 <!-- faq:start -->
 ### Contraindicações

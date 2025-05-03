@@ -63,6 +63,7 @@ export function ReviewCard({ review }: ReviewCardProps) {
                 alt={review.author_name}
                 width={48}
                 height={48}
+                loading="lazy"
                 className="rounded-full mr-4 object-cover"
               />
             ) : (

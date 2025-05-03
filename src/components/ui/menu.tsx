@@ -73,9 +73,9 @@ export default function Menu({ isSticky: isStickyProp = false, dark: darkProp = 
                 <div className="flex flex-row items-center justify-center lg:justify-between relative w-full">
                     <div className="hidden lg:flex cursor-pointer" onClick={goHome}>
                         {isSticky || darkProp ? (
-                            <Image draggable={false} src="/assets/logo-white.svg" alt="logo" width={128} height={100} />
+                            <Image draggable={false} src="/assets/logo-white.svg" alt="logo" width={128} height={100} loading="lazy" />
                         ) : (
-                            <Image draggable={false} src="/assets/logo-black.svg" alt="logo" width={128} height={100} />
+                            <Image draggable={false} src="/assets/logo-black.svg" alt="logo" width={128} height={100} loading="lazy" />
                         )}
                     </div>
                     <div className="absolute left-1/2 transform -translate-x-1/2 z-10 hidden lg:flex">

@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { ImageWithMark } from "./image"
+import Image from "next/image"
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>[0]
@@ -258,11 +259,23 @@ interface CarouselImage {
   alt: string;
 }
 
-const CarouselDefault = ({ images, maxSize }: { images: CarouselImage[]; maxSize?: string }) => {
+const CarouselDefault = ({ 
+  images, 
+  maxSize, 
+  imageClassName,
+  useImageWithMark = false 
+}: { 
+  images: CarouselImage[]; 
+  maxSize?: string; 
+  imageClassName?: string;
+  useImageWithMark?: boolean;
+}) => {
   const autoplayOptions = {
     delay: 3000,
     rootNode: (emblaRoot: HTMLElement) => emblaRoot.parentElement,
   }
+
+  const ImageComponent = useImageWithMark ? ImageWithMark : Image;
 
   return (
     <Carousel
@@ -275,19 +288,38 @@ const CarouselDefault = ({ images, maxSize }: { images: CarouselImage[]; maxSize
       plugins={[
         Autoplay(autoplayOptions)
       ]}
+      onContextMenu={(e) => e.preventDefault()}
     >
       <CarouselContent className="overflow-visible">
         {images.map((image, index) => (
           <CarouselItem key={index} className="basis-[70%] md:basis-1/3" style={{ maxHeight: maxSize, maxWidth: maxSize }}>
             <div className="p-0.5">
-              <div className="flex aspect-square items-center justify-center p-2">
-                <ImageWithMark
-                  src={image.url}
-                  alt={image.alt}
-                  width={800}
-                  height={800}
-                  className={`w-full h-full object-cover rounded-4xl`}
-                />
+              <div className="flex aspect-square items-center justify-center p-2 relative">
+                {useImageWithMark ? (
+                  <ImageWithMark
+                    src={image.url}
+                    alt={image.alt}
+                    width={800}
+                    height={800}
+                    loading="lazy"
+                    className={cn(
+                      "w-full h-full object-cover rounded-4xl",
+                      imageClassName
+                    )}
+                  />
+                ) : (
+                  <Image
+                    src={image.url}
+                    alt={image.alt}
+                    width={800}
+                    height={800}
+                    loading="lazy"
+                    className={cn(
+                      "w-full h-full object-cover rounded-4xl",
+                      imageClassName
+                    )}
+                  />
+                )}
               </div>
             </div>
           </CarouselItem>
@@ -301,10 +333,12 @@ const CarouselDefault = ({ images, maxSize }: { images: CarouselImage[]; maxSize
 
 const CarouselHighlight = ({
   images,
-  enableBlur = true
+  enableBlur = true,
+  useImageWithMark = false
 }: {
   images: CarouselImage[];
   enableBlur?: boolean;
+  useImageWithMark?: boolean;
 }) => {
   const autoplayOptions = {
     delay: 3000,
@@ -345,15 +379,29 @@ const CarouselHighlight = ({
                   : "scale-100 z-0 opacity-50",
                 enableBlur && selectedIndex !== index && "blur-xs"
               )}>
-                <ImageWithMark
-                  src={image.url}
-                  alt={image.alt}
-                  width={800}
-                  height={800}
-                  className={cn(
-                    "w-full h-full object-cover rounded-4xl transition-all duration-300"
-                  )}
-                />
+                {useImageWithMark ? (
+                  <ImageWithMark
+                    src={image.url}
+                    alt={image.alt}
+                    width={800}
+                    loading="lazy"
+                    height={800}
+                    className={cn(
+                      "w-full h-full object-cover rounded-4xl transition-all duration-300"
+                    )}
+                  />
+                ) : (
+                  <Image
+                    src={image.url}
+                    alt={image.alt}
+                    width={800}
+                    loading="lazy"
+                    height={800}
+                    className={cn(
+                      "w-full h-full object-cover rounded-4xl transition-all duration-300"
+                    )}
+                  />
+                )}
               </div>
             </div>
           </CarouselItem>

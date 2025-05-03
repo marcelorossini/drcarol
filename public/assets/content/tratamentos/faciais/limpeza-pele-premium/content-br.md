@@ -4,6 +4,16 @@
 <!-- title:end -->
 <!-- description:start -->
 A limpeza de pele profunda com um procedimento que remove impurezas, cravos, células mortas e o excesso de oleosidade, promovendo uma pele mais saudável, uniforme e renovada. Utilizando produtos da linha Adcos, reconhecida por sua tecnologia e ativos de alta performance, o procedimento proporciona uma limpeza eficaz sem agredir a pele.
+
+### Importância do Procedimento  
+No dia a dia, a pele acumula resíduos de poluição, oleosidade e células mortas que obstruem os poros, causando cravos, espinhas e aspecto desvitalizado e opaco. A limpeza de pele profunda é essencial para desintoxicar, equilibrar e preparar a pele para absorver os melhores tratamentos estéticos. Ideal que seja feita antes dos tratamentos injetáveis.
+### Benefícios  
+- Remoção de impurezas, células mortas e cravos  
+- Controle da oleosidade sem ressecar a pele  
+- Redução da dilatação dos poros  
+- Prevenção de acne e inflamações  
+- Estímulo de renovação celular  
+- Pele mais luminosa, macia e uniforme  
 <!-- description:end -->
 <!-- cover:start -->
 ./cover.jpg
@@ -18,19 +28,7 @@ A limpeza de pele profunda com um procedimento que remove impurezas, cravos, cé
 ./photos
 <!-- carousel:end -->
 
-<!-- faq:start -->
-### Importância do Procedimento  
-No dia a dia, a pele acumula resíduos de poluição, oleosidade e células mortas que obstruem os poros, causando cravos, espinhas e aspecto desvitalizado e opaco. A limpeza de pele profunda é essencial para desintoxicar, equilibrar e preparar a pele para absorver os melhores tratamentos estéticos. Ideal que seja feita antes dos tratamentos injetáveis.
-<!-- faq:end -->
-<!-- faq:start -->
-### Benefícios  
-- Remoção de impurezas, células mortas e cravos  
-- Controle da oleosidade sem ressecar a pele  
-- Redução da dilatação dos poros  
-- Prevenção de acne e inflamações  
-- Estímulo de renovação celular  
-- Pele mais luminosa, macia e uniforme  
-<!-- faq:end -->
+
 <!-- faq:start -->
 ### Contraindicações  
 - Pessoas com acne inflamada grave  

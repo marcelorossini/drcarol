@@ -15,7 +15,7 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
         color: 'inherit',
         fontFamily: 'inherit',
         fontSize: 'inherit',
-        lineHeight: 'inherit',
+        lineHeight: '1.5rem',
       }}
       components={{
         ul: ({ children }) => (

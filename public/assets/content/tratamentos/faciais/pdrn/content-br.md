@@ -3,6 +3,17 @@
 <!-- title:end -->
 <!-- description:start -->
 A Estética Regenerativa é uma abordagem inovadora que vai além do rejuvenescimento tradicional, pois atua na reparação da célula profundamente, na regeneração tecidual e na estimulação biológica natural da pele. Esse tratamento utiliza ativos de alta performance e tecnologia como o PDRN (Polidesoxirribonucleotídeo) e os Exossomos, que juntos promovem uma transformação na pele de dentro para fora.
+
+### Benefícios
+- Rejuvenescimento global da pele  
+- Estimulação de colágeno e elastina  
+- Hidratação profunda e duradoura  
+- Melhora da firmeza, elasticidade e viço  
+- Redução de rugas finas, manchas e poros dilatados  
+- Tratamento de rosácea, melasma e cicatrizes de acne  
+- Ação anti-inflamatória e cicatrizante  
+- Melhoria da função de barreira da pele  
+
 <!-- description:end -->
 <!-- cover:start -->
 ./cover.jpg
@@ -19,17 +30,7 @@ O protocolo combina dois ativos extremamente potentes:
 
 A aplicação dos ativos pode ser feita por meio de microagulhamento ou com o auxílio de tecnologias como o Laser Lavieen, que aumentam a absorção e a eficácia dos componentes.
 <!-- faq:end -->
-<!-- faq:start -->
-### Quais os principais benefícios?  
-- Rejuvenescimento global da pele  
-- Estimulação de colágeno e elastina  
-- Hidratação profunda e duradoura  
-- Melhora da firmeza, elasticidade e viço  
-- Redução de rugas finas, manchas e poros dilatados  
-- Tratamento de rosácea, melasma e cicatrizes de acne  
-- Ação anti-inflamatória e cicatrizante  
-- Melhoria da função de barreira da pele  
-<!-- faq:end -->
+
 <!-- faq:start -->
 ### Quantas sessões são necessárias?  
 Em geral, são recomendadas de 3 a 5 sessões, com intervalo de 15 a 30 dias entre elas, dependendo das necessidades e condições da pele de cada paciente.

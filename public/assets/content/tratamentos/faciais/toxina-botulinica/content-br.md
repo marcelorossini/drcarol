@@ -10,6 +10,18 @@ Descubra o poder do rejuvenescimento natural
 A Toxina Botulínica, também conhecida como BOTOX®, é um dos procedimentos mais procurados para o rejuvenescimento facial. Quando injetada na pele age bloqueando temporariamente os sinais nervosos dos músculos, resultando em um relaxamento da musculatura, o que diminui a formação de rugas e suaviza as existentes, causadas pelo envelhecimento e pelos movimentos repetitivos do rosto.
 
 Além da estética, também é utilizada para tratar questões funcionais, como bruxismo e hiperidrose (suor excessivo).
+
+### Importância do Procedimento  
+A Toxina Botulínica é eficaz na diminuição das rugas e linhas de expressão faciais, resultando em uma face rejuvenescida naturalmente. Quando realizada de forma preventiva, retarda os sinais de envelhecimento na face.
+
+### Benefícios  
+- Redução de rugas na testa, ao redor dos olhos (pés de galinha) e entre as sobrancelhas, as famosas rugas de bravo.  
+- Correção de sorriso gengival (exposição da gengiva ao sorrir)  
+- Diminuição das rugas no nariz, queixo, canto de boca e pescoço  
+- Tratamento para bruxismo (ranger dos dentes) e hiperidrose na axilas (suor excessivo)  
+- Prevenção do envelhecimento precoce  
+- Suavização da expressão facial, deixando um aspecto descansado e natural  
+- Procedimento rápido, seguro e com efeito natural  
 <!-- description:end -->
 <!-- cover:start -->
 ./cover.jpg
@@ -18,6 +30,7 @@ Além da estética, também é utilizada para tratar questões funcionais, como 
 <!-- photo1:start -->
 ./photo1.webp
 <!-- photo1:end -->
+<!-- photo1:style={"maxWidth": "600px"} -->
 
 <!-- carousel:start -->
 # FULLFACE
@@ -39,21 +52,6 @@ Além da estética, também é utilizada para tratar questões funcionais, como 
 ./photos/NERFETIT
 <!-- carousel:end -->
 
-
-<!-- faq:start -->
-### Importância do Procedimento  
-A Toxina Botulínica é eficaz na diminuição das rugas e linhas de expressão faciais, resultando em uma face rejuvenescida naturalmente. Quando realizada de forma preventiva, retarda os sinais de envelhecimento na face.
-<!-- faq:end -->
-<!-- faq:start -->
-### Benefícios  
-- Redução de rugas na testa, ao redor dos olhos (pés de galinha) e entre as sobrancelhas, as famosas rugas de bravo.  
-- Correção de sorriso gengival (exposição da gengiva ao sorrir)  
-- Diminuição das rugas no nariz, queixo, canto de boca e pescoço  
-- Tratamento para bruxismo (ranger dos dentes) e hiperidrose na axilas (suor excessivo)  
-- Prevenção do envelhecimento precoce  
-- Suavização da expressão facial, deixando um aspecto descansado e natural  
-- Procedimento rápido, seguro e com efeito natural  
-<!-- faq:end -->
 <!-- faq:start -->
 ### Contraindicações  
 - Gestantes  

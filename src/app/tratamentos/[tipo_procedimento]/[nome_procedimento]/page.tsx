@@ -72,12 +72,16 @@ const Tratamento = async ({ params }: TratamentoProps) => {
 
         // Extrair descrição usando a tag description
         const descriptionMatch = markdownContent.match(/<!-- description:start -->\s*([\s\S]*?)\s*<!-- description:end -->/);
-        const description = descriptionMatch ? descriptionMatch[1].trim().replaceAll('#', '') : '';
+        const description = descriptionMatch ? descriptionMatch[1].trim() : '';
 
         // Extrair photo1 usando a tag photo1
         const photo1Match = markdownContent.match(/<!-- photo1:start -->\s*([\s\S]*?)\s*<!-- photo1:end -->/);
         const photo1Path = photo1Match && photo1Match[1].trim() !== '' ? photo1Match[1].trim() : '';
         const photo1 = photo1Path ? `/assets/content/tratamentos/${procedureType}/${procedureName}/${photo1Path}` : '';
+
+        // Extrair estilo CSS da tag photo1
+        const photo1StyleMatch = markdownContent.match(/<!-- photo1:style={([^}]*)} -->/);
+        const photo1Style = photo1StyleMatch ? photo1StyleMatch[1] : '';
 
         // Extrair cover usando a tag cover
         const coverMatch = markdownContent.match(/<!-- cover:start -->\s*([\s\S]*?)\s*<!-- cover:end -->/);
@@ -199,22 +203,28 @@ const Tratamento = async ({ params }: TratamentoProps) => {
             <Section id="home" className="min-h-[100vh] bg-[#E7E1D9]">
                 <Page className="pt-10 lg:pt-10">
                     <div className="rounded-lg flex flex-col gap-8">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white rounded-xl shadow-xs overflow-hidden">
+                        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-4 bg-white rounded-xl shadow-xs overflow-hidden">
                             <div className="flex flex-col gap-4 p-6">
                                 <h1 className="text-2xl lg:text-4xl font-bold font-caladea text-primary">{title}</h1>
                                 {subtitle && <h2 className="text-xl font-medium">{subtitle}</h2>}
-                                <div className="h-full flex flex-col gap-2 flex-1 lg:text-justify">
+                                <div className="h-full flex flex-col gap-2 flex-1 lg:text-justify lg:text-lg">
                                     <MarkdownContent content={description} />
                                 </div>
                             </div>
-                            <div className="flex justify-center gap-4">
-                                <div className='relative w-full h-fit flex items-center justify-center lg:justify-end'>
+                            <div className="flex justify-center items-center gap-4">
+                                <div className='relative w-full h-full flex items-end justify-center lg:justify-end'>
                                     {finalPhoto1 && (
-                                        <Image draggable={false} src={finalPhoto1} alt={title || procedureName} width={1000} height={1000} className="bottom-0 w-full h-auto lg:max-w-[400px] object-contain" />
-                                    )}
-                                    {optimizedPhoto1 && (
-                                        <div className='display:none w-12 h-full '/>
-                                    ) }
+                                        <Image 
+                                            draggable={false} 
+                                            src={finalPhoto1} 
+                                            alt={title || procedureName} 
+                                            width={1000} 
+                                            height={1000}
+                                            loading="lazy" 
+                                            className="w-full h-auto object-contain"
+                                            style={photo1Style ? JSON.parse(`{${photo1Style}}`) : { maxWidth: '500px' }}
+                                        />
+                                    )}                                    
                                 </div>
                             </div>
                         </div>
@@ -224,7 +234,7 @@ const Tratamento = async ({ params }: TratamentoProps) => {
                                 {photoDirectory.description && (
                                     <p className="mb-4 text-xl">{photoDirectory.description}</p>
                                 )}
-                                <CarouselDefault images={photoDirectory.photos} maxSize="512px" />
+                                <CarouselDefault imageClassName="aspect-square" images={photoDirectory.photos} maxSize="512px" useImageWithMark={true} />
                             </div>
                         ))}
                         <div className="bg-white rounded-xl shadow-xs p-6">
