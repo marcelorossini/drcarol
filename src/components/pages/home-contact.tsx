@@ -5,27 +5,15 @@ import { ButtonOpenUrl } from "@/components/ui/button";
 import InstagramFeed from "@/components/InstagramFeed";
 import TikTokFeed from "@/components/TikTokFeed";
 import LazyLoad from "@/components/ui/lazy-load";
-
 import { FaRegClock, FaMapMarkerAlt } from "react-icons/fa";
+import { openMaps } from "@/utils/maps";
 
 export default function HomeContact() {
     const whatsappUrl = "https://api.whatsapp.com/send?phone=5511933110909&text=Gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+os+procedimentos+est%C3%A9ticos";
     
     const address = "Avenida Moaci, 395 - Conj. 44 - Moema, São Paulo - SP (Edifício Mundeo Moema Business)";
+    const mapUrl = "https://www.google.com/maps/place/Clínica+de+Estética+Avançada+Carolina+Macedo+-+Moema+•+Botox+•+Preenchimentos+Faciais+•+Bioestimuladores+de+Colágeno/@-23.6110294,-46.6640066,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce5b0bff046591:0x860df1209a40a93b!8m2!3d-23.6110294!4d-46.6640066!16s%2Fg%2F11rzszdgdb?hl=pt-BR&entry=ttu&g_ep=EgoyMDI1MDQyMy4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D"
     const coordinates = "-23.5937,-46.6731"; // Coordenadas aproximadas de Moema, SP
-    
-    const openMaps = () => {
-        // Verifica se é um dispositivo móvel
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        
-        if (isMobile) {
-            // Para dispositivos móveis, abre o aplicativo de mapas nativo
-            window.location.href = `geo:${coordinates}?q=${encodeURIComponent(address)}`;
-        } else {
-            // Para desktop, abre o Google Maps no navegador
-            window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`, '_blank');
-        }
-    };
 
     return (
         <Page title={<h1>Entre em <span className="text-primary">contato</span></h1>}>
@@ -58,7 +46,7 @@ export default function HomeContact() {
                         <h2 className="text-xl font-bold mb-4 flex items-center gap-2"><FaMapMarkerAlt />Localização</h2>
                         <h3 
                             className="text-lg font-semibold mb-2 cursor-pointer hover:text-primary transition-colors"
-                            onClick={openMaps}
+                            onClick={() => openMaps(address, coordinates, mapUrl)}
                         >
                             {address}
                         </h3>

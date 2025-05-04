@@ -76,7 +76,7 @@ interface CollapsibleArrayProps {
 
 export function CollapsibleList({ items }: CollapsibleArrayProps) {
   return (
-    <div className="grid grid-cols-1 gap-2 divide-y divide-gray-300">
+    <div className="grid grid-cols-1 gap-2 divide-y divide-gray-300 w-full">
       {items.map((item, index) => (
         <CollapsibleItem
           key={index}

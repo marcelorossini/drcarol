@@ -73,7 +73,7 @@ export function ReviewCard({ review }: ReviewCardProps) {
             )}
           </div>
           <div>
-            <h3 className="font-semibold">{review.author_name}</h3>
+            <h3 className="font-semibold lg:text-lg">{review.author_name}</h3>
             <div className="flex items-center">
               {[...Array(review.rating)].map((_, i) => (
                 <Star

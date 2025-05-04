@@ -48,10 +48,10 @@ export default function HomeFAQ() {
             <div className="flex flex-col md:flex-row gap-4">
                 <div className="hidden md:flex w-1/2 relative justify-end items-end">
                     <div className="w-full max-h-[600px] h-full relative">
-                        <Image draggable={false} src={"/assets/images/home-faq.png"} alt="imagem" fill className="object-contain object-bottom" loading="lazy" />
+                        <Image draggable={false} src={"/assets/images/home-faq.webp"} alt="imagem" fill className="object-contain object-bottom" loading="lazy" />
                     </div>
                 </div>
-                <div className="w-full md:w-1/2 pb-8 lg:pb-20">
+                <div className="w-full h-full md:w-1/2 pb-8 lg:pb-0 flex items-center justify-center">
                     <CollapsibleList items={faq} />
                 </div>
             </div>
