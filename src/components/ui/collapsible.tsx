@@ -63,7 +63,7 @@ export function CollapsibleItem({ title, content, useMarkdown = true }: Collapsi
             <MarkdownContent content={content} />
           </div>
         ) : (
-          <p className="text-lg text-gray-600 lg:text-justify" dangerouslySetInnerHTML={{ __html: content.replace(/\n/g, '<br />') }} />
+          <p className="text-lg text-gray-600 text-justify" dangerouslySetInnerHTML={{ __html: content.replace(/\n/g, '<br />') }} />
         )}
       </CollapsibleContent>
     </Collapsible>

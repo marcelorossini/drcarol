@@ -2,6 +2,7 @@ import { isMobile } from 'react-device-detect';
 
 export const openMaps = (address: string, coordinates: string, mapUrl: string) => {
     // Verifica se é um dispositivo móvel
+    /*
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     
     if (isMobile) {
@@ -28,4 +29,6 @@ export const openMaps = (address: string, coordinates: string, mapUrl: string) =
         // Para desktop, abre o Google Maps no navegador
         window.open(mapUrl, '_blank');
     }
+    */
+    window.open(mapUrl, '_blank');
 }; 

@@ -20,7 +20,7 @@ export function ProcedureCard({ procedure, index, animation = true }: { procedur
           className="w-full h-56 object-cover object-top lg:h-80"
           loading="lazy"
         />
-        <div className="flex items-center h-16 text-center justify-center gap-2 text-xl p-4 bg-[#a4826b]">
+        <div className="flex items-center min-h-16 text-center justify-center gap-2 text-md md:text-lg lg:text-xl p-4 bg-[#a4826b]">
           <strong>{procedure.title}</strong> <div><FaArrowAltCircleRight size={26}/></div>
         </div>
       </div>
