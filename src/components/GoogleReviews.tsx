@@ -35,7 +35,7 @@ export async function GoogleReviews() {
 
       <div className="text-center space-y-4 w-full flex justify-center">
         <a
-          href="https://www.google.com/search?q=Cl%C3%ADnica+de+Est%C3%A9tica+Avan%C3%A7ada+Carolina+Macedo&sca_esv=2c9839946796c83c&rlz=1C5CHFA_enBR1096BR1096&sxsrf=AHTn8zolDlbTOy10uy42xpI_pZEsdEv8gA%3A1745256973370&ei=DYIGaKWeFtS05OUPqa2A0Q8&ved=0ahUKEwjl2MHv1OmMAxVUGrkGHakWIPoQ4dUDCBA&uact=5&oq=Cl%C3%ADnica+de+Est%C3%A9tica+Avan%C3%A7ada+Carolina+Macedo&gs_lp=Egxnd3Mtd2l6LXNlcnAiL0Nsw61uaWNhIGRlIEVzdMOpdGljYSBBdmFuw6dhZGEgQ2Fyb2xpbmEgTWFjZWRvMgUQIRigATIFECEYoAEyBRAhGKABMgUQIRigAUikCFCbBFibBHABeACQAQCYAbsBoAGpAqoBAzAuMrgBA8gBAPgBAvgBAZgCAqACxQHCAgsQABiABBiwAxiiBMICCBAAGLADGO8FwgILEAAYsAMYogQYiQWYAwCIBgGQBgWSBwMxLjGgB80IsgcDMC4xuAfAAQ&sclient=gws-wiz-serp#lrd=0x94ce5b0bff046591:0x860df1209a40a93b,1,,,"
+          href="https://g.co/kgs/YFCaC5G"
           target="_blank"
           rel="noopener noreferrer"
           className="w-fit px-8 py-5 bg-primary text-xl text-white rounded-full hover:bg-primary/90 transition-colors duration-200 font-medium flex items-center gap-2 flex-col lg:flex-row shadow-lg"
