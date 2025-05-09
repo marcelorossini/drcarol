@@ -39,7 +39,7 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
         if (node.type === 'element' && node.tagName === 'p') {
           node.properties = {
             ...node.properties,
-            className: "text-justify"
+            className: "lg:text-justify"
           };
         }
         return node;

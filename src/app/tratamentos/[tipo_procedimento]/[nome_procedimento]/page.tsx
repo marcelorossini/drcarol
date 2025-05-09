@@ -207,7 +207,7 @@ const Tratamento = async ({ params }: TratamentoProps) => {
                             <div className="flex flex-col gap-4 p-6">
                                 <h1 className="text-2xl lg:text-4xl font-bold font-caladea text-primary">{title}</h1>
                                 {subtitle && <h2 className="text-xl font-medium">{subtitle}</h2>}
-                                <div className="h-full flex flex-col gap-2 flex-1 text-justify lg:text-lg">
+                                <div className="h-full flex flex-col gap-2 flex-1 lg:text-justify lg:text-lg">
                                     <MarkdownContent content={description} />
                                 </div>
                             </div>

@@ -85,7 +85,7 @@ export function ReviewCard({ review }: ReviewCardProps) {
           </div>
         </div>
         <div className="space-y-2 flex-1">
-          <div className="text-gray-600 text-justify">
+          <div className="text-gray-600 lg:text-justify">
             <span dangerouslySetInnerHTML={{ __html: displayText.replace(/\n/g, '<br />') }} />
             {hasMoreText && (
               <Button

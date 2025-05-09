@@ -11,7 +11,7 @@ export default async function HomeAboutClinic() {
         >
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-8">
                 <div className="flex flex-col gap-8">
-                    <p className="text-justify lg:text-xl">Fundada em 2020 pela Dra. Carolina Macedo, a Clínica nasceu do desejo de proporcionar uma experiência estética humanizada  e acolhedora. <br />
+                    <p className="lg:text-justify lg:text-xl">Fundada em 2020 pela Dra. Carolina Macedo, a Clínica nasceu do desejo de proporcionar uma experiência estética humanizada  e acolhedora. <br />
                         Nossa Clínica está localizada na região de Moema (SP), próxima ao Aeroporto de Congonhas e Shopping Ibirapuera, facilitando o acesso para nossos pacientes. O ambiente foi cuidadosamente planejado para proporcionar conforto, tranquilidade e bem-estar, um verdadeiro refúgio para quem busca autocuidado.    Contamos com atendimento bilíngue em inglês e português, garantindo atendimento personalizado e acolhedor, também para nossos pacientes estrangeiros. <br />
                         Aqui oferecemos tratamentos estéticos com foco em resultados compatíveis com os desejos e necessidades de quem nos procura, garantindo uma jornada maravilhosa e segura. <br />
                     </p>
